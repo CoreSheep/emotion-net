@@ -1,0 +1,107 @@
+﻿[
+  {
+    "link": "SUBCLASS_OF",
+    "head": "快乐",
+    "tail": "乐 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "安心",
+    "tail": "乐 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "相信",
+    "tail": "好 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "赞扬",
+    "tail": "好 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "喜爱",
+    "tail": "好 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "尊敬",
+    "tail": "好 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "祝愿",
+    "tail": "好 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "愤怒",
+    "tail": "怒 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "思",
+    "tail": "哀 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "悲伤",
+    "tail": "哀 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "失望",
+    "tail": "哀 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "慌",
+    "tail": "哀 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "疚",
+    "tail": "哀 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "烦闷",
+    "tail": "惧 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "恐惧",
+    "tail": "惧 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "羞",
+    "tail": "惧 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "怀疑",
+    "tail": "恶 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "妒忌",
+    "tail": "恶 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "贬责",
+    "tail": "恶 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "憎恶",
+    "tail": "恶 "
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "惊奇",
+    "tail": "惊"
+  }
+]

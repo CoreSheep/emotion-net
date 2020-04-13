@@ -1,0 +1,37 @@
+﻿[
+  {
+    "link": "SUBCLASS_OF",
+    "head": "乐 ",
+    "tail": "表情"
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "好 ",
+    "tail": "表情"
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "怒 ",
+    "tail": "表情"
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "哀 ",
+    "tail": "表情"
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "惧 ",
+    "tail": "表情"
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "恶 ",
+    "tail": "表情"
+  },
+  {
+    "link": "SUBCLASS_OF",
+    "head": "惊",
+    "tail": "表情"
+  }
+]

@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>first bootstrap program</title>
+<!--    <meta name="keywords" content="" />-->
+<!--    <meta name="author" content="" />-->
+    <link rel="shortcut icon" href="">
+    <!--  link outer css stylesheet  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    
+    <!--link outer js lib-->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+        /*body的样式*/
+        body {
+            background-color: lightgray;   /*背景颜色*/
+            padding-bottom: 30px;
+            text-align: center;
+            font-family: OpenSans-Light, PingFang SC, Hiragino Sans GB, Microsoft Yahei, Microsoft Jhenghei, sans-serif;
+        }
+    
+        /*之前在js代码里面定义了classes，这边就给这些写样式*/
+        .links line {
+            stroke: rgb(240, 240, 240); /*线的颜色*/
+            stroke-opacity: 0.2;        /*线的透明度*/
+        }
+        .links line.inactive {
+            /*display: none !important;*/
+            stroke-opacity: 0;
+        }
+    
+        .linetexts {
+            fill-opacity: 0;
+            font-size: 8px ;
+            font-family: SimSun,serif;
+            fill:#fff;
+        }
+        .linetexts.inactive {
+            display: none !important;
+        }
+    
+        .nodes circle {
+            stroke: #fff;
+            stroke-width: 1.5px;        /*圆的描边宽度*/
+        }
+        .nodes circle:hover {
+            cursor: pointer;
+        }
+        .nodes circle.inactive {
+            display: none !important;
+        }
+    
+        /*默认显示所有的圆圈，进入模式切换之后才会显示text*/
+        .texts text{
+            /*default set 解决一开始事，文本和节点同时显示*/
+            display: none;
+        }
+        .texts text:hover {
+            cursor: pointer;
+        }
+        .texts text.inactive {
+            display: none !important;
+        }
+    
+        /*label的样式*/
+        #label {
+            position: absolute;
+            left: 30px;
+            top: 200px;
+            text-align: left;
+            color: #f2f2f2;
+            font-size: 16px;
+        }
+    
+        /*label中每一个小的div/色块/图例的样式*/
+        #label>div {
+            margin-bottom: 10px;
+        }
+    
+        /* 实体色块和实体名称 */
+        #label span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            position: relative;
+            top: 2px;
+            margin-right: 8px;
+            border-radius: 20px;
+        }
+    
+        /*mode-模式切换的style*/
+        #mode {
+            position: absolute;
+            top: 100px;
+            left: 30px;
+        }
+    
+        #mode span {
+            display: inline-block;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: color, background-color .3s; /*CSS3中的渐变*/
+            -o-transition: color, background-color .3s;
+            -ms-transition: color, background-color .3s;
+            -moz-transition: color, background-color .3s;
+            -webkit-transition: color, background-color .3s;
+        }
+    
+        /*当按键处于激活状态的时候*/
+        #mode span.active {
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+        }
+    
+        /*当按键处于鼠标悬浮状态的时候*/
+        #mode span:hover {
+            background-color: #aaa;
+            color: #333;
+            cursor: pointer;
+        }
+    
+        /*switch1-菜品大类实体显示开关切换的style*/
+        #switch1 {
+            position: absolute;
+            top: 200px;
+            left: 170px;
+        }
+    
+        /* toggle开关使用inline-block*/
+        #switch1 span {
+            display: inline-block;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: color, background-color .3s; /*CSS3中的渐变*/
+            -o-transition: color, background-color .3s;
+            -ms-transition: color, background-color .3s;
+            -moz-transition: color, background-color .3s;
+            -webkit-transition: color, background-color .3s;
+        }
+    
+        /*当按键处于激活或者鼠标悬浮状态的时候*/
+        #switch1 span.active, #switch1 span:hover {
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+        }
+    
+        /*switch2-菜品大类实体显示开关切换的style*/
+        #switch2 {
+            position: absolute;
+            top: 225px;
+            left: 170px;
+            margin-top: 12px;
+        }
+    
+        #switch2 span {
+            display: inline-block;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: color, background-color .3s; /*CSS3中的渐变*/
+            -o-transition: color, background-color .3s;
+            -ms-transition: color, background-color .3s;
+            -moz-transition: color, background-color .3s;
+            -webkit-transition: color, background-color .3s;
+        }
+    
+        /*当按键处于激活或者鼠标悬浮状态的时候*/
+        #switch2 span.active, #switch2 span:hover {
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+        }
+    
+        /*switch3-菜品大类实体显示开关切换的style*/
+        #switch3 {
+            position: absolute;
+            top: 250px;
+            left: 170px;
+            margin-top: 24px;
+        }
+    
+        #switch3 span {
+            display: inline-block;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: color, background-color .3s; /*CSS3中的渐变*/
+            -o-transition: color, background-color .3s;
+            -ms-transition: color, background-color .3s;
+            -moz-transition: color, background-color .3s;
+            -webkit-transition: color, background-color .3s;
+        }
+    
+        /*当按键处于激活或者鼠标悬浮状态的时候*/
+        #switch3 span.active, #switch3 span:hover {
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /*switch3-菜品大类实体显示开关切换的style*/
+        #switch4 {
+            position: absolute;
+            top: 275px;
+            left: 170px;
+            margin-top: 36px;
+        }
+
+        #switch4 span {
+            display: inline-block;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            transition: color, background-color .3s; /*CSS3中的渐变*/
+            -o-transition: color, background-color .3s;
+            -ms-transition: color, background-color .3s;
+            -moz-transition: color, background-color .3s;
+            -webkit-transition: color, background-color .3s;
+        }
+
+        /*当按键处于激活或者鼠标悬浮状态的时候*/
+        #switch4 span.active, #switch4 span:hover {
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+        }
+    
+        /*info的样式*/
+        #info {
+            position: absolute;
+            top: 0px;			/*10px*/
+            /*bottom: 40px;*/
+            right: 10px;   		/*20px*/
+            text-align: left;		/*right*/
+            width: 253px;  		/*255px*/
+            border: lightgrey 1px dotted;;
+            
+        }
+    
+        #info p {
+            color: #fff;
+            font-size: 12px;
+            margin-top: 0px;
+            margin-bottom: 5px;
+        }
+    
+        #info p span {
+            color: #888;
+            margin-right: 0px;
+        }
+    
+        /*tips的样式*/
+        #tooltips {
+            position: absolute;
+            left: 20px;
+            right: 10px;
+            top: 350px;
+            text-align: left;
+            color: #f2f2f2;
+            font-size: 12px;
+            width:230px;
+        }
+    
+        /*indicator中每一个小的div/色块/图例的样式*/
+        #tooltips>div {
+            margin-bottom: 5px;
+        }
+    
+        #tooltips span {
+            display: inline-block;
+            width: 60px;
+            height: 20px;
+            position: relative;
+            top: 2px;
+            margin-right: 8px;
+            font-size: 16px;
+        }
+    
+        /*搜索框的样式*/
+        #search input {
+            position: absolute;
+            top: 150px;
+            left: 30px;
+            color: #fff;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            width: 200px;
+            background-color: #666;
+        }
+        div{
+            border: lightgrey 1px dotted;
+        }
+        #canvas{
+            /*background-color: lightgray  !*背景颜色*!*/
+            border: lightgrey 1px dotted;;
+        }
+    </style>
+</head>
+<body>
+    <!-- 标题 -->
+    <h1 style="color: #fff;font-size: 32px;margin-bottom: 10px;margin-top: 10px; text-align: left;margin-left: 40px">Emotion Net Mini</h1>
+    
+    <!-- 定义div存放关系图 -->
+    <!-- NOTE: 父元素采用相对定位，里面的元素采用绝对定位 -->
+    <div style="text-align: center;position: relative;">
+        <svg width="860" height="560" style="margin-left: 30px;margin-bottom: -150px" id="canvas"></svg>
+    
+        <!-- 模式(circle/text) -->
+        <div id="mode">
+            <span class="active" style="border-top-right-radius: 0;border-bottom-right-radius: 0;">Circles</span>
+            <span style="border-top-left-radius: 0;border-bottom-left-radius: 0;position: relative;left: -5px;">Texts</span>
+        </div>
+    
+        <!-- 搜索框 -->
+        <div id="search">
+            <input type="text" autocomplete="off" class="form-control">
+        </div>
+        
+        <!-- 图例 -->
+        <div id="label"></div>
+        
+        
+        <!-- 显示切换1 on/off -->
+        <div id="switch1">
+            <span class="active" style="border-top-right-radius: 0;border-bottom-right-radius: 0;">On</span>
+            <span style="border-top-left-radius: 0;border-bottom-left-radius: 0;position: relative;left: -5px;">Off</span>
+        </div>
+        
+        <!-- 显示切换2 on/off-->
+        <div id="switch2">
+            <span class="active" style="border-top-right-radius: 0;border-bottom-right-radius: 0;">On</span>
+            <span style="border-top-left-radius: 0;border-bottom-left-radius: 0;position: relative;left: -5px;">Off</span>
+        </div>
+        
+        <!-- 显示切换3 on/off-->
+        <div id="switch3">
+            <span class="active" style="border-top-right-radius: 0;border-bottom-right-radius: 0;">On</span>
+            <span style="border-top-left-radius: 0;border-bottom-left-radius: 0;position: relative;left: -5px;">Off</span>
+        </div>
+    
+        <!-- 显示切换4 on/off-->
+        <div id="switch4">
+            <span class="active" style="border-top-right-radius: 0;border-bottom-right-radius: 0;">On</span>
+            <span style="border-top-left-radius: 0;border-bottom-left-radius: 0;position: relative;left: -5px;">Off</span>
+        </div>
+        
+        <!-- 每个结点的信息 -->
+        <div id="info">
+            <h4>Word Property</h4>
+            1."emoID"<br>
+            2."wordClass<br>
+            3."totalMeanings"<br>
+            4."emotionID"<br>
+            5."emotionName"<br>
+            6."wordPolarity"<br>
+            7."categoryName"<br>
+            8."categoryID"<br>
+            9."intense"<br>
+        </div>
+        
+        <!-- 提示 -->
+        <div id="tooltips">
+            tooltip:<br>
+                1. Emotion Center<br>
+                2. Emotion<br>
+                3. Category<br>
+                4. Word Emotion<br>
+        </div>
+    </div>
+    
+    <div style="text-align: center;position: relative; top: 40px">
+        <svg width="960" height="240" id="svg2" style="margin-right: 60px;">
+            <!-- D3 -->
+            <g></g>
+        </svg>
+    </div>
+</body>
+<!--    <script src="../D3jsConquer/js/d3.v5.min.js"></script>-->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var canvas = d3.select("#canvas");
+            // console.log(canvas);
+            var width = canvas.attr("width");
+            var height = canvas.attr("height");
+            // console.log(canvas, width, height);
+
+            var EMOTION_NAMES = ['Center', 'Emotion', 'Category', 'WordEmotion']; //, 'WordEmotion'
+            const CIRCLE_SIZE = [25, 16, 12, 10];
+            const LABEL_TEXT_FONT_SIZE = [20, 16, 10, 8];
+            // console.log(CircleSize["EmotionCenter"]);
+            var colors = ['#6ca46c', '#ca635f', '#4e88af', "#5A2F77"];
+
+            for (var i = 0; i < EMOTION_NAMES.length; i++) {
+                $('#label').append("<div><span style='background-color:" + colors[i] + "'></span>" + EMOTION_NAMES[i] +"</div>")
+            }
+            
+            // var graph = d3.json("./assets/graph/emotion-net.json", function (data) {
+            
+            var graph;
+          
+            d3.json("./assets/mini-graph/mini-emotion-net.json").then(function (data) {
+                graph = data;
+                // var links = graph.links.map(d => Object.create(d));
+                // var nodes = graph.nodes.map(d => Object.create(d));
+                var nodes = data.nodes;
+                var links = data.links;
+                // console.log(graph.links);
+                // console.log(graph.nodes);
+
+                //定制结点的相互作用力
+                var forceManyBody = d3.forceManyBody()
+                    .strength(-5)   //微小排斥力，定义了力能够将结点push 5px
+                    .distanceMin(3); //定义一个最小距离，只有大于这个距离才会产生作用力
+
+                //定制边的牵引力
+                var forceLink = d3.forceLink()
+                    .id(d => d.id)
+                    .distance(20);
+                
+                //定制结点的碰撞力
+                var forceCollide =  d3.forceCollide()
+                    .radius(15)
+                    .iterations(1);
+                
+                //定制力模拟器，并添加各种定制的力
+                var simulation = d3.forceSimulation()
+                    .force("link", forceLink)
+                    .force("charge", forceManyBody)
+                    .force("collide", forceCollide)
+                    .force("center", d3.forceCenter(width / 2, height / 2));
+                
+                // D3数据驱动文档
+                // 用links去驱动line的线宽
+                var link = canvas.append('g')
+                    .attr("class", "links")
+                    .selectAll("line")
+                    .data(links)
+                    .enter()
+                    .append("line")
+                    .attr('stroke-width', d => Math.sqrt(d.value));
+                
+                //边上的文字（实体之间的关系）
+                var linktext = canvas.append('g')
+                    .attr("class", "linetexts")
+                    .selectAll("text")
+                    .data(links)
+                    .enter()
+                    .append("text")
+                    .style("display","block")
+                    .style("color","red")
+                    .text(d => d.relation);
+
+                // 添加所有的node
+                var node = canvas.append('g')
+                    .attr('class', 'nodes')
+                    .selectAll('circle')
+                    .data(nodes)
+                    .enter()
+                    .append('circle')
+                    .attr("r", d => CIRCLE_SIZE[d.group - 1])
+                    .attr('fill', d => colors[d.group - 1])
+                    .attr('stroke', 'none')    // 没有描边
+                    .attr('name', d => d.id)
+                    .call(drag(simulation));   // 拖动结束
+
+                // 文本
+                // 两种显示模式，每个结点可以用一个圆或者文本表示
+                var text = canvas.append('g')
+                    .attr("class", "texts")
+                    .selectAll("text")
+                    .data(nodes)
+                    .enter()
+                    .append("text")
+                    .attr("display", "none")
+                    .attr("font-size", d => LABEL_TEXT_FONT_SIZE[d.group - 1])
+                    .attr("fill", d => colors[d.group - 1])
+                    .attr('name', d => d.id)
+                    .text(d => d.id)
+                    .attr('text-anchor', 'middle')
+                    .call(drag(simulation));
+
+                // 给node加title, 当鼠标悬浮在圆圈上的时候
+                node.append('title').text(d => d.id);
+
+
+                //定义碰撞力，防止结点overlapping
+                //d3.forceCollide(int radius) 传入一个碰撞半径
+                //collide.strength(float strength) 传入一个浮点型碰撞力量，用于计算碰撞轨迹（越大计算越快，开销越大）默认0.7（0~1之间取值）
+                //collide.iterations(int count) count值越大，碰撞的刚性(rigidity of the constraint)越强
+
+                // var forceCollide = d3.forceCollide(2);
+  
+                simulation
+                    .nodes(nodes)
+                    .force("link", d3.forceLink(links).id(d => d.id))
+                    // .velocityDecay(0.4)
+                    // .force("collide", forceCollide)
+                    .on("tick", ticked);
+                
+                var PositionBias = 40;
+                var PositionJustify = 1;
+                
+                function ensureXInCanvas(x) {
+                    var alterX = x;
+                    if (x > width + PositionBias) alterX = width - PositionJustify;
+                    if (x < 0 - PositionBias) alterX = PositionJustify;
+                    return alterX;
+                }
+
+                function ensureYInCanvas(y) {
+                    var alterY = y;
+                    if (y > height + PositionBias) alterY = height - PositionJustify;
+                    if (y < 0 - PositionBias) alterY = PositionJustify;
+                    return alterY;
+                }
+                
+                
+                function ticked() {
+                    //更新每条边的两个端点的当前x,y值
+                    //每次tick响起，施加力
+                    //每个节点速度 v = v * (1 - alphaDecay)
+                    link
+                        .attr("x1", d => ensureXInCanvas(d.source.x))
+                        .attr("y1", d => ensureYInCanvas(d.source.y))
+                        .attr("x2", d => ensureXInCanvas(d.target.x))
+                        .attr("y2", d => ensureYInCanvas(d.target.y));
+
+                    //更新每个结点的中心坐标值cx, cy
+                    node
+                        .attr("cx", d => ensureXInCanvas(d.x))
+                        .attr("cy", d => ensureYInCanvas(d.y));
+
+                    linktext
+                        .attr("dx", d => (d.source.x + d.target.x) / 2)
+                        .attr("dy", d => (d.source.y + d.target.y) / 2);
+
+                    text
+                        .attr("dx", d => ensureXInCanvas(d.x))
+                        .attr("dy", d => ensureYInCanvas(d.y));
+                }
+                function drag(simulation) {
+                    //开始拖拽
+                    function dragstarted(d) {
+                        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+                        d.fx = d.x;
+                        d.fy = d.y;
+                    }
+
+                    function dragged(d) {
+                        d.fx = d3.event.x;
+                        d.fy = d3.event.y;
+                    }
+
+                    function dragended(d) {
+                        if (!d3.event.active) simulation.alphaTarget(0);
+                        d.fx = null;
+                        d.fy = null;
+                    }
+                    return d3.drag()
+                        .on("start", dragstarted)
+                        .on("drag", dragged)
+                        .on("end", dragended);
+                }
+
+                // 处理缩放
+                canvas.call(d3.zoom()
+                    .scaleExtent([1 / 4, 4])
+                    .on("zoom", zoomed));
+
+                function zoomed() {
+                    link.attr("transform", d3.event.transform);
+                    node.attr("transform", d3.event.transform);
+                    text.attr("transform", d3.event.transform);
+                    linktext.attr('transform', d3.event.transform);
+                }
+
+                // 处理模式点击后的事件(这些元素页面上本来有)
+                $('#mode span').click(function(event) {
+                    // 把mode里面所有span的active全部去掉
+                    // 把被点击的这个设置为active
+                    $('#mode span').removeClass('active');
+                    $(this).addClass('active');
+
+                    if ($(this).text() == 'Circles') {
+                        // 隐藏所有文本里面的svg元素
+                        // 把node里面的显示出来
+                        $('.texts text').hide();
+                        $('.nodes circle').show();
+                    }
+                    else {
+                        $('.texts text').show();
+                        $('.nodes circle').hide();
+                    }
+                });
+
+                // 三个开关标志，True表示打开
+                var sw1 = true;
+                var sw2 = true;
+                var sw3 = true;
+                var sw4 = true;
+                
+                // 处理Center开关点击后的事件
+                $('#switch1 span').click(function() {
+                    // 把mode里面所有span的active全部去掉
+                    // 把被点击的这个设置为active
+                    $('#switch1 span').removeClass('active');
+                    $(this).addClass('active');
+
+                    //显示中心表情
+                    if ($(this).text() == 'On') {
+                        //找到属于当前group的节点，并且显示其相连的边
+                        sw1 = true;
+                        d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
+                            // 当前选中类型实体显示
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true){
+                                return '';
+                            }
+                            else{
+                                return 'inactive'
+                            }
+                        });
+
+                        //显示边
+                        d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
+                            if ((d.source.group == 1 || d.target.group == 1) && sw1 == false) {
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 2 || d.target.group == 2) && sw2 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 3 || d.target.group == 3) && sw3 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 4 || d.target.group == 4) && sw4 == false){
+                                return 'inactive';
+                            }
+                            else{
+                                return '';
+                            }
+                        });
+                        d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
+                            // 当前选中类型实体显示
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true){
+                                return '';
+                            }
+                            else{
+                                return 'inactive'
+                            }
+                        });
+                    }
+                    //熄灭节点和与之关联的边
+                    else {
+                        sw1 = false;
+                        d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
+                            // 当前选中类型实体显示
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true){
+                                return '';
+                            }
+                            else{
+                                return 'inactive'
+                            }
+                        });
+
+                        //熄灭EmotionCenter连接的边
+                        d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
+                            if ((d.source.group == 1 || d.target.group == 1) && sw1 == false) {
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 2 || d.target.group == 2) && sw2 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 3 || d.target.group == 3) && sw3 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 4 || d.target.group == 4) && sw4 == false){
+                                return 'inactive';
+                            }
+                            else{
+                                return '';
+                            }
+                        });
+
+                        //熄灭EmotionCenter节点的文字
+                        d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
+                            // 当前选中类型实体显示
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true) {
+                                return '';
+                            }
+                            else{
+                                return 'inactive';
+                            }
+                        });
+                    }
+                });
+
+                // 处理Category开关点击后的事件
+                $('#switch2 span').click(function() {
+                    $('#switch2 span').removeClass('active');
+                    $(this).addClass('active');
+
+                    //显示EmotionCategory表情类别
+                    if ($(this).text() == 'On') {
+                        //找到属于当前group的节点，并且显示其相连的边
+                        sw2 = true;
+                        d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true){
+                                return '';
+                            }
+                            else{
+                                return 'inactive'
+                            }
+                        });
+                        
+                        d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
+                            if ((d.source.group == 1 || d.target.group == 1) && sw1 == false) {
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 2 || d.target.group == 2) && sw2 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 3 || d.target.group == 3) && sw3 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 4 || d.target.group == 4) && sw4 == false){
+                                return 'inactive';
+                            }
+                            else{
+                                return '';
+                            }
+                        });
+                        d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
+                            // 当前选中类型实体显示
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true){
+                                return '';
+                            }
+                            else{
+                                return 'inactive'
+                            }
+                        });
+                    }
+                    //熄灭节点和与之关联的边
+                    else {
+                        sw2 = false;
+                        d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true){
+                                return '';
+                            }
+                            else{
+                                return 'inactive'
+                            }
+                        });
+
+                        //熄灭Category连接的边
+                        d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
+                            if ((d.source.group == 1 || d.target.group == 1) && sw1 == false) {
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 2 || d.target.group == 2) && sw2 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 3 || d.target.group == 3) && sw3 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 4 || d.target.group == 4) && sw4 == false){
+                                return 'inactive';
+                            }
+                            else{
+                                return '';
+                            }
+                        });
+
+                        //熄灭Category节点的文字
+                        d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
+                            // 当前选中类型实体显示
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true) {
+                                return '';
+                            }
+                            else{
+                                return 'inactive';
+                            }
+                        });
+                    }
+                });
+                
+                // 处理Emotion开关事件
+                $('#switch3 span').click(function() {
+                    $('#switch3 span').removeClass('active');
+                    $(this).addClass('active');
+
+                    //显示Emotions表情细类别
+                    if ($(this).text() == 'On') {
+                        //找到属于当前group的节点，并且显示其相连的边
+                        sw3 = true;
+                        d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true){
+                                return '';
+                            }
+                            else{
+                                return 'inactive'
+                            }
+                        });
+
+                        //显示边
+                        d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
+                            if ((d.source.group == 1 || d.target.group == 1) && sw1 == false) {
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 2 || d.target.group == 2) && sw2 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 3 || d.target.group == 3) && sw3 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 4 || d.target.group == 4) && sw4 == false){
+                                return 'inactive';
+                            }
+                            else{
+                                return '';
+                            }
+                        });
+                        d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true){
+                                return '';
+                            }
+                            else{
+                                return 'inactive'
+                            }
+                        });
+                    }
+                    //熄灭Emotion节点和与之关联的边
+                    else {
+                        sw3 = false;
+                        d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
+                            // 当前选中类型实体显示
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true){
+                                return '';
+                            }
+                            else{
+                                return 'inactive'
+                            }
+                        });
+
+                        //熄灭EmotionCenter连接的边
+                        d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
+                            if ((d.source.group == 1 || d.target.group == 1) && sw1 == false) {
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 2 || d.target.group == 2) && sw2 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 3 || d.target.group == 3) && sw3 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 4 || d.target.group == 4) && sw4 == false){
+                                return 'inactive';
+                            }
+                            else{
+                                return '';
+                            }
+                        });
+
+                
+                        d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true) {
+                                return '';
+                            }
+                            else{
+                                return 'inactive';
+                            }
+                        });
+                    }
+                });
+
+                // 处理WordEmotion开关事件
+                $('#switch4 span').click(function() {
+                    // 把mode里面所有span的active全部去掉
+                    // 把被点击的这个设置为active
+                    $('#switch4 span').removeClass('active');
+                    $(this).addClass('active');
+
+                    //显示中心表情
+                    if ($(this).text() == 'On') {
+                        //找到属于当前group的节点，并且显示其相连的边
+                        sw4 = true;
+                        d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
+                            // 当前选中类型实体显示
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true){
+                                return '';
+                            }
+                            else{
+                                return 'inactive'
+                            }
+                        });
+
+                        //显示边
+                        d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
+                            if ((d.source.group == 1 || d.target.group == 1) && sw1 == false) {
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 2 || d.target.group == 2) && sw2 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 3 || d.target.group == 3) && sw3 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 4 || d.target.group == 4) && sw4 == false){
+                                return 'inactive';
+                            }
+                            else{
+                                return '';
+                            }
+                        });
+                        d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
+                            // 当前选中类型实体显示
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true){
+                                return '';
+                            }
+                            else{
+                                return 'inactive'
+                            }
+                        });
+                    }
+                    //熄灭WordEmotion节点和与之关联的边
+                    else {
+                        sw4 = false;
+                        d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
+                            // 当前WordEmotion节点显示
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true){
+                                return '';
+                            }
+                            else{
+                                return 'inactive'
+                            }
+                        });
+
+                        //熄灭WordEmotion类节点上连接的边
+                        d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
+                            if ((d.source.group == 1 || d.target.group == 1) && sw1 == false) {
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 2 || d.target.group == 2) && sw2 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 3 || d.target.group == 3) && sw3 == false){
+                                return 'inactive';
+                            }
+                            else if ((d.source.group == 4 || d.target.group == 4) && sw4 == false){
+                                return 'inactive';
+                            }
+                            else{
+                                return '';
+                            }
+                        });
+
+                        //熄灭WordEmotion类节点上的文字
+                        d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
+                            // 当前选中类型实体显示
+                            if (d.group == 1 && sw1 == true) {
+                                return '';
+                            }
+                            else if (d.group == 2 && sw2 == true){
+                                return '';
+                            }
+                            else if (d.group == 3 && sw3 == true){
+                                return '';
+                            }
+                            else if (d.group == 4 && sw4 == true) {
+                                return '';
+                            }
+                            else{
+                                return 'inactive';
+                            }
+                        });
+                    }
+                });
+
+            });
+        });
+    </script>
+</html>
