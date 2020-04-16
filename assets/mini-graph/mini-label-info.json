@@ -1,63 +1,39 @@
 {
   "表情":{
-    "SUBCLASS_OF":[
-      "1.乐",
-      "2,好",
-      "3,怒",
-      "4,哀",
-      "5,惧",
-      "6,恶",
-      "7,惊"
-    ]
+    "SUBCLASS_OF": "乐 好 怒 哀 惧 恶 惊",
+    "DESCRIPTION": "因为这个世界上有\"表情\"，我才能对你报以微笑。"
   },
   "乐":{
-    "SUBCLASS_OF":[
-      "1.快乐",
-      "2.安心"
-    ]
+    "SUBCLASS_OF": "快乐 安心",
+    "DESCRIPTION": "快乐是上帝赋予我们最美好的情感。"
   },
   "好":{
-    "SUBCLASS_OF":[
-      "1.尊敬",
-      "2.赞扬",
-      "3.相信",
-      "4.喜爱",
-      "5.祝愿"
-    ]
+    "SUBCLASS_OF": "尊敬 赞扬 相信 喜爱 祝愿",
+    "DESCRIPTION": "好是坏的对立面，好是坏的死对头。"
   },
   "怒":{
-    "SUBCLASS_OF":[
-      "1.愤怒"
-    ]
+    "SUBCLASS_OF":"愤怒",
+    "DESCRIPTION": "莫将怒容迁之于他人，心平才能气和。"
   },
   "哀":{
-    "SUBCLASS_OF":[
-      "1.悲伤",
-      "2.失望",
-      "3.疚",
-      "4.思",
-      "5.慌"
-    ]
+    "SUBCLASS_OF":
+      "悲伤 失望 疚 思 慌",
+    "DESCRIPTION": "秋风多,雨如和;<br> 帘外芭蕉三两窠,夜长人奈何。"
+
   },
   "惧":{
-    "SUBCLASS_OF":[
-      "1.恐惧",
-      "2.羞",
-      "3.烦闷"
-    ]
+    "SUBCLASS_OF": "恐惧 羞 烦闷",
+    "DESCRIPTION": "因为恐惧、害怕，方才心存敬畏。"
+
   },
   "恶":{
-    "SUBCLASS_OF":[
-      "1.憎恶",
-      "2.贬责",
-      "3.妒忌",
-      "4.怀疑"
-    ]
+    "SUBCLASS_OF":
+      "憎恶 贬责 妒忌 怀疑",
+    "DESCRIPTION": "世间有种情绪叫做恶，它是我们用来窥探人性的工具。"
   },
   "惊":{
-    "SUBCLASS_OF":[
-      "1.惊奇"
-    ]
+    "SUBCLASS_OF": "惊奇",
+    "DESCRIPTION": "山穷水尽疑无路，柳暗花明又一村。"
   },
   "快乐":{
     "SUBCLASS_OF":"快乐"
@@ -124,7 +100,7 @@
   },
   "瑞雪":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -140,7 +116,7 @@
   },
   "逞性子":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":7,
     "total_meanings":1,
@@ -156,7 +132,7 @@
   },
   "滑天下之大稽":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -164,7 +140,7 @@
   },
   "嫣然":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -172,7 +148,7 @@
   },
   "令人鼓舞":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -180,7 +156,7 @@
   },
   "倜傥":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -188,7 +164,7 @@
   },
   "暴跳如雷":{
     "category":"愤怒",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":9,
     "total_meanings":1,
@@ -196,7 +172,7 @@
   },
   "视如寇仇":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -204,7 +180,7 @@
   },
   "人浮于事":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -212,7 +188,7 @@
   },
   "珠联璧合":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -228,7 +204,7 @@
   },
   "逼上梁山":{
     "category":"愤怒",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -244,7 +220,7 @@
   },
   "得薄能鲜":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -252,7 +228,7 @@
   },
   "轻率":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -260,7 +236,7 @@
   },
   "博雅":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -276,7 +252,7 @@
   },
   "挂记":{
     "category":"思",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -284,7 +260,7 @@
   },
   "违纪":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -292,7 +268,7 @@
   },
   "心惊肉跳":{
     "category":"恐惧",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -300,7 +276,7 @@
   },
   "徘徊":{
     "category":"烦闷",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":7,
     "total_meanings":1,
@@ -308,7 +284,7 @@
   },
   "清顺":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":3,
     "total_meanings":1,
@@ -324,7 +300,7 @@
   },
   "无价值":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"prep",
     "emotion_intense":5,
     "total_meanings":1,
@@ -332,7 +308,7 @@
   },
   "气鼓鼓":{
     "category":"愤怒",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -348,7 +324,7 @@
   },
   "认认真真":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -356,7 +332,7 @@
   },
   "赏心乐事":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -364,7 +340,7 @@
   },
   "放松":{
     "category":"安心",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":1,
     "total_meanings":1,
@@ -372,7 +348,7 @@
   },
   "公正":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -380,7 +356,7 @@
   },
   "奇伟":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":7,
     "total_meanings":1,
@@ -388,7 +364,7 @@
   },
   "悲鸣":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":7,
     "total_meanings":1,
@@ -396,7 +372,7 @@
   },
   "窝心":{
     "category":"烦闷",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -404,7 +380,7 @@
   },
   "风调雨顺":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -412,7 +388,7 @@
   },
   "镂月裁云":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -420,7 +396,7 @@
   },
   "将心比心":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -428,7 +404,7 @@
   },
   "束手就擒":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -436,7 +412,7 @@
   },
   "十之八九":{
     "category":"相信",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -444,7 +420,7 @@
   },
   "适得其反":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -452,7 +428,7 @@
   },
   "伐功矜能":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -460,7 +436,7 @@
   },
   "缺德":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":7,
     "total_meanings":1,
@@ -468,7 +444,7 @@
   },
   "戴高帽子":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -476,7 +452,7 @@
   },
   "出息":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -492,7 +468,7 @@
   },
   "恭贺":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -500,7 +476,7 @@
   },
   "衰亡":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -508,7 +484,7 @@
   },
   "乌七八糟":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -516,7 +492,7 @@
   },
   "气急败坏":{
     "category":"愤怒",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":9,
     "total_meanings":1,
@@ -524,7 +500,7 @@
   },
   "干脆":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":3,
     "total_meanings":2,
@@ -532,7 +508,7 @@
   },
   "志同道合":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -540,7 +516,7 @@
   },
   "糟粕":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -564,7 +540,7 @@
   },
   "寒伧":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":7,
     "total_meanings":1,
@@ -572,7 +548,7 @@
   },
   "起敬":{
     "category":"尊敬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -580,7 +556,7 @@
   },
   "气闷":{
     "category":"烦闷",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -596,7 +572,7 @@
   },
   "含笑":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -604,7 +580,7 @@
   },
   "宽心":{
     "category":"安心",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":1,
     "total_meanings":1,
@@ -628,7 +604,7 @@
   },
   "生不逢辰":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -636,7 +612,7 @@
   },
   "深仇大恨":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":9,
     "total_meanings":1,
@@ -644,7 +620,7 @@
   },
   "慌慌张张":{
     "category":"慌",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":3,
     "total_meanings":1,
@@ -652,7 +628,7 @@
   },
   "逆水行舟":{
     "category":"烦闷",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":1,
     "total_meanings":1,
@@ -660,7 +636,7 @@
   },
   "蜗舍荆扉":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -668,7 +644,7 @@
   },
   "公平交易":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -684,7 +660,7 @@
   },
   "知恩报恩":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -692,7 +668,7 @@
   },
   "因小失大":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -700,7 +676,7 @@
   },
   "hiahia":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"nw",
     "emotion_intense":3,
     "total_meanings":1,
@@ -716,7 +692,7 @@
   },
   "白字":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":1,
     "total_meanings":1,
@@ -724,7 +700,7 @@
   },
   "倒灶":{
     "category":"烦闷",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -732,7 +708,7 @@
   },
   "僵化":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":3,
     "total_meanings":1,
@@ -756,7 +732,7 @@
   },
   "名不虚传":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -764,7 +740,7 @@
   },
   "缓解":{
     "category":"安心",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -780,7 +756,7 @@
   },
   "请教":{
     "category":"尊敬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":3,
     "total_meanings":1,
@@ -796,7 +772,7 @@
   },
   "不成器":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -804,7 +780,7 @@
   },
   "瑕不掩瑜":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -812,7 +788,7 @@
   },
   "拘礼":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -828,7 +804,7 @@
   },
   "稳扎稳打":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -836,7 +812,7 @@
   },
   "宠幸":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -852,7 +828,7 @@
   },
   "刚烈":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -860,7 +836,7 @@
   },
   "首屈一指":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":9,
     "total_meanings":1,
@@ -908,7 +884,7 @@
   },
   "大含细入":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -916,7 +892,7 @@
   },
   "孟母三迁":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -924,7 +900,7 @@
   },
   "有进无退":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -932,7 +908,7 @@
   },
   "漠视":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -940,7 +916,7 @@
   },
   "负心":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -948,7 +924,7 @@
   },
   "冲霄":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -972,7 +948,7 @@
   },
   "违规":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -980,7 +956,7 @@
   },
   "难看":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -988,7 +964,7 @@
   },
   "治世":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1004,7 +980,7 @@
   },
   "指斥":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1012,7 +988,7 @@
   },
   "家珍":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1028,7 +1004,7 @@
   },
   "惊奇不已":{
     "category":"惊奇",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1036,7 +1012,7 @@
   },
   "没头脑":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"prep",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1044,7 +1020,7 @@
   },
   "天字第一号":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":9,
     "total_meanings":1,
@@ -1052,7 +1028,7 @@
   },
   "内敛":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":1,
     "total_meanings":1,
@@ -1060,7 +1036,7 @@
   },
   "青睐":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1068,7 +1044,7 @@
   },
   "典范":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1076,7 +1052,7 @@
   },
   "情坚金石":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1084,7 +1060,7 @@
   },
   "易怒":{
     "category":"愤怒",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":1,
     "total_meanings":1,
@@ -1092,7 +1068,7 @@
   },
   "狼心狗肺":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1100,7 +1076,7 @@
   },
   "自贻伊戚":{
     "category":"烦闷",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":1,
     "total_meanings":1,
@@ -1108,7 +1084,7 @@
   },
   "经纶济世":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1116,7 +1092,7 @@
   },
   "宾至如归":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":1,
     "total_meanings":1,
@@ -1124,7 +1100,7 @@
   },
   "退思补过":{
     "category":"疚",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1132,7 +1108,7 @@
   },
   "人命危浅":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1140,7 +1116,7 @@
   },
   "不败之地":{
     "category":"相信",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -1148,7 +1124,7 @@
   },
   "梁上君子":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1156,7 +1132,7 @@
   },
   "有则改之，无则加勉":{
     "category":"尊敬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1196,7 +1172,7 @@
   },
   "落马":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1204,7 +1180,7 @@
   },
   "啬刻":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1220,7 +1196,7 @@
   },
   "旷达":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1228,7 +1204,7 @@
   },
   "纸上谈兵":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1244,7 +1220,7 @@
   },
   "道贺":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":1,
     "total_meanings":1,
@@ -1252,7 +1228,7 @@
   },
   "封建":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1260,7 +1236,7 @@
   },
   "清闲":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1276,7 +1252,7 @@
   },
   "慷慨陈词":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1284,7 +1260,7 @@
   },
   "用尽心机":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1292,7 +1268,7 @@
   },
   "告非":{
     "category":"愤怒",
-    "related_category":null,
+    "related_category":"",
     "word_class":"nw",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1300,7 +1276,7 @@
   },
   "祈盼":{
     "category":"思",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1308,7 +1284,7 @@
   },
   "纯情":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1316,7 +1292,7 @@
   },
   "率直":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1324,7 +1300,7 @@
   },
   "要好":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1340,7 +1316,7 @@
   },
   "夫子自道":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1348,7 +1324,7 @@
   },
   "能工巧匠":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1356,7 +1332,7 @@
   },
   "勇往直前":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1364,7 +1340,7 @@
   },
   "软骨头":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1372,7 +1348,7 @@
   },
   "大骂":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1380,7 +1356,7 @@
   },
   "责难":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1388,7 +1364,7 @@
   },
   "千真万确":{
     "category":"相信",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1404,7 +1380,7 @@
   },
   "以血洗血":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1412,7 +1388,7 @@
   },
   "憧憬":{
     "category":"祝愿",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1420,7 +1396,7 @@
   },
   "五星级":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":9,
     "total_meanings":1,
@@ -1428,7 +1404,7 @@
   },
   "里通外国":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -1444,7 +1420,7 @@
   },
   "阴错阳差":{
     "category":"惊奇",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1452,7 +1428,7 @@
   },
   "足色":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1460,7 +1436,7 @@
   },
   "叫苦":{
     "category":"烦闷",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1468,7 +1444,7 @@
   },
   "囊中羞涩":{
     "category":"烦闷",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1476,7 +1452,7 @@
   },
   "一统天下":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -1484,7 +1460,7 @@
   },
   "含在嘴里怕化了，捏在手里怕碎了":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -1492,7 +1468,7 @@
   },
   "好学":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1500,7 +1476,7 @@
   },
   "水灵灵":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1508,7 +1484,7 @@
   },
   "六月飞霜":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -1516,7 +1492,7 @@
   },
   "腻味":{
     "category":"烦闷",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":1,
     "total_meanings":1,
@@ -1524,7 +1500,7 @@
   },
   "趁人之危":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -1532,7 +1508,7 @@
   },
   "嚎啕大哭":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -1540,7 +1516,7 @@
   },
   "殚财竭力":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1548,7 +1524,7 @@
   },
   "官样文章":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1556,7 +1532,7 @@
   },
   "宽人大度":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1564,7 +1540,7 @@
   },
   "单复之术":{
     "category":"惊奇",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":1,
     "total_meanings":1,
@@ -1588,7 +1564,7 @@
   },
   "逞性":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1596,7 +1572,7 @@
   },
   "得时":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1604,7 +1580,7 @@
   },
   "恭正":{
     "category":"尊敬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1612,7 +1588,7 @@
   },
   "妄动":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1636,7 +1612,7 @@
   },
   "宗派":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1644,7 +1620,7 @@
   },
   "gx":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"nw",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1652,7 +1628,7 @@
   },
   "匀调":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1660,7 +1636,7 @@
   },
   "百读不厌":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1668,7 +1644,7 @@
   },
   "叫化子拾黄金－乐不可支":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1676,7 +1652,7 @@
   },
   "救困扶危":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1684,7 +1660,7 @@
   },
   "得逞":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1692,7 +1668,7 @@
   },
   "铁证如山":{
     "category":"相信",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1700,7 +1676,7 @@
   },
   "汗流满面":{
     "category":"慌",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":1,
     "total_meanings":1,
@@ -1708,7 +1684,7 @@
   },
   "轻裘缓带":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1716,7 +1692,7 @@
   },
   "庇护":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1724,7 +1700,7 @@
   },
   "耽误":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1732,7 +1708,7 @@
   },
   "为害":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1740,7 +1716,7 @@
   },
   "风骨":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1748,7 +1724,7 @@
   },
   "欢跃":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1756,7 +1732,7 @@
   },
   "魁梧奇伟":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1764,7 +1740,7 @@
   },
   "千锤百炼":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1772,7 +1748,7 @@
   },
   "治罪":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1780,7 +1756,7 @@
   },
   "螳螂捕蝉，黄雀在后":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1788,7 +1764,7 @@
   },
   "两姓之好":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1844,7 +1820,7 @@
   },
   "心软":{
     "category":"相信",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1852,7 +1828,7 @@
   },
   "面墙而立":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1860,7 +1836,7 @@
   },
   "天与人归":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -1868,7 +1844,7 @@
   },
   "彫虫篆刻":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1876,7 +1852,7 @@
   },
   "赏贤使能":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1884,7 +1860,7 @@
   },
   "暴风雨":{
     "category":"恐惧",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1892,7 +1868,7 @@
   },
   "洽博多闻":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1900,7 +1876,7 @@
   },
   "草长莺飞":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1908,7 +1884,7 @@
   },
   "健步如飞":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1916,7 +1892,7 @@
   },
   "马去马归":{
     "category":"慌",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1924,7 +1900,7 @@
   },
   "古董":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":2,
@@ -1932,7 +1908,7 @@
   },
   "守口如瓶":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1940,7 +1916,7 @@
   },
   "进退失措":{
     "category":"慌",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1948,7 +1924,7 @@
   },
   "邹衍谈天":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1956,7 +1932,7 @@
   },
   "贪生畏死":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -1964,7 +1940,7 @@
   },
   "飞灾横祸":{
     "category":"恐惧",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1972,7 +1948,7 @@
   },
   "助兴":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":7,
     "total_meanings":1,
@@ -1980,7 +1956,7 @@
   },
   "闲神野鬼":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -1988,7 +1964,7 @@
   },
   "东家效颦":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -1996,7 +1972,7 @@
   },
   "临深履薄":{
     "category":"恐惧",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2004,7 +1980,7 @@
   },
   "闲愁万种":{
     "category":"烦闷",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2012,7 +1988,7 @@
   },
   "渊海":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2020,7 +1996,7 @@
   },
   "著作":{
     "category":"尊敬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2028,7 +2004,7 @@
   },
   "诛尽杀绝":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2036,7 +2012,7 @@
   },
   "不稼不穑":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2044,7 +2020,7 @@
   },
   "雍容雅步":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2052,7 +2028,7 @@
   },
   "飞檐走壁":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2060,7 +2036,7 @@
   },
   "劈里啪啦":{
     "category":"祝愿",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2068,7 +2044,7 @@
   },
   "慢藏诲盗":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2076,7 +2052,7 @@
   },
   "教唆犯":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2084,7 +2060,7 @@
   },
   "枉费工夫":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2092,7 +2068,7 @@
   },
   "面面相睹":{
     "category":"恐惧",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":4,
     "total_meanings":1,
@@ -2100,7 +2076,7 @@
   },
   "便当":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2108,7 +2084,7 @@
   },
   "能事":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2116,7 +2092,7 @@
   },
   "脂膏莫润":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2124,7 +2100,7 @@
   },
   "死乞百赖":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2132,7 +2108,7 @@
   },
   "上无片瓦,下无插针之地":{
     "category":"烦闷",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2140,7 +2116,7 @@
   },
   "问一答十":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2148,7 +2124,7 @@
   },
   "扣人心弦":{
     "category":"尊敬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2156,7 +2132,7 @@
   },
   "肉刑":{
     "category":"恐惧",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2164,7 +2140,7 @@
   },
   "狗心狗行":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2172,7 +2148,7 @@
   },
   "闹意见":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2180,7 +2156,7 @@
   },
   "巴儿狗":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":3,
     "total_meanings":2,
@@ -2188,7 +2164,7 @@
   },
   "负屈衔冤":{
     "category":"愤怒",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2196,7 +2172,7 @@
   },
   "奇勋":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2204,7 +2180,7 @@
   },
   "亲痛仇快":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2212,7 +2188,7 @@
   },
   "道头知尾":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2220,7 +2196,7 @@
   },
   "匕首":{
     "category":"恐惧",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2228,7 +2204,7 @@
   },
   "千载一弹":{
     "category":"安心",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2236,7 +2212,7 @@
   },
   "引绳切墨":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2244,7 +2220,7 @@
   },
   "邻女詈人":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":1,
     "total_meanings":1,
@@ -2252,7 +2228,7 @@
   },
   "如汤泼雪":{
     "category":"相信",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2260,7 +2236,7 @@
   },
   "口服心服":{
     "category":"相信",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2268,7 +2244,7 @@
   },
   "狗嘴里吐不出象牙":{
     "category":"愤怒",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -2276,7 +2252,7 @@
   },
   "众口一词":{
     "category":"相信",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2284,7 +2260,7 @@
   },
   "威迫利诱":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2292,7 +2268,7 @@
   },
   "头上著头":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2300,7 +2276,7 @@
   },
   "赔笑":{
     "category":"恐惧",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":6,
     "total_meanings":1,
@@ -2308,7 +2284,7 @@
   },
   "钦定":{
     "category":"相信",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2316,7 +2292,7 @@
   },
   "倒持手板":{
     "category":"慌",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2324,7 +2300,7 @@
   },
   "楞手楞脚":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -2332,7 +2308,7 @@
   },
   "蹊田夺牛":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":3,
@@ -2340,7 +2316,7 @@
   },
   "蛀齿":{
     "category":"烦闷",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":6,
     "total_meanings":1,
@@ -2348,7 +2324,7 @@
   },
   "朱脣粉面":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2356,7 +2332,7 @@
   },
   "建功立业":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2364,7 +2340,7 @@
   },
   "不堪其忧":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2372,7 +2348,7 @@
   },
   "黑不溜秋":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":3,
     "total_meanings":1,
@@ -2380,7 +2356,7 @@
   },
   "平衍":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":6,
     "total_meanings":1,
@@ -2388,7 +2364,7 @@
   },
   "鹘仑吞枣":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2396,7 +2372,7 @@
   },
   "鬼哭狼嗥":{
     "category":"恐惧",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":2,
@@ -2404,7 +2380,7 @@
   },
   "伪君子":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2412,7 +2388,7 @@
   },
   "无可比象":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2420,7 +2396,7 @@
   },
   "死诸葛能走生仲达":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2428,7 +2404,7 @@
   },
   "桀黠":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2436,7 +2412,7 @@
   },
   "张公吃酒李公颠":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2444,7 +2420,7 @@
   },
   "水来土掩":{
     "category":"安心",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2452,7 +2428,7 @@
   },
   "鸿轩凤翥":{
     "category":"相信",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2460,7 +2436,7 @@
   },
   "好好先生":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":3,
     "total_meanings":1,
@@ -2468,7 +2444,7 @@
   },
   "文弛武玩":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2476,7 +2452,7 @@
   },
   "伈伈睍睍":{
     "category":"恐惧",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":8,
     "total_meanings":1,
@@ -2484,7 +2460,7 @@
   },
   "野鹤闲云":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2492,7 +2468,7 @@
   },
   "仍旧":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":2,
@@ -2500,7 +2476,7 @@
   },
   "捕影系风":{
     "category":"怀疑",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2508,7 +2484,7 @@
   },
   "风行电照":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2516,7 +2492,7 @@
   },
   "盛装":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2524,7 +2500,7 @@
   },
   "有口无行":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2540,7 +2516,7 @@
   },
   "黔驴技孤":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2548,7 +2524,7 @@
   },
   "凑巧":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":3,
     "total_meanings":1,
@@ -2556,7 +2532,7 @@
   },
   "殒灭":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2572,7 +2548,7 @@
   },
   "深见远虑":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2580,7 +2556,7 @@
   },
   "连枝分叶":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2588,7 +2564,7 @@
   },
   "金貂取酒":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2596,7 +2572,7 @@
   },
   "浊骨凡胎":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -2604,7 +2580,7 @@
   },
   "谈吐风生":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -2612,7 +2588,7 @@
   },
   "分劳赴功":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2620,7 +2596,7 @@
   },
   "日新月盛":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2628,7 +2604,7 @@
   },
   "乐极则忧":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2636,7 +2612,7 @@
   },
   "嘻皮笑脸":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":3,
@@ -2660,7 +2636,7 @@
   },
   "孜孜汲汲":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2668,7 +2644,7 @@
   },
   "金玉锦绣":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2676,7 +2652,7 @@
   },
   "保藏":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2684,7 +2660,7 @@
   },
   "绝艺":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2692,7 +2668,7 @@
   },
   "望尘靡及":{
     "category":"失望",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2700,7 +2676,7 @@
   },
   "適逢其会":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2708,7 +2684,7 @@
   },
   "戒惧":{
     "category":"恐惧",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2716,7 +2692,7 @@
   },
   "正正经经":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":2,
@@ -2724,7 +2700,7 @@
   },
   "鸿断鱼沈":{
     "category":"思",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2732,7 +2708,7 @@
   },
   "鸡肋":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2740,7 +2716,7 @@
   },
   "颜精柳骨":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2748,7 +2724,7 @@
   },
   "人物":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":7,
     "total_meanings":3,
@@ -2756,7 +2732,7 @@
   },
   "惨无天日":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2764,7 +2740,7 @@
   },
   "弓影杯蛇":{
     "category":"怀疑",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2780,7 +2756,7 @@
   },
   "鱼跃鸢飞":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2788,7 +2764,7 @@
   },
   "通忧共患":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2796,7 +2772,7 @@
   },
   "曲意承迎":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2804,7 +2780,7 @@
   },
   "狎妓":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":3,
     "total_meanings":1,
@@ -2812,7 +2788,7 @@
   },
   "流天澈地":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":1,
     "total_meanings":1,
@@ -2820,7 +2796,7 @@
   },
   "江郎才掩":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2828,7 +2804,7 @@
   },
   "斗霜傲雪":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2836,7 +2812,7 @@
   },
   "摧枯折腐":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2844,7 +2820,7 @@
   },
   "览闻辩见":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"adj",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2852,7 +2828,7 @@
   },
   "显山露水":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2860,7 +2836,7 @@
   },
   "虎尾春冰":{
     "category":"恐惧",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2868,7 +2844,7 @@
   },
   "抱头大哭":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2876,7 +2852,7 @@
   },
   "坐树不言":{
     "category":"安心",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2884,7 +2860,7 @@
   },
   "令行禁止":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2892,7 +2868,7 @@
   },
   "观眉说眼":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2900,7 +2876,7 @@
   },
   "运斤如风":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2908,7 +2884,7 @@
   },
   "未为不可":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2916,7 +2892,7 @@
   },
   "十转九空":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2924,7 +2900,7 @@
   },
   "金榜":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2932,7 +2908,7 @@
   },
   "横眉冷眼":{
     "category":"愤怒",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2940,7 +2916,7 @@
   },
   "尖言冷语":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2948,7 +2924,7 @@
   },
   "忧国奉公":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2956,7 +2932,7 @@
   },
   "老生常谈":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -2964,7 +2940,7 @@
   },
   "凤凰来仪":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2972,7 +2948,7 @@
   },
   "泥猪疥狗":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2980,7 +2956,7 @@
   },
   "松柏寒盟":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -2988,7 +2964,7 @@
   },
   "上窜下跳":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -2996,7 +2972,7 @@
   },
   "离世异俗":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3004,7 +2980,7 @@
   },
   "追根查源":{
     "category":"怀疑",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3012,7 +2988,7 @@
   },
   "喧腾":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":7,
     "total_meanings":2,
@@ -3020,7 +2996,7 @@
   },
   "枭心鹤貌":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3028,7 +3004,7 @@
   },
   "维妙维肖":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3036,7 +3012,7 @@
   },
   "陂湖禀量":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3044,7 +3020,7 @@
   },
   "静若处子，动若脱兔":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3052,7 +3028,7 @@
   },
   "袍哥":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":3,
     "total_meanings":1,
@@ -3060,7 +3036,7 @@
   },
   "歪不横楞":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3068,7 +3044,7 @@
   },
   "手疾眼快":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3076,7 +3052,7 @@
   },
   "才誇八斗":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3084,7 +3060,7 @@
   },
   "驾鹤成仙":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3092,7 +3068,7 @@
   },
   "荣誉军人":{
     "category":"尊敬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3100,7 +3076,7 @@
   },
   "牙签犀轴":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3108,7 +3084,7 @@
   },
   "圣上":{
     "category":"尊敬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3116,7 +3092,7 @@
   },
   "弃甲投戈":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":3,
     "total_meanings":1,
@@ -3124,7 +3100,7 @@
   },
   "残喘":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3132,7 +3108,7 @@
   },
   "身名俱败":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3140,7 +3116,7 @@
   },
   "铜浇铁铸":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3148,7 +3124,7 @@
   },
   "嫌长道短":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3156,7 +3132,7 @@
   },
   "搬脣递舌":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3164,7 +3140,7 @@
   },
   "欢呼鼓舞":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3172,7 +3148,7 @@
   },
   "寒腹短识":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3180,7 +3156,7 @@
   },
   "噱头":{
     "category":"快乐",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3188,7 +3164,7 @@
   },
   "死有余诛":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3196,7 +3172,7 @@
   },
   "事迹":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3204,7 +3180,7 @@
   },
   "无有伦比":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -3212,7 +3188,7 @@
   },
   "橡皮图章":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"noun",
     "emotion_intense":5,
     "total_meanings":2,
@@ -3220,7 +3196,7 @@
   },
   "倒持干戈":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3228,7 +3204,7 @@
   },
   "鸾飘凤泊":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
@@ -3236,7 +3212,7 @@
   },
   "雕虫刻篆":{
     "category":"贬责",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3244,7 +3220,7 @@
   },
   "流离颠沛":{
     "category":"悲伤",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -3252,7 +3228,7 @@
   },
   "闺英闱秀":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3260,7 +3236,7 @@
   },
   "鸡鸣狗吠":{
     "category":"憎恶",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":9,
     "total_meanings":1,
@@ -3268,7 +3244,7 @@
   },
   "一发破的":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":8,
     "total_meanings":1,
@@ -3276,7 +3252,7 @@
   },
   "变戏法":{
     "category":"喜爱",
-    "related_category":null,
+    "related_category":"",
     "word_class":"verb",
     "emotion_intense":5,
     "total_meanings":1,
@@ -3284,7 +3260,7 @@
   },
   "谭天说地":{
     "category":"赞扬",
-    "related_category":null,
+    "related_category":"",
     "word_class":"idiom",
     "emotion_intense":7,
     "total_meanings":1,
