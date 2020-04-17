@@ -283,6 +283,14 @@
             -webkit-transition: color, background-color .3s;
         }
         
+        p{
+            transition: top .3s; /*CSS3中的渐变*/
+            -o-transition: top .3s;
+            -ms-transition: top .3s;
+            -moz-transition: top .3s;
+            -webkit-transition: top .3s;
+        }
+        
         /*当按键处于激活或者鼠标悬浮状态的时候*/
         #switcher4 span.active {
             background-color: #fff;
@@ -350,32 +358,40 @@
             border: whitesmoke 1px solid;
             border-radius: 20px;
         }
+        
+        /*定义图片框样式，隐藏滚轴*/
         .showImage{
             position: relative;
             top: 10px;
             width: 200px;
-            height: 60px;
+            height: 59px;
+            padding-bottom: 12px;
+            /*padding-top: 6px;*/
             overflow-x: hidden;
             overflow-y: hidden;
             white-space: nowrap;
         }
         
+        /*定义横向滑框*/
         .imageContent {
             position:relative;
             overflow-x:auto; /*再现隐藏的横向的后面几张图片*/
-            width:195px;
+            overflow-y: hidden;
+            width: 195px;
             margin: 0;
             height:75px;
         }
         
         .imageContent ul { /*422*55*/
             position:relative;
-            padding: 0; /*这个一定要设置为0，不然会有一个多余的左边padding-left 40px,图片不能对其*/
+            padding-left: 0; /*这个一定要设置为0，不然会有一个多余的左边padding-left 40px,图片不能对齐*/
             display: inline-block;
             /*flex-wrap:nowrap;*/
-            overflow-x:hidden; /*横向超出部分直接截取掉*/
+            overflow-x: hidden; /*横向超出部分直接截取掉*/
+            overflow-y: hidden;
             margin: 0; /*消除默认的10px margin-bottom 避免上元素被撑起来，从而出现讨厌的滚轴*/
         }
+        
         
         .imageContent ul li { /*57 * 55*/
             display:inline-block;
@@ -385,13 +401,23 @@
             /*border-radius: 20px;*/
         }
         
-        .imageContent ul li :hover{ /*57 * 55*/
-            display:inline-block;
-            border: whitesmoke 4px solid;
-            
-            /*border-radius: 20px;*/
+        /*.imageContent ul li :hover{ !*57 * 55*!*/
+        /*    display:inline-block;*/
+        /*    border: whitesmoke 4px solid;*/
+        /*    */
+        /*    !*border-radius: 20px;*!*/
+        /*}*/
+        
+        @-webkit-keyframes  shine {
+            from{ -webkit-box-shadow: 0 0 3px #ffffff;}
+            to{ -webkit-box-shadow: 0 0 3px #ffffff;}
         }
         
+        .shiningBorder{
+            -webkit-animation-name: shine;
+            -webkit-animation-duration: 0.3s;
+            -webkit-animation-iteration-count: infinite;
+        }
         
         #project-footer{
             position: relative;
@@ -484,11 +510,11 @@
         <span style="font-size: 14px; color: rgba(22,116,31,0.78); font-weight: bold">tooltip:</span><br>
         <small>1.点击Circle/Text按钮可以切换模式哦!</small><br>
         <small>2.点击On/Off按钮可以显示和隐藏节点哦！</small><br>
-        <small>3.告诉你一个小魔法：拖拽图中节点，看看<br>&nbsp;&nbsp;它们是如何自我调整布局的吧！</small><br>
+        <small>3.告诉你一个小魔法：拖拽图中节点，看看<br>&nbsp;&nbsp;它们如何自我调整布局的吧！</small><br>
         <small>4.鼠标悬停可以查看节点属于那种情绪哦！</small><br>
         <small>5.鼠标移入白线框中，在触摸板上向上滑动<br>&nbsp;&nbsp;缩小图谱，向下滑动放大图谱哦！</small><br>
-        <small>6.在空白处点击图谱并拖动，可查看整体哦！</small><br>
-        <small>7.将鼠标移到黄色节点上，看看右侧表情吧<br>&nbsp;&nbsp;手指在触摸板左滑可以查看更多表情图片哦！</small><br>
+        <small>6.在空白区域点击图谱，可以整体拖动哦！</small><br>
+        <small>7.将鼠标移到黄色节点上，看看右侧表情吧！</small><br>
     </div>
 </div>
 
@@ -519,7 +545,7 @@
         // console.log(CircleSize["EmotionCenter"]);
         const NODE_COLORS = ['rgba(160,134,48,0.98)', 'rgba(142,74,74,0.98)', 'rgba(66,131,80,0.96)', "rgba(102,93,145,0.96)"];
 
-        for (let i = 0; i < EMOTION_NAMES.length; i++) {
+        for (var i = 0; i < EMOTION_NAMES.length; i++) {
             $('#label').append("<div><span style='background-color:" + NODE_COLORS[i] + "'></span>" + EMOTION_NAMES[i] +"</div>")
         }
 
@@ -1043,7 +1069,6 @@
                     if (!isDragging) {
                         //取出当前鼠标进入节点的名字，以便后续进行节点隐藏
                         var focusedNode = $(this).attr("name");
-                        // 确定显示模式
                         $("#subclass").empty();
                         $("#description").empty();
                         $("#faceImageContainer1").empty();
@@ -1056,9 +1081,73 @@
 
 
                         $("#labelProperty h4").css("color", $(this).attr("fill")).text($(this).attr("name"));
+
+                        //设置图片点击发光和上移特效
+                        $('#faceImageContainer1').on("mouseenter", '.imageItem', function () {
+                            $(this).css("top", "-6px")
+                                .css("transition", "top o.3s")
+                                .css("-o-transition", "top .3s")
+                                .css( "-ms-transition", "top .3s")
+                                .css(  "-moz-transition", "top .3s")
+                                .css("-webkit-transition", "top .3s")
+                                .addClass("shiningBorder");
+                        });
+
+                        $('#faceImageContainer1').on("mouseleave", '.imageItem', function () {
+                            $(this).css("top", "0").removeClass("shiningBorder");
+                        });
+
+                        $('#faceImageContainer2').on("mouseenter", '.imageItem', function () {
+                            $(this).css("top", "-6px")
+                                .css("transition", "top o.3s")
+                                .css("-o-transition", "top .3s")
+                                .css( "-ms-transition", "top .3s")
+                                .css(  "-moz-transition", "top .3s")
+                                .css("-webkit-transition", "top .3s")
+                                .addClass("shiningBorder");
+                        });
+                        $('#faceImageContainer2').on("mouseleave", '.imageItem', function () {
+                            $(this).css("top", "0").removeClass("shiningBorder");
+                        });
+
+                        $('#faceImageContainer3').on("mouseenter", '.imageItem', function () {
+                            $(this).css("top", "-6px")
+                                .css("transition", "top o.3s")
+                                .css("-o-transition", "top .3s")
+                                .css( "-ms-transition", "top .3s")
+                                .css(  "-moz-transition", "top .3s")
+                                .css("-webkit-transition", "top .3s")
+                                .addClass("shiningBorder");
+                        });
+                        $('#faceImageContainer3').on("mouseleave", '.imageItem', function () {
+                            $(this).css("top", "0").removeClass("shiningBorder");
+                        });
+
+                        $('#emojiImageContainer').on("mouseenter", '.imageItem', function () {
+                            $(this).css("top", "-6px")
+                                .css("transition", "top o.3s")
+                                .css("-o-transition", "top .3s")
+                                .css( "-ms-transition", "top .3s")
+                                .css(  "-moz-transition", "top .3s")
+                                .css("-webkit-transition", "top .3s")
+                                .addClass("shiningBorder");
+                        });
+                        $('#emojiImageContainer').on("mouseleave", '.imageItem', function () {
+                            $(this).css("top", "0").removeClass("shiningBorder");
+                        });
+
+
+
                         var labelInfo = labelInfoAll[focusedNode];
                         //针对不同类别情绪进行分类别展示（小类情绪词没有图片）
                         //对情绪大类的Property展示
+                        // $('.imageContent ul li').on('mouseenter', function () {
+                        //     $(this).css('border', '1px wihtesomke solid')
+                        // });
+                        // $('.imageContent ul li').on('mousemove', '.imageContent ul li', function () {
+                        //     $(this).css('display', 'block')
+                        // })
+
                         if (EMOTIONS.indexOf(focusedNode) != -1 || focusedNode == "表情") {
                             // $("#labelProperty").append("image").attr()
                             $("#subclass")
@@ -1075,39 +1164,40 @@
                                 var e;
 
                                 $("#description")
-                                    .append("<div><span class='label label-default' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>")
+                                    .append("<div><span class='label label-default' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>");
 
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
-                                    e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
+                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
                                     e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "1.png" + "'";
-                                    e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
+                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px; padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer1").append(e);
                                 }
 
                                 $("#tag1").append("<br>");
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
-                                    e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
+                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
                                     e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "2.png" + "'";
-                                    e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
+                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px; padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer2").append(e);
                                 }
 
                                 $("#tag2").append("<br>");
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
-                                    e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
+                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
                                     e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "6.png" + "'";
-                                    e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
+                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer3").append(e);
                                 }
 
-                                $("#tag3").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "社交媒体表情" + "</span><br></div>")
+                                $("#tag3").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "社交媒体表情" + "</span><br></div>");
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
-                                    e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
+                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
                                     e += "./assets/images/social-media-emotions/" + IMAGE_CATEGORIES[i] + "1.jpg" + "'";
-                                    e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
+                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#emojiImageContainer").append(e);
 
                                 }
+
 
                             }
                             else {
@@ -1116,18 +1206,18 @@
                                     .append("<div><span class='label' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>");
 
                                 for (let i = 0; i < imageNums; i++) {
-                                    e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
+                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
                                     e += "./assets/images/human-face-emotions/" + emotionType + (i + 1) + ".png" + "'";
-                                    e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
+                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer1").append(e);
                                 }
 
                                 const emojiNums = 7;
                                 $("#tag1").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "社交媒体表情" + "</span><br></div>")
                                 for (let i = 0; i < emojiNums; i++) {
-                                    e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
+                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
                                     e += "./assets/images/social-media-emotions/" + emotionType + (i+1) + ".jpg" + "'";
-                                    e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
+                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer2").append(e);
                                 }
                             }
