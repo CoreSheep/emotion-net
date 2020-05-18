@@ -24,6 +24,25 @@
             font-family: "Microsoft Yahei", monospace, "Microsoft Sans Serif", sans-serif, OpenSans-Light, PingFang SC;
         }
         
+        body.darkMode {
+            background-color: #252725;   /*dark mode模式下的背景颜色*/
+        }
+        
+        #emotionNetName {
+            position: absolute;
+            left: 10px;
+            color: rgba(236,235,234,0.96);
+            font-size: 38px;
+            margin-bottom: 10px;
+            margin-top: 15px;
+            text-align: left;
+            margin-left: 40px;
+        }
+        #emotionNetName.darkMode {
+            color: rgba(69, 75, 111, 0.96);
+        }
+        
+        
         /*之前在js代码里面定义了classes，这边就给这些写样式*/
         .links line {
             stroke: rgba(69, 81, 100, 0.97);
@@ -31,13 +50,16 @@
         }
         
         .links line.focus{
-            stroke: whitesmoke;
+            stroke: #ffa322;
             stroke-width: 1px;
             stroke-opacity: 0.999;
         }
         .links line.inactive {
             /*display: none !important;*/
             stroke-opacity: 0;
+        }
+        .links line.darkMode {
+            stroke: rgba(91, 133, 165, 0.97);
         }
         
         /*.links line .shadow{*/
@@ -53,10 +75,14 @@
             /*text-emphasis: #555555;*/
         }
         
+        .lineTexts text.darkMode {
+            fill: rgba(128, 128, 128, 0.91);
+            /*text-emphasis: #555555;*/
+        }
+        
         .lineTexts text.inactive {
             display: none !important;
         }
-        
         
         .nodes circle {
             stroke: #fff;
@@ -66,8 +92,20 @@
             cursor: pointer;
             stroke: #ffa322;
             stroke-opacity: 0.9;
-            stroke-width: 4px;
+            stroke-width: 14px;
         }
+        
+        .nodes circle.darkMode {
+            stroke: #717171;
+            stroke-width: 1.5px;        /*圆的描边宽度*/
+        }
+        .nodes circle.darkMode:hover {
+            stroke: rgba(91, 133, 165, 0.97);;
+            cursor: pointer;
+            stroke-opacity: 0.9;
+            stroke-width: 14px;
+        }
+        
         .nodes circle.inactive {
             display: none !important;
         }
@@ -101,6 +139,11 @@
             text-align: left;
             color: #f2f2f2;
             font-size: 16px;
+        }
+        
+        /*label的样式*/
+        #label.darkMode {
+            color: rgba(128, 128, 128, 0.96);
         }
         
         /*label圆形小圈的样式*/
@@ -156,6 +199,67 @@
             cursor: pointer;
         }
         
+        #mode span.darkMode {
+            border: 1px solid #717171;
+            color: rgba(128, 128, 128, 0.96);
+        }
+        
+        /*当按键处于激活状态的时候*/
+        #mode span.darkMode.active {
+            background-color: rgba(69, 75, 111, 0.96);
+            color: #808080;
+        }
+        
+        /*当按键处于鼠标悬浮状态的时候*/
+        #mode span.darkMode:hover {
+            background-color: #484a46;
+            color: #333;
+        }
+        
+        #darkMode span {
+            display: inline-block;
+            border: 1px solid #fff;
+            color: rgba(117, 123, 167, 0.91);
+            padding: 2px 3px;
+            border-radius: 3px;
+            font-size: 10px;
+            text-align: center;
+            transition: color, background-color .3s; /*CSS3中的渐变*/
+            -o-transition: color, background-color .3s;
+            -ms-transition: color, background-color .3s;
+            -moz-transition: color, background-color .3s;
+            -webkit-transition: color, background-color .3s;
+        }
+        
+        /*当按键处于鼠标悬浮状态的时候*/
+        #darkMode span:hover {
+            background-color: #1f1f25;
+            color: rgba(117, 123, 167, 0.91);
+            cursor: pointer;
+        }
+        
+        #darkMode span.darkMode {
+            display: inline-block;
+            border: 1px solid #fff;
+            color: #7b878a;
+            padding: 2px 3px;
+            border-radius: 3px;
+            font-size: 10px;
+            text-align: center;
+            transition: color, background-color .3s; /*CSS3中的渐变*/
+            -o-transition: color, background-color .3s;
+            -ms-transition: color, background-color .3s;
+            -moz-transition: color, background-color .3s;
+            -webkit-transition: color, background-color .3s;
+        }
+        
+        /*当按键处于鼠标悬浮状态的时候*/
+        #darkMode span.darkMode:hover {
+            background-color: #f3f2f1;
+            color: #555958;
+            cursor: pointer;
+        }
+        
         #switcher1 {
             position: absolute;
             top: 200px;
@@ -177,11 +281,22 @@
             -webkit-transition: color, background-color .3s;
         }
         
+        /* toggle开关使用inline-block*/
+        #switcher1 span.darkMode {
+            border: 1px solid #717171;
+            color: rgba(128, 128, 128, 0.96);
+        }
+        
         /*当按键处于激活或者鼠标悬浮状态的时候*/
         #switcher1 span.active{
             background-color: #fff;
             color: #333;
             cursor: pointer;
+        }
+        
+        #switcher1 span.darkMode.active {
+            background-color: rgba(69, 75, 111, 0.96);
+            color: #808080;
         }
         
         /*当按键处于激活或者鼠标悬浮状态的时候*/
@@ -191,6 +306,11 @@
             cursor: pointer;
         }
         
+        /*当按键处于鼠标悬浮状态的时候*/
+        #switcher1 span.darkMode:hover {
+            background-color: #484a46;
+            color: #333;
+        }
         
         #switcher2 {
             position: absolute;
@@ -212,6 +332,11 @@
             -moz-transition: color, background-color .3s;
             -webkit-transition: color, background-color .3s;
         }
+        /* toggle开关使用inline-block*/
+        #switcher2 span.darkMode {
+            border: 1px solid #717171;
+            color: rgba(128, 128, 128, 0.96);
+        }
         
         /*当按键处于激活或者鼠标悬浮状态的时候*/
         #switcher2 span.active {
@@ -220,11 +345,22 @@
             cursor: pointer;
         }
         
+        #switcher2 span.darkMode.active {
+            background-color: rgba(69, 75, 111, 0.96);
+            color: #808080;
+        }
+        
+        
         /*当按键处于激活或者鼠标悬浮状态的时候*/
         #switcher2 span:hover{
             background-color: #d9e1e8;
             color: #333;
             cursor: pointer;
+        }
+        /*当按键处于鼠标悬浮状态的时候*/
+        #switcher2 span.darkMode:hover {
+            background-color: #484a46;
+            color: #333;
         }
         
         #switcher3 {
@@ -248,6 +384,11 @@
             -webkit-transition: color, background-color .3s;
         }
         
+        #switcher3 span.darkMode {
+            border: 1px solid #717171;
+            color: rgba(128, 128, 128, 0.96);
+        }
+        
         /*当按键处于激活或者鼠标悬浮状态的时候*/
         #switcher3 span.active {
             background-color: #fff;
@@ -255,11 +396,22 @@
             cursor: pointer;
         }
         
+        #switcher3 span.darkMode.active {
+            background-color: rgba(69, 75, 111, 0.96);
+            color: #808080;
+        }
+        
         /*当按键处于激活或者鼠标悬浮状态的时候*/
         #switcher3 span:hover{
             background-color: #d9e1e8;
             color: #333;
             cursor: pointer;
+        }
+        
+        /*当按键处于鼠标悬浮状态的时候*/
+        #switcher3 span.darkMode:hover {
+            background-color: #484a46;
+            color: #333;
         }
         
         #switcher4 {
@@ -283,6 +435,13 @@
             -webkit-transition: color, background-color .3s;
         }
         
+        
+        /* toggle开关使用inline-block*/
+        #switcher4 span.darkMode {
+            border: 1px solid #717171;
+            color: rgba(128, 128, 128, 0.96);
+        }
+        
         p{
             transition: top .3s; /*CSS3中的渐变*/
             -o-transition: top .3s;
@@ -298,11 +457,22 @@
             cursor: pointer;
         }
         
+        #switcher4 span.darkMode.active {
+            background-color: rgba(69, 75, 111, 0.96);
+            color: #808080;
+        }
+        
         /*当按键处于激活或者鼠标悬浮状态的时候*/
         #switcher4 span:hover{
             background-color: #d9e1e8;
             color: #333;
             cursor: pointer;
+        }
+        
+        /*当按键处于鼠标悬浮状态的时候*/
+        #switcher4 span.darkMode:hover {
+            background-color: #484a46;
+            color: #333;
         }
         
         /*info的样式*/
@@ -335,6 +505,12 @@
             text-align: left;
         }
         
+        #tooltips.darkMode {
+            color: rgba(111, 110, 109, 0.92);
+        }
+        
+        
+        
         /*搜索框的样式*/
         #search input {
             position: absolute;
@@ -348,6 +524,11 @@
             /*display: none;*/
             background-color: rgba(158, 162, 157, 0.72);
         }
+        
+        /*搜索框的样式*/
+        #search input.darkMode {
+            background-color: #1f1f1e
+        }
         #canvas{
             /*background-color: lightgray  !*背景颜色*!*/
             border: #BFC5D9 1px solid;
@@ -358,6 +539,19 @@
             border: whitesmoke 1px solid;
             border-radius: 20px;
         }
+        
+        #canvas.darkMode{
+            /*background-color: lightgray  !*背景颜色*!*/
+            border: #252725 1px solid;
+            border-radius: 20px;
+        }
+        
+        #canvas.darkMode:hover{
+            border: rgba(69, 75, 111, 0.96) 1px solid;
+            border-radius: 20px;
+        }
+        
+        
         
         /*定义图片框样式，隐藏滚轴*/
         .showImage{
@@ -421,7 +615,7 @@
         
         #project-footer{
             position: relative;
-            top: 170px;
+            top: 10em;
             text-align: center;
         }
     
@@ -429,12 +623,17 @@
 </head>
 <body>
 <!-- 标题 -->
-<h1 style="color: rgba(236,235,234,0.96);font-size: 38px;margin-bottom: 10px;margin-top: 10px; text-align: left;margin-left: 40px">Emotion Net Mini</h1>
+<div style="height: 5em">
+    <h1 id="emotionNetName">Emotion Net Mini</h1>
+    <div id='darkMode' style="display:inline-block;">
+        <span style="position: absolute; right: 30px; margin-bottom: 25px; margin-top: 15px;"><strong>dark mode</strong></span>
+    </div>
+</div>
 
 <!-- 定义div存放关系图 -->
 <!-- NOTE: 父元素采用相对定位，里面的元素采用绝对定位 -->
 <div style="text-align: center;position: relative;">
-    <svg width="880" height="580" style="margin-left: 30px;margin-bottom: -150px" id="canvas"></svg>
+    <svg width="880" height="580" style="position: relative; top: 15px; margin-left: 30px;margin-bottom: -150px" id="canvas"></svg>
     
     <!-- 模式(circle/text) -->
     <div id="mode">
@@ -503,6 +702,24 @@
                 <u id="emojiImageContainer"></u>
             </div>
         </div>
+        <div id="tag4"></div>
+        <div class="showImage">
+            <div class="imageContent">
+                <u id="animalImageContainer"></u>
+            </div>
+        </div>
+        <div id="tag5"></div>
+        <div class="showImage">
+            <div class="imageContent">
+                <u id="animalImageContainer2"></u>
+            </div>
+        </div>
+        <div id="tag6"></div>
+        <div class="showImage">
+            <div class="imageContent">
+                <u id="animalImageContainer3"></u>
+            </div>
+        </div>
     </div>
     
     <!-- 提示 -->
@@ -514,7 +731,7 @@
         <small>4.鼠标悬停可以查看节点属于那种情绪哦！</small><br>
         <small>5.鼠标移入白线框中，在触摸板上向上滑动<br>&nbsp;&nbsp;缩小图谱，向下滑动放大图谱哦！</small><br>
         <small>6.在空白区域点击图谱，可以整体拖动哦！</small><br>
-        <small>7.将鼠标移到黄色节点上，看看右侧表情吧！<br>&nbsp;&nbsp;在触摸盘左滑，可以查看更多表情哦！</small><br>
+        <small>7.将鼠标移到黄色节点上，看看右侧表情吧！</small><br>
     </div>
 </div>
 
@@ -596,7 +813,7 @@
                 .data(links)
                 .enter()
                 .append("line")
-                .attr('stroke-width', 1);
+                .attr('stroke-width', d => 1);
 
             //边上的文字（实体之间的关系）
             lineText = canvas.append('g')
@@ -783,7 +1000,7 @@
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return 'inactive'
                         }
@@ -792,7 +1009,7 @@
                     //显示边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return '';
+                            return 'darkMode';
                         } else {
                             return 'inactive';
                         }
@@ -800,7 +1017,7 @@
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else {
                             return 'inactive'
                         }
@@ -812,7 +1029,7 @@
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else {
                             return 'inactive'
                         }
@@ -821,7 +1038,7 @@
                     //熄灭EmotionCenter连接的边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return "inactive";
                         }
@@ -831,7 +1048,7 @@
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return 'inactive';
                         }
@@ -850,7 +1067,7 @@
                     switcher[2] = true;
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return 'inactive'
                         }
@@ -858,7 +1075,7 @@
 
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return "inactive";
                         }
@@ -866,7 +1083,7 @@
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return 'inactive'
                         }
@@ -877,7 +1094,7 @@
                     switcher[2] = false;
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return 'inactive'
                         }
@@ -896,7 +1113,7 @@
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return 'inactive';
                         }
@@ -915,7 +1132,7 @@
                     switcher[3] = true;
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return 'inactive'
                         }
@@ -924,14 +1141,14 @@
                     //显示边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return "inactive";
                         }
                     });
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else {
                             return 'inactive'
                         }
@@ -943,7 +1160,7 @@
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         }
                         else{
                             return 'inactive'
@@ -953,7 +1170,7 @@
                     //熄灭EmotionCenter连接的边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return "inactive";
                         }
@@ -962,7 +1179,7 @@
 
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return 'inactive';
                         }
@@ -984,7 +1201,7 @@
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return 'inactive'
                         }
@@ -993,7 +1210,7 @@
                     //显示边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return "inactive";
                         }
@@ -1001,7 +1218,7 @@
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return 'inactive'
                         }
@@ -1013,7 +1230,7 @@
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         // 当前WordEmotion节点显示
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return 'inactive'
                         }
@@ -1022,7 +1239,7 @@
                     //熄灭WordEmotion类节点上连接的边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return "inactive";
                         }
@@ -1032,7 +1249,7 @@
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return '';
+                            return 'darkMode';
                         } else{
                             return 'inactive';
                         }
@@ -1055,17 +1272,74 @@
             // loadData("../../EmotionNet/assets/mini-graph/mini-emotion-net.json", d =>  emotionNet = JSON.parse(d));
 
             var labelInfoAll;
+            const imageNums = 10;
+            const IMAGE_CATEGORIES = ['HA1_P', 'GD1_P', 'AN1_P', 'SA1_P', 'FE1_P', 'DI1_P', 'SU1_P'];
+            const ANIMAL_EMOTIONS_NUMS = 3;
+            const IMAGE_CATEGORIES_ANIMALS = ['happy_0', 'good_0', 'angry_0', 'sad_0', 'fear_0',
+                'disgust_0', 'surprise_0'];
+
 
             /**
              * 处理节点聚焦事件
              * handle node's focus event
              */
+            var DARKMODE = false;
             // d3.json("./assets/mini-graph/mini-emotion-net.json");
             d3.json("./assets/mini-graph/mini-label-info.json").then(function (data) {
-
                 labelInfoAll = data;
 
+                $("#darkMode").on("click", function (e) {
+                    DARKMODE = !DARKMODE;
+                    if (DARKMODE) {
+                        $("body").addClass("darkMode");
+                        $("#emotionNetName").addClass("darkMode");
+                        $("#label").addClass("darkMode");
+                        $("#mode span").addClass("darkMode");
+                        $("#darkMode span").addClass("darkMode").html("<strong>light mode</strong>");
+                        $("#switcher1 span").addClass("darkMode");
+                        $("#switcher2 span").addClass("darkMode");
+                        $("#switcher3 span").addClass("darkMode");
+                        $("#switcher4 span").addClass("darkMode");
+                        $("#tooltips").addClass("darkMode");
+                        $("#search input").addClass("darkMode");
+                        $("#canvas").addClass("darkMode");
+                        d3.select('#canvas .links').selectAll('line').attr('class', 'darkMode');
+                        d3.select('#canvas .nodes').selectAll('circle').attr('class', 'darkMode');
+                        d3.select('#canvas .lineTexts').selectAll('text').attr('class', 'darkMode inactive');
+
+
+
+                    } else {
+                        $("body").removeClass("darkMode");
+                        $("#emotionNetName").removeClass("darkMode");
+                        $("#label").removeClass("darkMode");
+                        $("#mode span").removeClass("darkMode");
+                        $("#darkMode span").removeClass("darkMode").html("<strong>dark mode</strong>");
+                        $("#switcher1 span").removeClass("darkMode");
+                        $("#switcher2 span").removeClass("darkMode");
+                        $("#switcher3 span").removeClass("darkMode");
+                        $("#switcher4 span").removeClass("darkMode");
+                        $("#tooltips").removeClass("darkMode");
+                        $("#search input").removeClass("darkMode");
+                        $("#canvas").removeClass("darkMode");
+                        $(".links line").removeClass("darkMode");
+                        var linksClassList = d3.select('#canvas .links').selectAll('line').attr('class');
+                        d3.select('#canvas .links').selectAll('line').attr('class', linksClassList.replace("darkMode", ''));
+                        var nodesClassList = d3.select('#canvas .nodes').selectAll('circle').attr('class');
+                        d3.select('#canvas .nodes').selectAll('circle').attr('class', nodesClassList.replace("darkMode", ''));
+                        var textClassList = d3.select('#canvas .lineTexts').selectAll('text').attr('class');
+                        d3.select('#canvas .lineTexts').selectAll('text').attr('class', textClassList.replace("darkMode", ''));
+
+                    }
+                });
+
+                var addDarkModeClass = '';
+                if (DARKMODE) {
+                    addDarkModeClass = "darkMode ";
+                }
+
                 $("#canvas").on("mouseenter", ".nodes circle", function (e) {
+                    console.log(addDarkModeClass);
                     if (!isDragging) {
                         //取出当前鼠标进入节点的名字，以便后续进行节点隐藏
                         var focusedNode = $(this).attr("name");
@@ -1074,11 +1348,16 @@
                         $("#faceImageContainer1").empty();
                         $("#faceImageContainer2").empty();
                         $("#faceImageContainer3").empty();
+                        $("#emojiImageContainer").empty();
+                        $("#animalImageContainer").empty();
+                        $("#animalImageContainer2").empty();
+                        $("#animalImageContainer3").empty();
                         $("#tag1").empty();
                         $("#tag2").empty();
                         $("#tag3").empty();
-                        $("#emojiImageContainer").empty();
-
+                        $("#tag4").empty();
+                        $("#tag5").empty();
+                        $("#tag6").empty();
 
                         $("#labelProperty h4").css("color", $(this).attr("fill")).text($(this).attr("name"));
 
@@ -1136,7 +1415,44 @@
                             $(this).css("top", "0").removeClass("shiningBorder");
                         });
 
+                        $('#animalImageContainer').on("mouseenter", '.imageItem', function () {
+                            $(this).css("top", "-6px")
+                                .css("transition", "top o.3s")
+                                .css("-o-transition", "top .3s")
+                                .css( "-ms-transition", "top .3s")
+                                .css(  "-moz-transition", "top .3s")
+                                .css("-webkit-transition", "top .3s")
+                                .addClass("shiningBorder");
+                        });
+                        $('#animalImageContainer').on("mouseleave", '.imageItem', function () {
+                            $(this).css("top", "0").removeClass("shiningBorder");
+                        });
 
+                        $('#animalImageContainer2').on("mouseenter", '.imageItem', function () {
+                            $(this).css("top", "-6px")
+                                .css("transition", "top o.3s")
+                                .css("-o-transition", "top .3s")
+                                .css( "-ms-transition", "top .3s")
+                                .css(  "-moz-transition", "top .3s")
+                                .css("-webkit-transition", "top .3s")
+                                .addClass("shiningBorder");
+                        });
+                        $('#animalImageContainer2').on("mouseleave", '.imageItem', function () {
+                            $(this).css("top", "0").removeClass("shiningBorder");
+                        });
+
+                        $('#animalImageContainer3').on("mouseenter", '.imageItem', function () {
+                            $(this).css("top", "-6px")
+                                .css("transition", "top o.3s")
+                                .css("-o-transition", "top .3s")
+                                .css( "-ms-transition", "top .3s")
+                                .css(  "-moz-transition", "top .3s")
+                                .css("-webkit-transition", "top .3s")
+                                .addClass("shiningBorder");
+                        });
+                        $('#animalImageContainer3').on("mouseleave", '.imageItem', function () {
+                            $(this).css("top", "0").removeClass("shiningBorder");
+                        });
 
                         var labelInfo = labelInfoAll[focusedNode];
                         //针对不同类别情绪进行分类别展示（小类情绪词没有图片）
@@ -1158,11 +1474,8 @@
                                 .append("<div><span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "描述" + "</span><br></div>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + labelInfo.DESCRIPTION + "</span>");
 
-                            const imageNums = 10;
-                            const IMAGE_CATEGORIES = ['HA1_P', 'GD1_P', 'AN1_P', 'SA1_P', 'FE1_P', 'DI1_P', 'SU1_P'];
                             if (focusedNode == "表情") {
                                 var e;
-
                                 $("#description")
                                     .append("<div><span class='label label-default' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>");
 
@@ -1197,11 +1510,41 @@
                                     $("#emojiImageContainer").append(e);
 
                                 }
+                                $("#tag4").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "动物表情" + "</span><br></div>");
+                                for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
+                                    for (let j = 1; j <= 3; j++) {
+                                        e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                        e += "./assets/images/animal-cat-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "'";
+                                        e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                        $("#animalImageContainer").append(e);
+                                    }
+                                }
 
+                                $("#tag5").append("<br>");
+                                for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
+                                    for (let j = 1; j <= 3; j++) {
+                                        e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                        e += "./assets/images/animal-dog-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "'";
+                                        e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                        $("#animalImageContainer2").append(e);
+                                    }
+                                }
 
+                                $("#tag6").append("<br>");
+                                for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
+                                    for (let j = 1; j <= 3; j++) {
+                                        e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                        e += "./assets/images/animal-hamster-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "'";
+                                        e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                        $("#animalImageContainer3").append(e);
+                                    }
+                                }
                             }
+                            // 展示情感大类(emotion category)
                             else {
                                 var emotionType = IMAGE_CATEGORIES[EMOTIONS.indexOf(focusedNode)];
+                                var animalEmotionType = IMAGE_CATEGORIES_ANIMALS[EMOTIONS.indexOf(focusedNode)];
+
                                 $("#description")
                                     .append("<div><span class='label' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>");
 
@@ -1212,7 +1555,7 @@
                                     $("#faceImageContainer1").append(e);
                                 }
 
-                                const emojiNums = 7;
+                                var emojiNums = 7;
                                 $("#tag1").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "社交媒体表情" + "</span><br></div>")
                                 for (let i = 0; i < emojiNums; i++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
@@ -1220,13 +1563,37 @@
                                     e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer2").append(e);
                                 }
+
+                                var animalEmotionsNum = 3;
+                                $("#tag2").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "动物表情" + "</span><br></div>")
+                                for (let j = 0; j < animalEmotionsNum; j++) {
+                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                    e += "./assets/images/animal-cat-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
+                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                    $("#faceImageContainer3").append(e);
+                                }
+                                for (let j = 0; j < animalEmotionsNum; j++) {
+                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                    e += "./assets/images/animal-dog-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
+                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                    $("#faceImageContainer3").append(e);
+                                }
+                                for (let j = 0; j < animalEmotionsNum; j++) {
+                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                    e += "./assets/images/animal-hamster-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
+                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                    $("#faceImageContainer3").append(e);
+                                }
+
                             }
 
+                            // 展示情感子类(emotions subclass)
                         } else if (EMOTION_CATEGORIES.indexOf(focusedNode) != -1) {
                             $("#subclass")
                                 .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "子类" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + labelInfo.SUBCLASS_OF + "</span>");
                         } else {
+                            // 展示情感词属性列表（word emotion feature)
                             var propertyValue = Object.values(labelInfo);
                             var relatedEmotion;
                             if(propertyValue[1] == ""){
@@ -1254,71 +1621,87 @@
 
                         //遍历所有结点，选出与聚焦节点直接相连的节点
                         d3.select("#canvas").selectAll(".nodes circle").attr("class", function (d) {
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             //聚焦节点
                             if (d.id == focusedNode) {
-                                return '';
+                                return addDarkModeClass;
                             }
                             // 显示与当前聚焦节点直接相连并且对应的switcher开关打开的的节点
                             for (var i = 0; i < links.length; i++) {
                                 if (links[i].source.id == focusedNode && links[i].target.id == d.id) {
                                     if (switcher[links[i].target.group]) {
-                                        return '';
+                                        return addDarkModeClass;
                                     } else {
-                                        return "inactive";
+                                        return addDarkModeClass + "inactive";
                                     }
                                 }
                                 if (links[i].target.id  == focusedNode && links[i].source.id  == d.id) {
                                     if (switcher[links[i].source.group]) {
-                                        return '';
+                                        return addDarkModeClass;
                                     } else {
-                                        return "inactive";
+                                        return addDarkModeClass + "inactive";
                                     }
                                 }
                             }
-                            return "inactive";
+                            return addDarkModeClass + "inactive";
                         });
 
                         // 显示与当前聚焦节点直接相连的边
                         d3.select("#canvas").selectAll(".links line").attr("class", function (d) {
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             // console.log(d.source.id);
                             // console.log(focusedNode.name);
                             if (d.source.id == focusedNode || d.target.id == focusedNode) {
                                 if (switcher[d.source.group] && switcher[d.target.group]) {
-                                    return 'focus';
+                                    return addDarkModeClass + 'focus';
                                 } else {
-                                    return "inactive";
+                                    return addDarkModeClass + "inactive";
                                 }
                             }
-                            return 'inactive';
+                            return addDarkModeClass + 'inactive';
                         });
 
                         // 只显示之间相连的关系名
                         d3.select("#canvas").selectAll('.lineTexts text').attr('class', function(d) {
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             if (d.source.id == focusedNode || d.target.id == focusedNode) {
                                 if (switcher[d.source.group] && switcher[d.target.group]) {
-                                    return '';
+                                    return addDarkModeClass;
                                 } else {
-                                    return "inactive";
+                                    return addDarkModeClass + "inactive";
                                 }
                             } else {
-                                return "inactive";
+                                return addDarkModeClass + "inactive";
                             }
                         });
 
                         //当鼠标悬停与圆圈节点时，对所有Text文本节点进行隐藏
                         d3.select('#canvas').selectAll('.texts text').attr('class', function(d){
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             if (d.id == focusedNode) {
-                                return '';
+                                return addDarkModeClass;
                             }
                             for (var i = 0; i < links.length; i++) {
                                 if (links[i]['source'].id == focusedNode && links[i]['target'].id == d.id) {
-                                    return '';
+                                    return addDarkModeClass;
                                 }
                                 if (links[i]['target'].id == focusedNode && links[i]['source'].id == d.id) {
-                                    return '';
+                                    return addDarkModeClass;
                                 }
                             }
-                            return 'inactive';
+                            return addDarkModeClass + 'inactive';
                         });
                     }
                 });
@@ -1335,29 +1718,41 @@
 
                         // 显示标签为on的所有结点，如果switch开关处于off，则设置为inactive
                         d3.select('#canvas').selectAll(".nodes circle").attr('class', function(d) {
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             //位于group1且开关标签为on则显示
                             if (switcher[d.group]) {
-                                return '';
+                                return addDarkModeClass;
                             } else {
-                                return 'inactive'
+                                return addDarkModeClass + 'inactive'
                             }
                         });
                         //选中标签开关为on的节点所连接的边
                         d3.select("#canvas").selectAll('.links line').attr('class', function(d) {
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             //选中边上首尾节点属于同类，并且所属标签开关为开的节点给予显示
                             if (switcher[d.source.group] && switcher[d.target.group]) {
-                                return '';
+                                return addDarkModeClass;
                             } else{
-                                return "inactive";
+                                return addDarkModeClass + "inactive";
                             }
                         });
                         //选中标签节点为on中的所有文本节点显示
                         d3.select('#canvas').selectAll('.texts text').attr('class', function(d){
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             // 当前选中类型实体显示
                             if (switcher[d.group]) {
-                                return '';
+                                return addDarkModeClass;
                             } else{
-                                return 'inactive'
+                                return addDarkModeClass + 'inactive'
                             }
                         });
                     }
@@ -1374,10 +1769,16 @@
                         $("#faceImageContainer1").empty();
                         $("#faceImageContainer2").empty();
                         $("#faceImageContainer3").empty();
+                        $("#emojiImageContainer").empty();
+                        $("#animalImageContainer").empty();
+                        $("#animalImageContainer2").empty();
+                        $("#animalImageContainer3").empty();
                         $("#tag1").empty();
                         $("#tag2").empty();
                         $("#tag3").empty();
-                        $("#emojiImageContainer").empty();
+                        $("#tag4").empty();
+                        $("#tag5").empty();
+                        $("#tag6").empty();
 
                         $("#labelProperty h4").css("color", $(this).attr("fill")).text($(this).attr("name"));
                         var labelInfo = labelInfoAll[focusedNode];
@@ -1395,8 +1796,6 @@
                                 .append("<div><span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "描述" + "</span><br></div>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + labelInfo.DESCRIPTION + "</span>");
 
-                            const imageNums = 10;
-                            const IMAGE_CATEGORIES = ['HA1_P', 'GD1_P', 'AN1_P', 'SA1_P', 'FE1_P', 'DI1_P', 'SU1_P'];
                             if (focusedNode == "表情") {
                                 var e;
 
@@ -1432,12 +1831,44 @@
                                     e += "./assets/images/social-media-emotions/" + IMAGE_CATEGORIES[i] + "1.jpg" + "'";
                                     e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#emojiImageContainer").append(e);
-
                                 }
 
+                                $("#tag4").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "动物表情" + "</span><br></div>");
+                                for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
+                                    for (let j = 1; j <= 3; j++) {
+                                        e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                        e += "./assets/images/animal-cat-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "'";
+                                        e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                        $("#animalImageContainer").append(e);
+                                    }
+                                }
+
+                                $("#tag5").append("<br>");
+                                for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
+                                    for (let j = 1; j <= 3; j++) {
+                                        e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                        e += "./assets/images/animal-dog-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "'";
+                                        e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                        $("#animalImageContainer2").append(e);
+                                    }
+                                }
+
+                                $("#tag6").append("<br>");
+                                for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
+                                    for (let j = 1; j <= 3; j++) {
+                                        e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                        e += "./assets/images/animal-hamster-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "'";
+                                        e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                        $("#animalImageContainer3").append(e);
+                                    }
+                                }
                             }
+
+                            // 展示情感大类
                             else {
                                 var emotionType = IMAGE_CATEGORIES[EMOTIONS.indexOf(focusedNode)];
+                                var animalEmotionType = IMAGE_CATEGORIES_ANIMALS[EMOTIONS.indexOf(focusedNode)];
+
                                 $("#description")
                                     .append("<div><span class='label' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>");
 
@@ -1456,8 +1887,30 @@
                                     e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer2").append(e);
                                 }
+
+                                var animalEmotionsNum = 3;
+                                $("#tag2").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "动物表情" + "</span><br></div>")
+                                for (let j = 0; j < animalEmotionsNum; j++) {
+                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                    e += "./assets/images/animal-cat-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
+                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                    $("#faceImageContainer3").append(e);
+                                }
+                                for (let j = 0; j < animalEmotionsNum; j++) {
+                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                    e += "./assets/images/animal-dog-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
+                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                    $("#faceImageContainer3").append(e);
+                                }
+                                for (let j = 0; j < animalEmotionsNum; j++) {
+                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                    e += "./assets/images/animal-hamster-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
+                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                    $("#faceImageContainer3").append(e);
+                                }
                             }
 
+                            // 展示情感小类
                         } else if (EMOTION_CATEGORIES.indexOf(focusedNode) != -1) {
                             $("#subclass")
                                 .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "子类" + "</span><br>")
@@ -1490,67 +1943,86 @@
 
                         //遍历所有文本结点，选出与聚焦节点直接相连的文本节点
                         d3.select("#canvas").selectAll(".texts text").attr("class", function (d) {
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             //聚焦节点
                             if (d.id == focusedNode) {
-                                return '';
+                                return addDarkModeClass;
                             }
                             // 显示与当前聚焦节点直接相连的节点
                             for (var i = 0; i < links.length; i++) {
                                 if (links[i].source.id == focusedNode && links[i].target.id == d.id) {
                                     if (switcher[links[i].target.group]) {
-                                        return '';
+                                        return addDarkModeClass;
                                     } else {
-                                        return "inactive";
+                                        return addDarkModeClass + "inactive";
                                     }
                                 }
                                 if (links[i].target.id  == focusedNode && links[i].source.id  == d.id) {
                                     if (switcher[links[i].source.group]) {
-                                        return '';
+                                        return addDarkModeClass;
                                     } else {
-                                        return "inactive";
+                                        return addDarkModeClass + "inactive";
                                     }
                                 }
                             }
-                            return "inactive";
+                            return addDarkModeClass + "inactive";
                         });
 
                         // 显示与当前聚焦节点直接相连的边
                         d3.select("#canvas").selectAll(".links line").attr("class", function (d) {
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             // console.log(d.source.id);
                             // console.log(focusedNode.name);
                             if (d.source.id == focusedNode || d.target.id == focusedNode) {
                                 if (switcher[d.source.group] && switcher[d.target.group]) {
-                                    return 'focus';
+                                    return addDarkModeClass + 'focus';
                                 } else {
-                                    return "inactive";
+                                    return addDarkModeClass + "inactive";
                                 }
                             }
-                            return 'inactive';
+                            return addDarkModeClass + 'inactive';
                         });
 
                         // 只显示之间相连的关系名
                         d3.select("#canvas").selectAll('.lineTexts text').attr('class', function(d) {
-                            if (d.source.id == focusedNode || d.target.id == focusedNode) {
-                                return "";
-                            } else {
-                                return "inactive";
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
                             }
+                            if (d.source.id == focusedNode || d.target.id == focusedNode) {
+                                if (switcher[d.source.group] && switcher[d.target.group]) {
+                                    return addDarkModeClass;
+                                } else {
+                                    return addDarkModeClass + "inactive";
+                                }
+                            }
+                            return addDarkModeClass + 'inactive';
                         });
 
                         //当鼠标悬停于文本节点时，对所有Nodes节点进行隐藏
                         d3.select('#canvas').selectAll('.nodes circle').attr('class', function(d){
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             if (d.id == focusedNode) {
-                                return '';
+                                return addDarkModeClass;
                             }
                             for (var i = 0; i < links.length; i++) {
                                 if (links[i]['source'].id == focusedNode && links[i]['target'].id == d.id) {
-                                    return '';
+                                    return addDarkModeClass;
                                 }
                                 if (links[i]['target'].id == focusedNode && links[i]['source'].id == d.id) {
-                                    return '';
+                                    return addDarkModeClass;
                                 }
                             }
-                            return 'inactive';
+                            return addDarkModeClass + 'inactive';
                         });
                     }
                 });
@@ -1565,27 +2037,39 @@
                         $(".nodes circle").removeClass("inactive");
                         // 显示标签为Off的所有文本结点，如果switch开关处于off并属于当前标签，则设置为active
                         d3.select('#canvas').selectAll(".texts text").attr('class', function(d) {
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             if (switcher[d.group]) {
-                                return '';
+                                return addDarkModeClass;
                             } else{
-                                return 'inactive'
+                                return addDarkModeClass + 'inactive'
                             }
                         });
                         //选中标签开关为on的节点所连接的边
                         d3.select("#canvas").selectAll('.links line').attr('class', function(d) {
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             if (switcher[d.source.group] && switcher[d.target.group]) {
-                                return '';
+                                return addDarkModeClass;
                             } else{
-                                return "inactive";
+                                return addDarkModeClass + "inactive";
                             }
                         });
                         //选中标签节点为on中的所有文本节点显示
                         d3.select('#canvas').selectAll('.nodes node').attr('class', function(d){
+                            var addDarkModeClass = '';
+                            if (DARKMODE) {
+                                addDarkModeClass = "darkMode ";
+                            }
                             // 当前选中类型实体显示
                             if (switcher[d.group]) {
-                                return '';
+                                return addDarkModeClass;
                             } else{
-                                return 'inactive'
+                                return addDarkModeClass + 'inactive'
                             }
                         });
                     }
