@@ -732,6 +732,7 @@
         <small>5.鼠标移入白线框中，在触摸板上向上滑动<br>&nbsp;&nbsp;缩小图谱，向下滑动放大图谱哦！</small><br>
         <small>6.在空白区域点击图谱，可以整体拖动哦！</small><br>
         <small>7.将鼠标移到黄色节点上，看看右侧表情吧！</small><br>
+        <small>8.提醒一下，右侧的表情是可以滑动的哦！</small><br>
     </div>
 </div>
 
@@ -992,34 +993,38 @@
                 // 把被点击的这个设置为active
                 $('#switcher1 span').removeClass('active');
                 $(this).addClass('active');
-
+                var addDarkModeClass = '';
+                if (DARKMODE) {
+                    addDarkModeClass = "darkMode ";
+                }
                 //显示中心表情
                 if ($(this).text() =='On') {
                     //找到属于当前group的节点，并且显示其相连的边
                     switcher[1] = true;
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
+
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return 'inactive'
+                            return addDarkModeClass + 'inactive'
                         }
                     });
 
                     //显示边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else {
-                            return 'inactive';
+                            return addDarkModeClass + 'inactive';
                         }
                     });
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else {
-                            return 'inactive'
+                            return addDarkModeClass + 'inactive'
                         }
                     });
                 }
@@ -1029,18 +1034,18 @@
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else {
-                            return 'inactive'
+                            return addDarkModeClass + 'inactive'
                         }
                     });
 
                     //熄灭EmotionCenter连接的边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return "inactive";
+                            return addDarkModeClass + "inactive";
                         }
                     });
 
@@ -1048,9 +1053,9 @@
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return 'inactive';
+                            return addDarkModeClass + 'inactive';
                         }
                     });
                 }
@@ -1060,32 +1065,35 @@
             $('#switcher2 span').click(function() {
                 $('#switcher2 span').removeClass('active');
                 $(this).addClass('active');
-
+                var addDarkModeClass = '';
+                if (DARKMODE) {
+                    addDarkModeClass = "darkMode ";
+                }
                 //显示EmotionCategory表情类别
                 if ($(this).text() =='On') {
                     //找到属于当前group的节点，并且显示其相连的边
                     switcher[2] = true;
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return 'inactive'
+                            return addDarkModeClass + 'inactive';
                         }
                     });
 
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return "inactive";
+                            return addDarkModeClass + 'inactive';
                         }
                     });
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return 'inactive'
+                            return addDarkModeClass + 'inactive';
                         }
                     });
                 }
@@ -1094,18 +1102,18 @@
                     switcher[2] = false;
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return 'inactive'
+                            return addDarkModeClass + 'inactive';
                         }
                     });
 
                     //熄灭Category连接的边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return '';
+                            return addDarkModeClass;
                         } else{
-                            return "inactive";
+                            return addDarkModeClass + 'inactive';
                         }
                     });
 
@@ -1113,9 +1121,9 @@
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return 'inactive';
+                            return addDarkModeClass + 'inactive';
                         }
                     });
                 }
@@ -1125,32 +1133,35 @@
             $('#switcher3 span').click(function() {
                 $('#switcher3 span').removeClass('active');
                 $(this).addClass('active');
-
+                var addDarkModeClass = '';
+                if (DARKMODE) {
+                    addDarkModeClass = "darkMode ";
+                }
                 //显示Emotions表情细类别
                 if ($(this).text() =='On') {
                     //找到属于当前group的节点，并且显示其相连的边
                     switcher[3] = true;
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return 'inactive'
+                            return addDarkModeClass + 'inactive';
                         }
                     });
 
                     //显示边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return "inactive";
+                            return addDarkModeClass + 'inactive';
                         }
                     });
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         if (switcher[d.group]) {
-                            return 'darkMode';
-                        } else {
-                            return 'inactive'
+                            return addDarkModeClass;
+                        } else{
+                            return addDarkModeClass + 'inactive';
                         }
                     });
                 }
@@ -1160,28 +1171,27 @@
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return 'darkMode';
-                        }
-                        else{
-                            return 'inactive'
+                            return addDarkModeClass;
+                        } else{
+                            return addDarkModeClass + 'inactive';
                         }
                     });
 
                     //熄灭EmotionCenter连接的边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return "inactive";
+                            return addDarkModeClass + 'inactive';
                         }
                     });
 
 
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return 'inactive';
+                            return addDarkModeClass + 'inactive';
                         }
                     });
                 }
@@ -1193,7 +1203,10 @@
                 // 把被点击的这个设置为active
                 $('#switcher4 span').removeClass('active');
                 $(this).addClass('active');
-
+                var addDarkModeClass = '';
+                if (DARKMODE) {
+                    addDarkModeClass = "darkMode ";
+                }
                 //显示中心表情
                 if ($(this).text() =='On') {
                     //找到属于当前group的节点，并且显示其相连的边
@@ -1201,26 +1214,26 @@
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return 'inactive'
+                            return addDarkModeClass + 'inactive';
                         }
                     });
 
                     //显示边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return "inactive";
+                            return addDarkModeClass + 'inactive';
                         }
                     });
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return 'inactive'
+                            return addDarkModeClass + 'inactive';
                         }
                     });
                 }
@@ -1230,18 +1243,18 @@
                     d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
                         // 当前WordEmotion节点显示
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return 'inactive'
+                            return addDarkModeClass + 'inactive';
                         }
                     });
 
                     //熄灭WordEmotion类节点上连接的边
                     d3.select("#canvas .links").selectAll('line').attr('class', function(d) {
                         if (switcher[d.source.group] && switcher[d.target.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return "inactive";
+                            return addDarkModeClass + 'inactive';
                         }
                     });
 
@@ -1249,9 +1262,9 @@
                     d3.select('#canvas .texts').selectAll('text').attr('class', function(d){
                         // 当前选中类型实体显示
                         if (switcher[d.group]) {
-                            return 'darkMode';
+                            return addDarkModeClass;
                         } else{
-                            return 'inactive';
+                            return addDarkModeClass + 'inactive';
                         }
                     });
                 }
