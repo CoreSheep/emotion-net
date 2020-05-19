@@ -1316,11 +1316,22 @@
                         $("#tooltips").addClass("darkMode");
                         $("#search input").addClass("darkMode");
                         $("#canvas").addClass("darkMode");
-                        d3.select('#canvas .links').selectAll('line').attr('class', 'darkMode');
-                        d3.select('#canvas .nodes').selectAll('circle').attr('class', 'darkMode');
+                        var addDarkModeClass = 'darkMode ';
+                        d3.select('#canvas .links').selectAll('line').attr('class', function(d) {
+                            if (switcher[d.source.group] && switcher[d.target.group]) {
+                                return addDarkModeClass;
+                            } else {
+                                return addDarkModeClass + 'inactive';
+                            }
+                        });
+                        d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
+                            if (switcher[d.group]) {
+                                return addDarkModeClass;
+                            } else{
+                                return addDarkModeClass + 'inactive'
+                            }
+                        });
                         d3.select('#canvas .lineTexts').selectAll('text').attr('class', 'darkMode inactive');
-
-
 
                     } else {
                         $("body").removeClass("darkMode");
@@ -1336,12 +1347,25 @@
                         $("#search input").removeClass("darkMode");
                         $("#canvas").removeClass("darkMode");
                         $(".links line").removeClass("darkMode");
-                        var linksClassList = d3.select('#canvas .links').selectAll('line').attr('class');
-                        d3.select('#canvas .links').selectAll('line').attr('class', linksClassList.replace("darkMode", ''));
-                        var nodesClassList = d3.select('#canvas .nodes').selectAll('circle').attr('class');
-                        d3.select('#canvas .nodes').selectAll('circle').attr('class', nodesClassList.replace("darkMode", ''));
-                        var textClassList = d3.select('#canvas .lineTexts').selectAll('text').attr('class');
-                        d3.select('#canvas .lineTexts').selectAll('text').attr('class', textClassList.replace("darkMode", ''));
+
+                        var linksClassList = d3.select('#canvas .links').selectAll('line').attr('class').replace("darkMode", '');
+                        d3.select('#canvas .links').selectAll('line').attr('class', function(d) {
+                            if (switcher[d.source.group] && switcher[d.target.group]) {
+                                return linksClassList;
+                            } else {
+                                return linksClassList + 'inactive';
+                            }
+                        });
+                        var nodesClassList = d3.select('#canvas .nodes').selectAll('circle').attr('class').replace("darkMode", '');
+                        d3.select('#canvas .nodes').selectAll('circle').attr('class', function(d){
+                            if (switcher[d.group]) {
+                                return nodesClassList;
+                            } else{
+                                return nodesClassList + 'inactive'
+                            }
+                        });
+                        var textClassList = d3.select('#canvas .lineTexts').selectAll('text').attr('class').replace("darkMode", '');
+                        d3.select('#canvas .lineTexts').selectAll('text').attr('class', textClassList);
 
                     }
                 });
