@@ -1,0 +1,111 @@
+/*之前在js代码里面定义了classes，这边就给这些写样式*/
+.links line {
+    stroke: rgba(69, 81, 100, 0.97);
+    stroke-opacity: 0.16;
+}
+
+.links line.focus{
+    stroke: #ffa322;
+    stroke-width: 1px;
+    stroke-opacity: 0.999;
+}
+.links line.inactive {
+    /*display: none !important;*/
+    stroke-opacity: 0;
+}
+.links line.darkMode {
+    stroke: rgba(91, 133, 165, 0.97);
+}
+
+/*.links line .shadow{*/
+/*    stroke: #778899;*/
+/*    stroke-opacity: 0.09;*/
+/*}*/
+
+.lineTexts text {
+    fill-opacity: 0.79; /*一开始加载时不显示边的关系*/
+    font-size: 10px ;
+    font-family: "Microsoft Yahei", monospace, "Microsoft Sans Serif";
+    fill: rgba(16, 23, 38, 0.91);
+    /*text-emphasis: #555555;*/
+}
+
+.lineTexts text.darkMode {
+    fill: rgba(128, 128, 128, 0.91);
+    /*text-emphasis: #555555;*/
+}
+
+.lineTexts text.inactive {
+    display: none !important;
+}
+
+.nodes circle {
+    stroke: #fff;
+    stroke-width: 1.5px;        /*圆的描边宽度*/
+}
+.nodes circle:hover {
+    cursor: pointer;
+    stroke: #ffa322;
+    stroke-opacity: 0.9;
+    stroke-width: 14px;
+}
+
+.nodes circle.darkMode {
+    stroke: #717171;
+    stroke-width: 1.5px;        /*圆的描边宽度*/
+}
+.nodes circle.darkMode:hover {
+    stroke: rgba(91, 133, 165, 0.97);;
+    cursor: pointer;
+    stroke-opacity: 0.9;
+    stroke-width: 14px;
+}
+
+.nodes circle.inactive {
+    display: none !important;
+}
+
+/*.nodes circle.shadow {*/
+/*    stroke: #fff;*/
+/*    stroke-width: 1.5px;        !*圆的描边宽度*!*/
+/*    fill: #778899;*/
+/*}*/
+
+/*默认显示所有的圆圈，进入模式切换之后才会显示text*/
+.texts text{
+    /*default set 解决一开始事，文本和节点同时显示*/
+    display: none;
+}
+.texts text:hover {
+    cursor: pointer;
+}
+.texts text.inactive {
+    display: none !important;
+}
+/*.texts text.shadow {*/
+/*    fill: #778899;*/
+/*}*/
+
+
+
+#canvas{
+    /*background-color: lightgray  !*背景颜色*!*/
+    border: #BFC5D9 1px solid;
+    border-radius: 20px;
+}
+
+#canvas:hover{
+    border: whitesmoke 1px solid;
+    border-radius: 20px;
+}
+
+#canvas.darkMode{
+    /*background-color: lightgray  !*背景颜色*!*/
+    border: #252725 1px solid;
+    border-radius: 20px;
+}
+
+#canvas.darkMode:hover{
+    border: rgba(69, 75, 111, 0.96) 1px solid;
+    border-radius: 20px;
+}
