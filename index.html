@@ -26,6 +26,7 @@
 <!-- 标题 -->
 <div style="height: 5em">
     <h1 id="emotionNetName">Emotion Net Mini</h1>
+    <button id="tooltips-toggle" style="display: none;">💡 Tips ▶</button>
     <div id='darkMode' style="display:inline-block;">
         <span style="position: absolute; right: 30px; margin-bottom: 25px; margin-top: 15px;"><strong>dark mode</strong></span>
     </div>
@@ -129,7 +130,6 @@
     </div>
     
     <!-- 提示 -->
-    <button id="tooltips-toggle" style="display: none;">💡 Tips</button>
     <div id="tooltips">
         <span style="font-size: 13px; color: rgba(22,116,31,0.78); font-weight: bold">Tips:</span><br>
         <small style="font-size: 10px;">1. Click Circle/Text button to switch between display modes</small><br>
@@ -186,34 +186,38 @@
         $('#tooltips-toggle').on('click', function() {
             tooltipsVisible = !tooltipsVisible;
             if (tooltipsVisible) {
-                $('#tooltips').slideDown(300);
+                $('#tooltips').removeClass('slide-out').show().addClass('slide-in');
                 $(this).text('💡 Tips ▼');
             } else {
-                $('#tooltips').slideUp(300);
+                $('#tooltips').removeClass('slide-in').addClass('slide-out');
+                setTimeout(function() {
+                    if (!tooltipsVisible) {
+                        $('#tooltips').hide();
+                    }
+                }, 300);
                 $(this).text('💡 Tips ▶');
             }
         });
         
-        // Show toggle button and hide tooltips on mobile
-        if (window.innerWidth <= 768) {
-            $('#tooltips-toggle').show();
-            $('#tooltips').hide();
-            tooltipsVisible = false;
-            $('#tooltips-toggle').text('💡 Tips ▶');
-        }
-        
-        // Handle window resize for tooltips
-        window.addEventListener('resize', function() {
+        // Show toggle button on mobile/tablet
+        function handleTooltipsDisplay() {
             if (window.innerWidth <= 768) {
                 $('#tooltips-toggle').show();
                 if (!tooltipsVisible) {
-                    $('#tooltips').hide();
+                    $('#tooltips').hide().removeClass('slide-in slide-out');
+                    $('#tooltips-toggle').text('💡 Tips ▶');
                 }
             } else {
                 $('#tooltips-toggle').hide();
-                $('#tooltips').show();
+                $('#tooltips').show().removeClass('slide-in slide-out');
+                tooltipsVisible = true;
             }
-        });
+        }
+        
+        handleTooltipsDisplay();
+        
+        // Handle window resize for tooltips
+        window.addEventListener('resize', handleTooltipsDisplay);
         
         // 选出当前画布对象obj
         var canvas = d3.select("#canvas");

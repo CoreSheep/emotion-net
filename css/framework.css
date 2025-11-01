@@ -454,21 +454,20 @@ body.darkMode .github-icon:hover {
 
 /* Tooltips toggle button */
 #tooltips-toggle {
-    position: static;
+    position: absolute;
+    left: 30px;
+    top: 55px;
     display: block;
     background-color: rgba(236, 235, 234, 0.15);
     color: rgba(60, 60, 60, 0.9);
     border: 1px solid rgba(200, 200, 200, 0.4);
-    padding: 8px 15px;
+    padding: 6px 12px;
     border-radius: 12px;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    margin: 10px auto;
-    width: fit-content;
-    text-align: left;
     backdrop-filter: blur(5px);
 }
 
@@ -595,10 +594,10 @@ body.darkMode #tooltips-toggle:hover {
     }
     
     #tooltips-toggle {
-        font-size: 11px;
-        padding: 6px 12px;
-        margin: 10px 0 10px 15px;
-        text-align: left;
+        left: 15px;
+        top: 48px;
+        font-size: 10px;
+        padding: 5px 10px;
         border-radius: 10px;
     }
     
@@ -629,7 +628,7 @@ body.darkMode #tooltips-toggle:hover {
     
     .github-icon {
         right: 85px !important;
-        margin-top: 10px !important;
+        margin-top: 18px !important;
     }
     
     .github-icon svg {
@@ -736,10 +735,10 @@ body.darkMode #tooltips-toggle:hover {
     }
     
     #tooltips-toggle {
-        font-size: 10px;
-        padding: 5px 10px;
-        margin: 8px 0 8px 10px;
-        text-align: left;
+        left: 10px;
+        top: 40px;
+        font-size: 9px;
+        padding: 4px 8px;
         border-radius: 8px;
     }
     
