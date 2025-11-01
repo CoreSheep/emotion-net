@@ -34,7 +34,7 @@
 <!-- Define div for relationship graph -->
 <!-- NOTE: Parent element uses relative positioning, child elements use absolute positioning -->
 <div style="text-align: center;position: relative;">
-    <svg width="880" height="580" style="position: relative; top: 15px; margin-left: 30px;margin-bottom: -150px" id="canvas"></svg>
+    <svg width="880" height="580" style="position: relative; top: 15px; margin-left: auto; margin-right: auto; margin-bottom: -150px; display: block;" id="canvas"></svg>
     
     <!-- Mode (circle/text) -->
     <div id="mode">
@@ -126,14 +126,10 @@
     <!-- Tooltips -->
     <div id="tooltips">
         <span style="font-size: 14px; color: rgba(22,116,31,0.78); font-weight: bold">tooltip:</span><br>
-        <small>1. Click Circle/Text button to switch modes!</small><br>
-        <small>2. Click On/Off button to show and hide nodes!</small><br>
-        <small>3. A little magic trick: drag nodes in the graph to see how<br>&nbsp;&nbsp;they adjust their layout!</small><br>
-        <small>4. Hover the mouse over a node to see which emotion it belongs to!</small><br>
-        <small>5. Move the mouse into the white frame, scroll up on the touchpad<br>&nbsp;&nbsp;to zoom out, scroll down to zoom in!</small><br>
-        <small>6. Click on an empty area of the graph to drag the entire graph!</small><br>
-        <small>7. Move the mouse to the yellow node to see the expressions on the right!</small><br>
-        <small>8. Reminder: the expressions on the right are scrollable!</small><br>
+        <small>1. Click Circle/Text to switch modes</small><br>
+        <small>2. Click On/Off to show/hide nodes</small><br>
+        <small>3. Drag nodes to adjust layout</small><br>
+        <small>4. Hover over nodes to see details</small><br>
     </div>
 </div>
 
@@ -915,11 +911,11 @@
                             if (focusedNode == "Expression") {
                                 var e;
                                 $("#description")
-                                    .append("<div><span class='label label-default' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "Human Facial Expressions" + "</span><br></div>");
+                                    .append("<div><span class='label label-default' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>");
 
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "1.png" + "'";
+                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "1.png" + "' ";
                                     e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px; padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer1").append(e);
                                 }
@@ -927,7 +923,7 @@
                                 $("#tag1").append("<br>");
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "2.png" + "'";
+                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "2.png" + "' ";
                                     e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px; padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer2").append(e);
                                 }
@@ -935,24 +931,24 @@
                                 $("#tag2").append("<br>");
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "6.png" + "'";
+                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "6.png" + "' ";
                                     e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer3").append(e);
                                 }
 
-                                $("#tag3").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "Social Media Emojis" + "</span><br></div>");
+                                $("#tag3").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "社交媒体表情" + "</span><br></div>");
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/social-media-emotions/" + IMAGE_CATEGORIES[i] + "1.jpg" + "'";
+                                    e += "./assets/images/social-media-emotions/" + IMAGE_CATEGORIES[i] + "1.jpg" + "' ";
                                     e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#emojiImageContainer").append(e);
 
                                 }
-                                $("#tag4").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "Animal Expressions" + "</span><br></div>");
+                                $("#tag4").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "动物表情" + "</span><br></div>");
                                 for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
                                     for (let j = 1; j <= 3; j++) {
                                         e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                        e += "./assets/images/animal-cat-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "'";
+                                        e += "./assets/images/animal-cat-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "' ";
                                         e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                         $("#animalImageContainer").append(e);
                                     }
@@ -962,7 +958,7 @@
                                 for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
                                     for (let j = 1; j <= 3; j++) {
                                         e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                        e += "./assets/images/animal-dog-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "'";
+                                        e += "./assets/images/animal-dog-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "' ";
                                         e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                         $("#animalImageContainer2").append(e);
                                     }
@@ -972,7 +968,7 @@
                                 for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
                                     for (let j = 1; j <= 3; j++) {
                                         e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                        e += "./assets/images/animal-hamster-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "'";
+                                        e += "./assets/images/animal-hamster-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "' ";
                                         e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                         $("#animalImageContainer3").append(e);
                                     }
@@ -984,41 +980,41 @@
                                 var animalEmotionType = IMAGE_CATEGORIES_ANIMALS[EMOTIONS.indexOf(focusedNode)];
 
                                 $("#description")
-                                    .append("<div><span class='label' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "Human Facial Expressions" + "</span><br></div>");
+                                    .append("<div><span class='label' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>");
 
                                 for (let i = 0; i < imageNums; i++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/human-face-emotions/" + emotionType + (i + 1) + ".png" + "'";
+                                    e += "./assets/images/human-face-emotions/" + emotionType + (i + 1) + ".png" + "' ";
                                     e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer1").append(e);
                                 }
 
                                 var emojiNums = 7;
-                                $("#tag1").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "Social Media Emojis" + "</span><br></div>")
+                                $("#tag1").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "社交媒体表情" + "</span><br></div>")
                                 for (let i = 0; i < emojiNums; i++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/social-media-emotions/" + emotionType + (i+1) + ".jpg" + "'";
+                                    e += "./assets/images/social-media-emotions/" + emotionType + (i+1) + ".jpg" + "' ";
                                     e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer2").append(e);
                                 }
 
                                 var animalEmotionsNum = 3;
-                                $("#tag2").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "Animal Expressions" + "</span><br></div>")
+                                $("#tag2").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "动物表情" + "</span><br></div>")
                                 for (let j = 0; j < animalEmotionsNum; j++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/animal-cat-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
+                                    e += "./assets/images/animal-cat-emotions/" + animalEmotionType + (j+1) + ".jpg" + "' ";
                                     e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer3").append(e);
                                 }
                                 for (let j = 0; j < animalEmotionsNum; j++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/animal-dog-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
+                                    e += "./assets/images/animal-dog-emotions/" + animalEmotionType + (j+1) + ".jpg" + "' ";
                                     e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer3").append(e);
                                 }
                                 for (let j = 0; j < animalEmotionsNum; j++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/animal-hamster-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
+                                    e += "./assets/images/animal-hamster-emotions/" + animalEmotionType + (j+1) + ".jpg" + "' ";
                                     e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer3").append(e);
                                 }
@@ -1238,11 +1234,11 @@
                                 var e;
 
                                 $("#description")
-                                    .append("<div><span class='label label-default' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "Human Facial Expressions" + "</span><br></div>")
+                                    .append("<div><span class='label label-default' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>")
 
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "1.png" + "'";
+                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "1.png" + "' ";
                                     e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer1").append(e);
                                 }
@@ -1250,7 +1246,7 @@
                                 $("#tag1").append("<br>");
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "2.png" + "'";
+                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "2.png" + "' ";
                                     e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer2").append(e);
                                 }
@@ -1258,24 +1254,24 @@
                                 $("#tag2").append("<br>");
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "6.png" + "'";
+                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "6.png" + "' ";
                                     e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer3").append(e);
                                 }
 
-                                $("#tag3").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "Social Media Emojis" + "</span><br></div>")
+                                $("#tag3").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "社交媒体表情" + "</span><br></div>")
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/social-media-emotions/" + IMAGE_CATEGORIES[i] + "1.jpg" + "'";
+                                    e += "./assets/images/social-media-emotions/" + IMAGE_CATEGORIES[i] + "1.jpg" + "' ";
                                     e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#emojiImageContainer").append(e);
                                 }
 
-                                $("#tag4").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "Animal Expressions" + "</span><br></div>");
+                                $("#tag4").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "动物表情" + "</span><br></div>");
                                 for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
                                     for (let j = 1; j <= 3; j++) {
                                         e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                        e += "./assets/images/animal-cat-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "'";
+                                        e += "./assets/images/animal-cat-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "' ";
                                         e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                         $("#animalImageContainer").append(e);
                                     }
@@ -1285,7 +1281,7 @@
                                 for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
                                     for (let j = 1; j <= 3; j++) {
                                         e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                        e += "./assets/images/animal-dog-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "'";
+                                        e += "./assets/images/animal-dog-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "' ";
                                         e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                         $("#animalImageContainer2").append(e);
                                     }
@@ -1295,7 +1291,7 @@
                                 for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
                                     for (let j = 1; j <= 3; j++) {
                                         e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                        e += "./assets/images/animal-hamster-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "'";
+                                        e += "./assets/images/animal-hamster-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "' ";
                                         e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
                                         $("#animalImageContainer3").append(e);
                                     }
@@ -1308,43 +1304,67 @@
                                 var animalEmotionType = IMAGE_CATEGORIES_ANIMALS[EMOTIONS.indexOf(focusedNode)];
 
                                 $("#description")
-                                    .append("<div><span class='label' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "Human Facial Expressions" + "</span><br></div>");
+                                    .append("<div><span class='label label-default' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>")
 
-                                for (let i = 0; i < imageNums; i++) {
+                                for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/human-face-emotions/" + emotionType + (i + 1) + ".png" + "'";
+                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "1.png" + "' ";
                                     e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer1").append(e);
                                 }
 
-                                const emojiNums = 7;
-                                $("#tag1").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "Social Media Emojis" + "</span><br></div>")
-                                for (let i = 0; i < emojiNums; i++) {
+                                $("#tag1").append("<br>");
+                                for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/social-media-emotions/" + emotionType + (i+1) + ".jpg" + "'";
+                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "2.png" + "' ";
                                     e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer2").append(e);
                                 }
 
-                                var animalEmotionsNum = 3;
-                                $("#tag2").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "Animal Expressions" + "</span><br></div>")
-                                for (let j = 0; j < animalEmotionsNum; j++) {
-                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/animal-cat-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
-                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                $("#tag2").append("<br>");
+                                for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
+                                    e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
+                                    e += "./assets/images/human-face-emotions/" + IMAGE_CATEGORIES[i] + "6.png" + "' ";
+                                    e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
                                     $("#faceImageContainer3").append(e);
                                 }
-                                for (let j = 0; j < animalEmotionsNum; j++) {
-                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/animal-dog-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
-                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
-                                    $("#faceImageContainer3").append(e);
+
+                                $("#tag3").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "社交媒体表情" + "</span><br></div>")
+                                for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
+                                    e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
+                                    e += "./assets/images/social-media-emotions/" + IMAGE_CATEGORIES[i] + "1.jpg" + "' ";
+                                    e += "class='img-responsive img-thumbnail' alt='Responsive image' style='padding:2px; width: 55px; height: 55px;'></li>";
+                                    $("#emojiImageContainer").append(e);
                                 }
-                                for (let j = 0; j < animalEmotionsNum; j++) {
-                                    e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
-                                    e += "./assets/images/animal-hamster-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
-                                    e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
-                                    $("#faceImageContainer3").append(e);
+
+                                $("#tag4").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "动物表情" + "</span><br></div>");
+                                for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
+                                    for (let j = 1; j <= 3; j++) {
+                                        e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                        e += "./assets/images/animal-cat-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "' ";
+                                        e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                        $("#animalImageContainer").append(e);
+                                    }
+                                }
+
+                                $("#tag5").append("<br>");
+                                for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
+                                    for (let j = 1; j <= 3; j++) {
+                                        e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                        e += "./assets/images/animal-dog-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "' ";
+                                        e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                        $("#animalImageContainer2").append(e);
+                                    }
+                                }
+
+                                $("#tag6").append("<br>");
+                                for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
+                                    for (let j = 1; j <= 3; j++) {
+                                        e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
+                                        e += "./assets/images/animal-hamster-emotions/" + IMAGE_CATEGORIES_ANIMALS[i] + j + ".jpg" + "' ";
+                                        e += "class='img-responsive img-thumbnail imageItem' alt='Responsive image' style='position:relative; margin:1px 0px;padding:2px; width: 55px; height: 55px;'></li>";
+                                        $("#animalImageContainer3").append(e);
+                                    }
                                 }
                             }
 
