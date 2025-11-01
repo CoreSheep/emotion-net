@@ -57,3 +57,38 @@
     -webkit-animation-duration: 0.3s;
     -webkit-animation-iteration-count: infinite;
 }
+
+/* Responsive styles for mobile */
+@media only screen and (max-width: 768px) {
+    .showImage {
+        width: 100%;
+        height: auto;
+        padding: 8px;
+    }
+    
+    .imageContent {
+        width: 100%;
+        height: auto;
+    }
+    
+    .imageContent ul li {
+        width: 50px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .showImage {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+    }
+    
+    .imageContent {
+        width: 100%;
+        height: 60px;
+    }
+    
+    .imageContent ul li {
+        width: 45px;
+    }
+}

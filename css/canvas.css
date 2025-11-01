@@ -109,3 +109,39 @@
     border: rgba(69, 75, 111, 0.96) 1px solid;
     border-radius: 20px;
 }
+
+/* Responsive canvas for mobile */
+@media only screen and (max-width: 768px) {
+    #canvas {
+        border-radius: 15px;
+        margin-bottom: -100px !important;
+    }
+    
+    .nodes circle:hover {
+        stroke-width: 10px;
+    }
+    
+    .nodes circle.darkMode:hover {
+        stroke-width: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #canvas {
+        border-radius: 10px;
+        margin-bottom: -80px !important;
+        top: 10px !important;
+    }
+    
+    .nodes circle:hover {
+        stroke-width: 8px;
+    }
+    
+    .nodes circle.darkMode:hover {
+        stroke-width: 8px;
+    }
+    
+    .lineTexts text {
+        font-size: 8px;
+    }
+}

@@ -151,10 +151,39 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        // Make canvas responsive
+        var canvasElement = document.getElementById("canvas");
+        var canvasWidth, canvasHeight;
+        
+        function resizeCanvas() {
+            var windowWidth = window.innerWidth;
+            if (windowWidth <= 480) {
+                // Mobile phones
+                canvasWidth = Math.min(windowWidth - 20, 350);
+                canvasHeight = 400;
+                canvasElement.style.marginLeft = "10px";
+            } else if (windowWidth <= 768) {
+                // Tablets
+                canvasWidth = Math.min(windowWidth - 40, 600);
+                canvasHeight = 500;
+                canvasElement.style.marginLeft = "20px";
+            } else {
+                // Desktop
+                canvasWidth = 880;
+                canvasHeight = 580;
+                canvasElement.style.marginLeft = "30px";
+            }
+            canvasElement.setAttribute("width", canvasWidth);
+            canvasElement.setAttribute("height", canvasHeight);
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
         // 选出当前画布对象obj
         var canvas = d3.select("#canvas");
-        var width = canvas.attr("width");
-        var height = canvas.attr("height");
+        var width = canvasElement.getAttribute("width");
+        var height = canvasElement.getAttribute("height");
         // console.log(canvas, width, height);
 
         const EMOTION_NAMES = ['Center', 'Emotion', 'Category', 'WordEmotion']; //, 'WordEmotion'
@@ -220,7 +249,8 @@
                 .data(links)
                 .enter()
                 .append("line")
-                .attr('stroke-width', d => 1);
+                .attr('stroke-width', d => 1)
+                .attr('class', 'darkMode');  // Start with dark mode
 
             //边上的文字（实体之间的关系）
             lineText = canvas.append('g')
@@ -229,7 +259,7 @@
                 .data(links)
                 .enter()
                 .append("text")
-                .attr("class", "inactive")
+                .attr("class", "darkMode inactive")  // Start with dark mode
                 .text(d => RELATION_NAMES[d.relation]);
 
             //为节点和边施加各种作用力
@@ -254,6 +284,7 @@
                 .attr('fill', d => NODE_COLORS[d.group - 1])
                 .attr('stroke', 'none')    // 没有描边
                 .attr('name', d => d.id)
+                .attr('class', 'darkMode')  // Start with dark mode
                 .call(drag(simulation));   // 拖动结束
 
             // 文本
@@ -702,7 +733,24 @@
              * 处理节点聚焦事件
              * handle node's focus event
              */
-            var DARKMODE = false;
+            var DARKMODE = true;
+            
+            // Apply dark mode on page load
+            $(document).ready(function() {
+                $("body").addClass("darkMode");
+                $("#emotionNetName").addClass("darkMode");
+                $("#label").addClass("darkMode");
+                $("#mode span").addClass("darkMode");
+                $("#darkMode span").addClass("darkMode").html("<strong>light mode</strong>");
+                $("#switcher1 span").addClass("darkMode");
+                $("#switcher2 span").addClass("darkMode");
+                $("#switcher3 span").addClass("darkMode");
+                $("#switcher4 span").addClass("darkMode");
+                $("#tooltips").addClass("darkMode");
+                $("#search input").addClass("darkMode");
+                $("#canvas").addClass("darkMode");
+            });
+            
             // d3.json("./assets/mini-graph/mini-emotion-net.json");
             d3.json("./assets/mini-graph/mini-label-info.json").then(function (data) {
                 labelInfoAll = data;
