@@ -194,6 +194,23 @@
             "思", "慌", "恐惧", "羞", "烦闷", "憎恶", "贬责", "妒忌", "怀疑", "惊奇"];
 
         const EMOTIONS = ["乐", "好", "怒", "哀", "惧", "恶", "惊"];
+        
+        // Bilingual emotion name mapping
+        const EMOTION_DISPLAY_NAMES = {
+            "表情": "表情 (Emotion)",
+            "乐": "乐 (Joy)",
+            "好": "好 (Good)",
+            "怒": "怒 (Anger)",
+            "哀": "哀 (Sadness)",
+            "惧": "惧 (Fear)",
+            "恶": "恶 (Disgust)",
+            "惊": "惊 (Surprise)"
+        };
+        
+        // Function to get display name
+        function getDisplayName(name) {
+            return EMOTION_DISPLAY_NAMES[name] || name;
+        }
 
         // console.log(CircleSize["EmotionCenter"]);
         const NODE_COLORS = ['rgba(160,134,48,0.98)', 'rgba(142,74,74,0.98)', 'rgba(66,131,80,0.96)', "rgba(102,93,145,0.96)"];
@@ -299,12 +316,12 @@
                 .attr("font-size", d => LABEL_TEXT_FONT_SIZE[d.group - 1])
                 .attr("fill", d => NODE_COLORS[d.group - 1])
                 .attr('name', d => d.id)
-                .text(d => d.id)
+                .text(d => getDisplayName(d.id))
                 .attr('text-anchor', 'middle')
                 .call(drag(simulation));
 
             // 给node加title, 当鼠标悬浮在圆圈上的时候
-            node.append('title').text(d => d.id);
+            node.append('title').text(d => getDisplayName(d.id));
 
             // $("#canvas").on("mouseenter", function (e) {
             //     d3.select("#canvas").attr("class",  "showBorder");
@@ -850,7 +867,7 @@
                         $("#tag5").empty();
                         $("#tag6").empty();
 
-                        $("#labelProperty h4").css("color", $(this).attr("fill")).text($(this).attr("name"));
+                        $("#labelProperty h4").css("color", $(this).attr("fill")).text(getDisplayName($(this).attr("name")));
 
                         //设置图片点击发光和上移特效
                         $('#faceImageContainer1').on("mouseenter", '.imageItem', function () {
@@ -1271,7 +1288,7 @@
                         $("#tag5").empty();
                         $("#tag6").empty();
 
-                        $("#labelProperty h4").css("color", $(this).attr("fill")).text($(this).attr("name"));
+                        $("#labelProperty h4").css("color", $(this).attr("fill")).text(getDisplayName($(this).attr("name")));
                         var labelInfo = labelInfoAll[focusedNode];
                         //针对不同类别情绪进行分类别展示（小类情绪词没有图片）
                         //对情绪大类的Property展示
