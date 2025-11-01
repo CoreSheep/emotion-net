@@ -86,10 +86,10 @@ The knowledge graph integrates multimodal emotional data representing **7 core e
 If you use this work in your research, please cite:
 
 ```bibtex
-@phdthesis{li2021emotionnet,
+@mastersthesis{li2021emotionnet,
   title={Construction of a Multimodal Knowledge Graph for Fine-Grained Sentiment Analysis},
   author={Li, Jiufeng},
-  year={2021},
+  year={2020},
   school={Northeastern University},
   address={Shenyang, China},
   type={Bachelor's Thesis}
