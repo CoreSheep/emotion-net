@@ -15,9 +15,9 @@ body.darkMode {
     left: 10px;
     color: rgba(236,235,234,0.96);
     font-size: 38px;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial Black", "Segoe UI", Arial, sans-serif;
-    font-weight: 900;
-    letter-spacing: -0.5px;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     margin-bottom: 10px;
     margin-top: 15px;
     text-align: left;
@@ -30,8 +30,8 @@ body.darkMode {
 /*label的样式*/
 #label {
     position: absolute;
-    left: 30px;
-    top: 200px;
+    left: 40px;
+    top: 235px;
     text-align: left;
     color: #f2f2f2;
     font-size: 16px;
@@ -62,8 +62,8 @@ body.darkMode {
 /*mode-模式切换的style*/
 #mode {
     position: absolute;
-    top: 100px;
-    left: 30px;
+    top: 135px;
+    left: 40px;
 }
 
 #mode span {
@@ -158,8 +158,8 @@ body.darkMode {
 
 #switcher1 {
     position: absolute;
-    top: 200px;
-    left: 170px;
+    top: 235px;
+    left: 180px;
 }
 
 /* toggle开关使用inline-block*/
@@ -210,8 +210,8 @@ body.darkMode {
 
 #switcher2 {
     position: absolute;
-    top: 225px;
-    left: 170px;
+    top: 260px;
+    left: 180px;
     margin-top: 12px;
 }
 
@@ -261,8 +261,8 @@ body.darkMode {
 
 #switcher3 {
     position: absolute;
-    top: 250px;
-    left: 170px;
+    top: 285px;
+    left: 180px;
     margin-top: 24px;
 }
 
@@ -312,8 +312,8 @@ body.darkMode {
 
 #switcher4 {
     position: absolute;
-    top: 275px;
-    left: 170px;
+    top: 310px;
+    left: 180px;
     margin-top: 36px;
 }
 
@@ -374,7 +374,7 @@ p{
 /*info的样式*/
 #labelProperty {
     position: absolute;
-    top: 0px;
+    top: 120px;
     /*bottom: 40px;*/
     right: 10px;
     text-align: left;
@@ -394,7 +394,7 @@ p{
     width: 210px;
     position: relative;
     top: -45px;
-    left: 30px;
+    left: 40px;
     color: rgba(16,23,38,0.92);
     font-size: 12px;
     font-family: "Microsoft Yahei", monospace, "Microsoft Sans Serif";
@@ -410,8 +410,8 @@ p{
 /*搜索框的样式*/
 #search input {
     position: absolute;
-    top: 150px;
-    left: 30px;
+    top: 185px;
+    left: 40px;
     color: #fff;
     border: none;
     outline: none;
@@ -459,8 +459,8 @@ body.darkMode .github-icon:hover {
 #tooltips-toggle {
     display: none; /* Hidden by default on desktop */
     position: absolute;
-    left: 30px;
-    top: 430px;
+    left: 40px;
+    top: 380px;
     background-color: rgba(236, 235, 234, 0.2);
     color: rgba(60, 60, 60, 0.9);
     border: 1px solid rgba(200, 200, 200, 0.4);
