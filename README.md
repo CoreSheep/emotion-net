@@ -4,7 +4,7 @@ An interactive web-based visualization platform for exploring multimodal emotion
 
 ## 📺 Demo Video
 
-<div>
+<div align="center">
     <a href="https://www.loom.com/share/d5dcc77efbca43168d5e6a92c41a2ce8">
       <p>Building an Emotional Knowledge Graph for Enhanced Sentiment Analysis 🌟 - Watch Video</p>
     </a>
@@ -41,8 +41,10 @@ An interactive web-based visualization platform for exploring multimodal emotion
 
 The knowledge graph integrates multimodal emotional data representing **7 core emotions**:
 
+<div align="center">
+
 | Emotion | English | Description |
-|---------|---------|-------------|
+|:-------:|:-------:|:------------|
 | 乐 | Joy | Happiness, pleasure, delight |
 | 好 | Good | Positive feelings, satisfaction |
 | 怒 | Anger | Frustration, rage, irritation |
@@ -50,6 +52,8 @@ The knowledge graph integrates multimodal emotional data representing **7 core e
 | 惧 | Fear | Anxiety, worry, terror |
 | 恶 | Disgust | Aversion, revulsion, dislike |
 | 惊 | Surprise | Astonishment, amazement, shock |
+
+</div>
 
 **Dataset Sources:**
 - **Text Emotion Words**: 27,466 Chinese emotion words from Dalian University of Technology
@@ -77,9 +81,26 @@ The knowledge graph integrates multimodal emotional data representing **7 core e
 - **Data Storage**: Neo4j graph database
 - **Ontology Editor**: Protégé
 
-## 👤 Author
+## 📖 Citation
 
-**@sheepcore** - Project Designer & Developer
+If you use this work in your research, please cite:
+
+```bibtex
+@phdthesis{li2021emotionnet,
+  title={Construction of a Multimodal Knowledge Graph for Fine-Grained Sentiment Analysis},
+  author={Li, Jiufeng},
+  year={2021},
+  school={Northeastern University},
+  address={Shenyang, China},
+  type={Bachelor's Thesis}
+}
+```
+
+**Patent Citation:**
+```
+Li, J. et al. (2021). Method for Constructing and Presenting a Multimodal Sentiment Knowledge Graph. 
+China Patent No. CN ZL202011319237.8.
+```
 
 ---
 
