@@ -129,6 +129,7 @@
     </div>
     
     <!-- 提示 -->
+    <button id="tooltips-toggle" style="display: none;">💡 Tips</button>
     <div id="tooltips">
         <span style="font-size: 13px; color: rgba(22,116,31,0.78); font-weight: bold">Tips:</span><br>
         <small style="font-size: 10px;">1. Click Circle/Text button to switch between display modes</small><br>
@@ -179,6 +180,40 @@
         
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
+        
+        // Tooltips toggle functionality
+        var tooltipsVisible = true;
+        $('#tooltips-toggle').on('click', function() {
+            tooltipsVisible = !tooltipsVisible;
+            if (tooltipsVisible) {
+                $('#tooltips').slideDown(300);
+                $(this).text('💡 Tips ▼');
+            } else {
+                $('#tooltips').slideUp(300);
+                $(this).text('💡 Tips ▶');
+            }
+        });
+        
+        // Show toggle button and hide tooltips on mobile
+        if (window.innerWidth <= 768) {
+            $('#tooltips-toggle').show();
+            $('#tooltips').hide();
+            tooltipsVisible = false;
+            $('#tooltips-toggle').text('💡 Tips ▶');
+        }
+        
+        // Handle window resize for tooltips
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768) {
+                $('#tooltips-toggle').show();
+                if (!tooltipsVisible) {
+                    $('#tooltips').hide();
+                }
+            } else {
+                $('#tooltips-toggle').hide();
+                $('#tooltips').show();
+            }
+        });
         
         // 选出当前画布对象obj
         var canvas = d3.select("#canvas");
