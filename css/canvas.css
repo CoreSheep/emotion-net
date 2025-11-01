@@ -113,8 +113,13 @@
 /* Responsive canvas for mobile */
 @media only screen and (max-width: 768px) {
     #canvas {
+        border: #BFC5D9 1px solid !important; /* Ensure border is visible */
         border-radius: 15px;
         margin-bottom: -100px !important;
+    }
+    
+    #canvas.darkMode {
+        border: #252725 1px solid !important; /* Ensure border is visible in dark mode */
     }
     
     .nodes circle:hover {
@@ -128,10 +133,15 @@
 
 @media only screen and (max-width: 480px) {
     #canvas {
+        border: #BFC5D9 1px solid !important; /* Ensure border is visible */
         border-radius: 8px;
         margin-bottom: 0 !important;
         margin-left: 5px !important;
         top: 5px !important;
+    }
+    
+    #canvas.darkMode {
+        border: #252725 1px solid !important; /* Ensure border is visible in dark mode */
     }
     
     .nodes circle {
