@@ -64,7 +64,7 @@ The knowledge graph integrates multimodal emotional data representing **7 core e
 ## 🏆 Academic Recognition
 
 **Bachelor's Thesis**
-- **Topic**: "Construction of a Multimodal Knowledge Graph for Fine-Grained Sentiment Analysis"
+- **Topic**: "Construction of a Multimodal Knowledge Graph for Fine-Grained Sentiment Analysis" ([view the project website](https://coresheep.github.io/emotion-net/))
 - **Institution**: Northeastern University (NEU), China
 
 **China Invention Patent (Granted)**
