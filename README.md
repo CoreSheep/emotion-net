@@ -6,7 +6,7 @@ A comprehensive web-based visualization platform for exploring multimodal emotio
 
 ## 🌐 Live Demo
 
-**[Visit the Live Website →](https://yourusername.github.io/emotion-net/)**
+**[Visit the Live Website →](https://CoreSheep.github.io/emotion-net/)**
 
 ## 📺 Demo Video
 
