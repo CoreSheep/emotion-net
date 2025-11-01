@@ -26,7 +26,6 @@
 <!-- 标题 -->
 <div style="height: 5em">
     <h1 id="emotionNetName">Emotion Net Mini</h1>
-    <button id="tooltips-toggle" style="display: none;">💡 Tips ▶</button>
     <div id='darkMode' style="display:inline-block;">
         <span style="position: absolute; right: 30px; margin-bottom: 25px; margin-top: 15px;"><strong>dark mode</strong></span>
     </div>
@@ -129,8 +128,11 @@
         </div>
     </div>
     
+    <!-- Tooltips toggle button -->
+    <button id="tooltips-toggle">💡 Tips</button>
+    
     <!-- 提示 -->
-    <div id="tooltips">
+    <div id="tooltips" class="tooltips-visible">
         <span style="font-size: 13px; color: rgba(22,116,31,0.78); font-weight: bold">Tips:</span><br>
         <small style="font-size: 10px;">1. Click Circle/Text button to switch between display modes</small><br>
         <small style="font-size: 10px;">2. Click On/Off buttons to show or hide node categories</small><br>
@@ -152,6 +154,31 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        // Tooltips visibility management
+        window.tooltipsVisible = true;
+        
+        // Auto-show tooltips when in Circle mode (no text visible)
+        window.updateTooltipsAutoDisplay = function() {
+            var isCircleMode = $('.texts text:visible').length === 0;
+            if (isCircleMode && !window.tooltipsVisible) {
+                window.tooltipsVisible = true;
+                $("#tooltips").removeClass("tooltips-hidden").addClass("tooltips-visible");
+                $("#tooltips-toggle").html("💡 Tips");
+            }
+        };
+        
+        // Tooltips toggle functionality
+        $("#tooltips-toggle").on("click", function() {
+            window.tooltipsVisible = !window.tooltipsVisible;
+            if (window.tooltipsVisible) {
+                $("#tooltips").removeClass("tooltips-hidden").addClass("tooltips-visible");
+                $(this).html("💡 Tips");
+            } else {
+                $("#tooltips").removeClass("tooltips-visible").addClass("tooltips-hidden");
+                $(this).html("💡 Show Tips");
+            }
+        });
+        
         // Make canvas responsive
         var canvasElement = document.getElementById("canvas");
         var canvasWidth, canvasHeight;
@@ -180,44 +207,6 @@
         
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
-        
-        // Tooltips toggle functionality
-        var tooltipsVisible = true;
-        $('#tooltips-toggle').on('click', function() {
-            tooltipsVisible = !tooltipsVisible;
-            if (tooltipsVisible) {
-                $('#tooltips').removeClass('slide-out').show().addClass('slide-in');
-                $(this).text('💡 Tips ▼');
-            } else {
-                $('#tooltips').removeClass('slide-in').addClass('slide-out');
-                setTimeout(function() {
-                    if (!tooltipsVisible) {
-                        $('#tooltips').hide();
-                    }
-                }, 300);
-                $(this).text('💡 Tips ▶');
-            }
-        });
-        
-        // Show toggle button on mobile/tablet
-        function handleTooltipsDisplay() {
-            if (window.innerWidth <= 768) {
-                $('#tooltips-toggle').show();
-                if (!tooltipsVisible) {
-                    $('#tooltips').hide().removeClass('slide-in slide-out');
-                    $('#tooltips-toggle').text('💡 Tips ▶');
-                }
-            } else {
-                $('#tooltips-toggle').hide();
-                $('#tooltips').show().removeClass('slide-in slide-out');
-                tooltipsVisible = true;
-            }
-        }
-        
-        handleTooltipsDisplay();
-        
-        // Handle window resize for tooltips
-        window.addEventListener('resize', handleTooltipsDisplay);
         
         // 选出当前画布对象obj
         var canvas = d3.select("#canvas");
@@ -467,7 +456,13 @@
                     // 把node里面的显示出来
                     $('.texts text').hide();
                     $('.nodes circle').show();
-
+                    
+                    // Auto-show tooltips in circle mode
+                    setTimeout(function() {
+                        if (typeof updateTooltipsAutoDisplay === 'function') {
+                            updateTooltipsAutoDisplay();
+                        }
+                    }, 100);
 
                 }
                 else {
