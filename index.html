@@ -187,7 +187,7 @@
         // console.log(canvas, width, height);
 
         const EMOTION_NAMES = ['Center', 'Emotion', 'Category', 'WordEmotion']; //, 'WordEmotion'
-        const RELATION_NAMES = {"SUBCLASS_OF": "子类", "PART_OF": "属于", "RELATED_TO": "相关"};
+        const RELATION_NAMES = {"SUBCLASS_OF": "Subclass", "PART_OF": "Part of", "RELATED_TO": "Related"};
         const CIRCLE_SIZE = [25, 16, 12, 10];
         const LABEL_TEXT_FONT_SIZE = [20, 16, 10, 8];
         const EMOTION_CATEGORIES = ["快乐", "安心", "尊敬", "赞扬", "相信", "喜爱", "祝愿", "愤怒", "悲伤", "失望", "疚",
@@ -958,17 +958,17 @@
                         if (EMOTIONS.indexOf(focusedNode) != -1 || focusedNode == "表情") {
                             // $("#labelProperty").append("image").attr()
                             $("#subclass")
-                                .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "子类" + "</span><br>")
+                                .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "Subclass" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + labelInfo.SUBCLASS_OF + "</span>");
 
                             $("#description")
-                                .append("<div><span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "描述" + "</span><br></div>")
+                                .append("<div><span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "Description" + "</span><br></div>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + labelInfo.DESCRIPTION + "</span>");
 
                             if (focusedNode == "表情") {
                                 var e;
                                 $("#description")
-                                    .append("<div><span class='label label-default' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>");
+                                    .append("<div><span class='label label-default' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "Human Face Expressions" + "</span><br></div>");
 
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
@@ -993,7 +993,7 @@
                                     $("#faceImageContainer3").append(e);
                                 }
 
-                                $("#tag3").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "社交媒体表情" + "</span><br></div>");
+                                $("#tag3").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "Social Media Emojis" + "</span><br></div>");
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
                                     e += "./assets/images/social-media-emotions/" + IMAGE_CATEGORIES[i] + "1.jpg" + "'";
@@ -1001,7 +1001,7 @@
                                     $("#emojiImageContainer").append(e);
 
                                 }
-                                $("#tag4").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "动物表情" + "</span><br></div>");
+                                $("#tag4").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "Animal Expressions" + "</span><br></div>");
                                 for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
                                     for (let j = 1; j <= 3; j++) {
                                         e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
@@ -1037,7 +1037,7 @@
                                 var animalEmotionType = IMAGE_CATEGORIES_ANIMALS[EMOTIONS.indexOf(focusedNode)];
 
                                 $("#description")
-                                    .append("<div><span class='label' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>");
+                                    .append("<div><span class='label' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "Human Face Expressions" + "</span><br></div>");
 
                                 for (let i = 0; i < imageNums; i++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
@@ -1047,7 +1047,7 @@
                                 }
 
                                 var emojiNums = 7;
-                                $("#tag1").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "社交媒体表情" + "</span><br></div>")
+                                $("#tag1").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "Social Media Emojis" + "</span><br></div>")
                                 for (let i = 0; i < emojiNums; i++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
                                     e += "./assets/images/social-media-emotions/" + emotionType + (i+1) + ".jpg" + "'";
@@ -1056,7 +1056,7 @@
                                 }
 
                                 var animalEmotionsNum = 3;
-                                $("#tag2").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "动物表情" + "</span><br></div>")
+                                $("#tag2").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "Animal Expressions" + "</span><br></div>")
                                 for (let j = 0; j < animalEmotionsNum; j++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
                                     e += "./assets/images/animal-cat-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
@@ -1081,7 +1081,7 @@
                             // 展示情感子类(emotions subclass)
                         } else if (EMOTION_CATEGORIES.indexOf(focusedNode) != -1) {
                             $("#subclass")
-                                .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "子类" + "</span><br>")
+                                .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "Subclass" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + labelInfo.SUBCLASS_OF + "</span>");
                         } else {
                             // 展示情感词属性列表（word emotion feature)
@@ -1092,20 +1092,20 @@
                             } else{
                                 relatedEmotion = propertyValue[1];
                             }
-                            const wordPolarity = ["中性", "褒义", "贬义", "兼有"];
+                            const wordPolarity = ["Neutral", "Positive", "Negative", "Both"];
 
                             $("#description")
-                                .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "属于" + "</span><br>")
+                                .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "Belongs to" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + propertyValue[0] + "</span><br>")
-                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color: cornflowerblue'>" + "相关" + "</span><br>")
+                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color: cornflowerblue'>" + "Related" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + relatedEmotion + "</span><br>")
-                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color: #3e8e41'>" + "词性" + "</span><br>")
+                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color: #3e8e41'>" + "Part of Speech" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + propertyValue[2] + "</span><br>")
-                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color: #a7a82e'>" + "强度" + "</span><br>")
+                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color: #a7a82e'>" + "Intensity" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + propertyValue[3] + "</span><br>")
-                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color:#944b4b;'>" + "词义数" + "</span><br>")
+                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color:#944b4b;'>" + "Meanings" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + propertyValue[4] + "</span><br>")
-                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background:#665d91;'>" + "极性" + "</span><br>")
+                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background:#665d91;'>" + "Polarity" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + wordPolarity[propertyValue[5]] + "</span><br>");
 
                         }
@@ -1279,19 +1279,19 @@
                             // $("#labelProperty").append("image").attr()
                             // 展示子类情绪信息
                             $("#subclass")
-                                .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "子类" + "</span><br>")
+                                .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "Subclass" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + labelInfo.SUBCLASS_OF + "</span>");
 
                             // 为每个情感大类添加描述信息
                             $("#description")
-                                .append("<div><span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "描述" + "</span><br></div>")
+                                .append("<div><span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "Description" + "</span><br></div>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + labelInfo.DESCRIPTION + "</span>");
 
                             if (focusedNode == "表情") {
                                 var e;
 
                                 $("#description")
-                                    .append("<div><span class='label label-default' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>")
+                                    .append("<div><span class='label label-default' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "Human Face Expressions" + "</span><br></div>")
 
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
@@ -1316,7 +1316,7 @@
                                     $("#faceImageContainer3").append(e);
                                 }
 
-                                $("#tag3").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "社交媒体表情" + "</span><br></div>")
+                                $("#tag3").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "Social Media Emojis" + "</span><br></div>")
                                 for (let i = 0; i < IMAGE_CATEGORIES.length; i++) {
                                     e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
                                     e += "./assets/images/social-media-emotions/" + IMAGE_CATEGORIES[i] + "1.jpg" + "'";
@@ -1324,7 +1324,7 @@
                                     $("#emojiImageContainer").append(e);
                                 }
 
-                                $("#tag4").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "动物表情" + "</span><br></div>");
+                                $("#tag4").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "Animal Expressions" + "</span><br></div>");
                                 for (let i = 0; i < IMAGE_CATEGORIES_ANIMALS.length; i++) {
                                     for (let j = 1; j <= 3; j++) {
                                         e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
@@ -1361,7 +1361,7 @@
                                 var animalEmotionType = IMAGE_CATEGORIES_ANIMALS[EMOTIONS.indexOf(focusedNode)];
 
                                 $("#description")
-                                    .append("<div><span class='label' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "人脸表情" + "</span><br></div>");
+                                    .append("<div><span class='label' style='margin-left: -2px; background-color:#665d91;color: lightgrey;'>" + "Human Face Expressions" + "</span><br></div>");
 
                                 for (let i = 0; i < imageNums; i++) {
                                     e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
@@ -1371,7 +1371,7 @@
                                 }
 
                                 const emojiNums = 7;
-                                $("#tag1").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "社交媒体表情" + "</span><br></div>")
+                                $("#tag1").append("<br><div><span class='label' style='margin-left: -2px; background-color:#944b4b;color: lightgrey;'>" + "Social Media Emojis" + "</span><br></div>")
                                 for (let i = 0; i < emojiNums; i++) {
                                     e = "<li style='display: inline-block; width:57px; text-align:left; list-style:none;'><img src='";
                                     e += "./assets/images/social-media-emotions/" + emotionType + (i+1) + ".jpg" + "'";
@@ -1380,7 +1380,7 @@
                                 }
 
                                 var animalEmotionsNum = 3;
-                                $("#tag2").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "动物表情" + "</span><br></div>")
+                                $("#tag2").append("<br><div><span class='label' style='margin-left: -2px; background-color:#227636;color: lightgrey;'>" + "Animal Expressions" + "</span><br></div>")
                                 for (let j = 0; j < animalEmotionsNum; j++) {
                                     e = "<li style='display: inline-block; width:60px; padding-top: 4px; padding-bottom: 2px; padding-left: 2px; text-align:left; list-style:none;'><img src='";
                                     e += "./assets/images/animal-cat-emotions/" + animalEmotionType + (j+1) + ".jpg" + "'";
@@ -1404,7 +1404,7 @@
                             // 展示情感小类
                         } else if (EMOTION_CATEGORIES.indexOf(focusedNode) != -1) {
                             $("#subclass")
-                                .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "子类" + "</span><br>")
+                                .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "Subclass" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + labelInfo.SUBCLASS_OF + "</span>");
                         } else {
                             var propertyValue = Object.values(labelInfo);
@@ -1414,20 +1414,20 @@
                             } else{
                                 relatedEmotion = propertyValue[1];
                             }
-                            const wordPolarity = ["中性", "褒义", "贬义", "兼有"];
+                            const wordPolarity = ["Neutral", "Positive", "Negative", "Both"];
 
                             $("#description")
-                                .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "属于" + "</span><br>")
+                                .append("<span class='label label-default' style='margin-left: -2px; color: lightgrey;'>" + "Belongs to" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + propertyValue[0] + "</span><br>")
-                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color: cornflowerblue'>" + "相关" + "</span><br>")
+                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color: cornflowerblue'>" + "Related" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + relatedEmotion + "</span><br>")
-                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color: #3e8e41'>" + "词性" + "</span><br>")
+                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color: #3e8e41'>" + "Part of Speech" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + propertyValue[2] + "</span><br>")
-                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color: #a7a82e'>" + "强度" + "</span><br>")
+                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color: #a7a82e'>" + "Intensity" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + propertyValue[3] + "</span><br>")
-                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color:#944b4b;'>" + "词义数" + "</span><br>")
+                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background-color:#944b4b;'>" + "Meanings" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + propertyValue[4] + "</span><br>")
-                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background:#665d91;'>" + "极性" + "</span><br>")
+                                .append("<span class='label ' style='margin-left: -2px; color: lightgrey;background:#665d91;'>" + "Polarity" + "</span><br>")
                                 .append("<span style='color: #555555; font-size:12px; font-family:'Microsoft Yahei''>" + wordPolarity[propertyValue[5]] + "</span><br>");
 
                         }
