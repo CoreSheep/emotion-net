@@ -432,18 +432,22 @@ p{
 
 /* GitHub icon styles */
 .github-icon {
-    color: #333 !important;
-    transition: color 0.3s ease;
+    color: rgba(236, 235, 234, 0.85) !important;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9;
 }
 
 .github-icon:hover {
-    color: #000 !important;
+    color: rgba(236, 235, 234, 1) !important;
+    opacity: 1;
 }
 
 body.darkMode .github-icon {
-    color: rgba(128, 128, 128, 0.96) !important;
+    color: rgba(69, 75, 111, 0.85) !important;
+    opacity: 0.9;
 }
 
 body.darkMode .github-icon:hover {
-    color: rgba(200, 200, 200, 0.96) !important;
+    color: rgba(69, 75, 111, 1) !important;
+    opacity: 1;
 }
