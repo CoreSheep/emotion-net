@@ -128,20 +128,25 @@
 
 @media only screen and (max-width: 480px) {
     #canvas {
-        border-radius: 10px;
-        margin-bottom: -80px !important;
-        top: 10px !important;
+        border-radius: 8px;
+        margin-bottom: 0 !important;
+        margin-left: 5px !important;
+        top: 5px !important;
+    }
+    
+    .nodes circle {
+        stroke-width: 1px;
     }
     
     .nodes circle:hover {
-        stroke-width: 8px;
+        stroke-width: 6px;
     }
     
     .nodes circle.darkMode:hover {
-        stroke-width: 8px;
+        stroke-width: 6px;
     }
     
     .lineTexts text {
-        font-size: 8px;
+        font-size: 7px;
     }
 }
