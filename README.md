@@ -6,18 +6,18 @@ A comprehensive web-based visualization platform for exploring multimodal emotio
 
 ## 🌐 Live Demo
 
-**[Visit the Live Website →](https://CoreSheep.github.io/emotion-net/)**
+**[Visit the Live Website →](https://yourusername.github.io/emotion-net/)**
 
 ## 📺 Demo Video
 
-<div>
+<div align="center">
     <a href="https://www.loom.com/share/d5dcc77efbca43168d5e6a92c41a2ce8">
       <p>Building an Emotional Knowledge Graph for Enhanced Sentiment Analysis 🌟 - Watch Video</p>
     </a>
     <a href="https://www.loom.com/share/d5dcc77efbca43168d5e6a92c41a2ce8">
       <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/d5dcc77efbca43168d5e6a92c41a2ce8-978372225188b8c1-full-play.gif">
     </a>
-  </div>
+</div>
 
 ## 📋 Project Overview
 
