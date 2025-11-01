@@ -429,3 +429,21 @@ p{
     top: 10em;
     text-align: center;
 }
+
+/* GitHub icon styles */
+.github-icon {
+    color: #333 !important;
+    transition: color 0.3s ease;
+}
+
+.github-icon:hover {
+    color: #000 !important;
+}
+
+body.darkMode .github-icon {
+    color: rgba(128, 128, 128, 0.96) !important;
+}
+
+body.darkMode .github-icon:hover {
+    color: rgba(200, 200, 200, 0.96) !important;
+}
