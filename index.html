@@ -59,14 +59,12 @@
 
             <!-- Legend and Node Categories Row -->
             <div class="legend-categories-wrapper" style="display: flex; gap: 8px; margin-bottom: 10px; align-items: flex-start; padding-top: 20px;">
-                <!-- Legend Section with Tips -->
+                <!-- Legend Section -->
                 <div style="flex: 1;">
                     <div id="label" class="control-group" style="margin-bottom: 8px; border-bottom: none;">
                         <label class="control-label">Legend</label>
                         <div id="label-content"></div>
                     </div>
-                    <!-- Tips Toggle Button -->
-                    <button id="tooltips-toggle" class="tips-button" style="width: 100%; padding: 6px 8px; font-size: 11px; margin: 0;">💡 Tips</button>
                 </div>
 
                 <!-- Switches Container (Node Categories) -->
@@ -105,6 +103,17 @@
                     </div>
                 </div>
                 </div>
+            </div>
+
+            <!-- Tips Section (Full Width) -->
+            <div id="tooltips" class="tooltips-visible tooltips-section" style="width: 100%; margin-top: 10px;">
+                <span style="font-size: 12px; color: rgba(22,116,31,0.78); font-weight: bold">Tips:</span><br>
+                <span style="font-size: 11px;">1. Click Circle/Text button to switch display modes</span><br>
+                <span style="font-size: 11px;">2. Click On/Off to show or hide node categories</span><br>
+                <span style="font-size: 11px;">3. Drag nodes to auto-adjust layout</span><br>
+                <span style="font-size: 11px;">4. Hover over nodes to see emotion</span><br>
+                <span style="font-size: 11px;">5. Scroll to zoom in/out</span><br>
+                <span style="font-size: 11px;">6. Drag empty areas to move graph</span><br>
             </div>
         </div>
 
@@ -166,23 +175,6 @@
         </div>
     </div>
 
-    <!-- Row 2: Tips Section (visible on mobile) -->
-    <div class="row">
-        <div class="col-xs-12">
-            <!-- Tips Section -->
-            <div id="tooltips" class="tooltips-visible tooltips-section">
-                <span style="font-size: 13px; color: rgba(22,116,31,0.78); font-weight: bold">Tips:</span><br>
-                <small style="font-size: 10px;">1. Click Circle/Text button to switch between display modes</small><br>
-                <small style="font-size: 10px;">2. Click On/Off buttons to show or hide node categories</small><br>
-                <small style="font-size: 10px;">3. Drag any node and watch the graph auto-adjust its layout!</small><br>
-                <small style="font-size: 10px;">4. Hover over nodes to see which emotion they belong to</small><br>
-                <small style="font-size: 10px;">5. Scroll within the graph area to zoom in or zoom out</small><br>
-                <small style="font-size: 10px;">6. Click and drag empty areas to move the entire graph</small><br>
-                <small style="font-size: 10px;">7. Hover over yellow nodes to view expressions on the right</small><br>
-                <small style="font-size: 10px;">8. The expression images on the right side are scrollable</small><br>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div id="project-footer">
