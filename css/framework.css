@@ -10,6 +10,10 @@ body.darkMode {
     background-color: #252725;
 }
 
+body.darkMode .github-icon-svg {
+    fill: #fff !important;
+}
+
 /* Main Container and Grid Layout */
 .main-container {
     padding: 20px 15px;
@@ -274,11 +278,16 @@ body.darkMode .tips-button:hover {
 
 /* Tooltips Section */
 .tooltips-section {
-    padding: 15px;
+    padding: 12px;
     background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    margin-top: 20px;
+    border-radius: 6px;
+    margin-top: 0;
     text-align: left;
+    font-size: 11px;
+    line-height: 1.6;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 body.darkMode .tooltips-section {
