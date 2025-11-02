@@ -1,43 +1,38 @@
-/*定义图片框样式，隐藏滚轴*/
+/*Define image frame styles with grid layout for 4 images per row*/
 .showImage{
     position: relative;
     top: 10px;
-    width: 200px;
-    height: 59px;
+    width: 100%;
     padding-bottom: 12px;
-    /*padding-top: 6px;*/
-    overflow-x: hidden;
-    overflow-y: hidden;
-    white-space: nowrap;
+    overflow: visible;
+    white-space: normal;
 }
 
-/*定义横向滑框*/
+/*Define grid layout for image content*/
 .imageContent {
-    position:relative;
-    overflow-x:auto; /*再现隐藏的横向的后面几张图片*/
-    overflow-y: hidden;
-    width: 195px;
+    position: relative;
+    overflow: visible;
+    width: 100%;
     margin: 0;
-    height:75px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
 }
 
-.imageContent ul { /*422*55*/
-    position:relative;
-    padding-left: 0; /*这个一定要设置为0，不然会有一个多余的左边padding-left 40px,图片不能对齐*/
-    display: inline-block;
-    /*flex-wrap:nowrap;*/
-    overflow-x: hidden; /*横向超出部分直接截取掉*/
-    overflow-y: hidden;
-    margin: 0; /*消除默认的10px margin-bottom 避免上元素被撑起来，从而出现讨厌的滚轴*/
+.imageContent ul { /*4-column grid layout*/
+    position: relative;
+    padding-left: 0;
+    display: contents; /*Allow grid to layout direct children*/
+    overflow: visible;
+    margin: 0;
 }
 
-
-.imageContent ul li { /*57 * 55*/
-    display:inline-block;
-    width:57px;
-    text-align:left;
-    list-style:none;
-    /*border-radius: 20px;*/
+.imageContent ul li { /*Grid item styling*/
+    display: block;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    padding: 2px;
 }
 
 /*.imageContent ul li :hover{ !*57 * 55*!*/
@@ -58,6 +53,23 @@
     -webkit-animation-iteration-count: infinite;
 }
 
+/* Responsive styles for tablets */
+@media only screen and (max-width: 992px) {
+    .imageContent {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .imageContent ul li {
+        width: 100%;
+    }
+
+    .imageContent ul li img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+
 /* Responsive styles for mobile */
 @media only screen and (max-width: 768px) {
     .showImage {
@@ -65,16 +77,17 @@
         height: auto;
         padding: 6px;
     }
-    
+
     .imageContent {
         width: 100%;
-        height: 65px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
     }
-    
+
     .imageContent ul li {
-        width: 48px;
+        width: 100%;
     }
-    
+
     .imageContent ul li img {
         width: 45px !important;
         height: 45px !important;
@@ -87,21 +100,22 @@
         height: auto;
         padding: 3px;
     }
-    
+
     .imageContent {
         width: 100%;
-        height: 50px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3px;
     }
-    
+
     .imageContent ul li {
-        width: 38px;
+        width: 100%;
     }
-    
+
     .imageContent ul li img {
         width: 35px !important;
         height: 35px !important;
     }
-    
+
     .imageItem {
         width: 35px !important;
         height: 35px !important;
