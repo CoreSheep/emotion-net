@@ -151,6 +151,10 @@ body.darkMode .switcher-label {
 .switcher-group .button-group {
     flex: 1;
     gap: 0;
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Canvas Column */
@@ -232,6 +236,21 @@ body.darkMode .property-panel {
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+/* Increase spacing between Subclass/Description labels and their content */
+#subclass .label,
+#description .label {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+/* Add spacing to content that follows Subclass/Description labels */
+#subclass > span:not(.label),
+#description > span:not(.label),
+#description div ~ span {
+    display: block;
+    margin-top: 8px;
 }
 
 body.darkMode #subclass,
@@ -323,13 +342,18 @@ body.darkMode .tooltips-section {
 }
 
 #label.darkMode {
-    color: rgba(128, 128, 128, 0.96);
+    color: rgba(200, 200, 200, 0.96);
 }
 
 /* Legend Item Circles */
 #label-content > div,
 #label>div {
-    margin-bottom: 12px;
+    margin-bottom: 18px;
+}
+
+/* Center label - add top margin */
+#label-content > div:first-child {
+    margin-top: 3px;
 }
 
 /* Legend Color Indicators */
@@ -464,22 +488,48 @@ body.darkMode .tooltips-section {
     /* removed absolute positioning - now using flex layout via .switcher-group */
 }
 
-/* Switcher button styles */
+/* Switcher button styles - Light Mode */
 #switcher1 .button-group span,
 #switcher2 .button-group span,
 #switcher3 .button-group span,
 #switcher4 .button-group span {
     display: inline-block;
-    border: 1px solid #fff;
-    color: #fff;
-    padding: 3px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    transition: color, background-color .3s;
-    -o-transition: color, background-color .3s;
-    -ms-transition: color, background-color .3s;
-    -moz-transition: color, background-color .3s;
-    -webkit-transition: color, background-color .3s;
+    border: none;
+    color: #666;
+    background-color: rgba(200, 200, 210, 0.5);
+    padding: 5px 12px;
+    font-size: 11px;
+    transition: all 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* Remove overlap - ensure proper spacing */
+#switcher1 .button-group span:first-child,
+#switcher2 .button-group span:first-child,
+#switcher3 .button-group span:first-child,
+#switcher4 .button-group span:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0;
+}
+
+#switcher1 .button-group span:last-child,
+#switcher2 .button-group span:last-child,
+#switcher3 .button-group span:last-child,
+#switcher4 .button-group span:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0;
+    position: relative;
+    left: 0;
 }
 
 /* Switcher button dark mode */
@@ -487,35 +537,43 @@ body.darkMode .tooltips-section {
 #switcher2 .button-group span.darkMode,
 #switcher3 .button-group span.darkMode,
 #switcher4 .button-group span.darkMode {
-    border: 1px solid #717171;
-    color: rgba(128, 128, 128, 0.96);
+    border: none;
+    color: rgba(180, 180, 180, 0.85);
+    background-color: rgba(50, 50, 50, 0.7);
 }
 
-/* Active and hover states for switcher buttons */
+/* Active and hover states for switcher buttons - Light Mode */
 #switcher1 .button-group span.active,
 #switcher2 .button-group span.active,
 #switcher3 .button-group span.active,
 #switcher4 .button-group span.active {
-    background-color: #fff;
-    color: #333;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #4a5568;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    font-weight: 600;
+    z-index: 2;
 }
 
 #switcher1 .button-group span.darkMode.active,
 #switcher2 .button-group span.darkMode.active,
 #switcher3 .button-group span.darkMode.active,
 #switcher4 .button-group span.darkMode.active {
-    background-color: rgba(69, 75, 111, 0.96);
-    color: #808080;
+    background-color: rgba(90, 95, 100, 0.95);
+    color: rgba(240, 240, 240, 0.98);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-weight: 600;
+    z-index: 2;
 }
 
-/* Hover states for switcher buttons */
+/* Hover states for switcher buttons - Light Mode */
 #switcher1 .button-group span:hover,
 #switcher2 .button-group span:hover,
 #switcher3 .button-group span:hover,
 #switcher4 .button-group span:hover {
-    background-color: #d9e1e8;
-    color: #333;
+    background-color: rgba(230, 230, 240, 0.7);
+    color: #555;
     cursor: pointer;
 }
 
@@ -524,8 +582,8 @@ body.darkMode .tooltips-section {
 #switcher2 .button-group span.darkMode:hover,
 #switcher3 .button-group span.darkMode:hover,
 #switcher4 .button-group span.darkMode:hover {
-    background-color: #484a46;
-    color: #333;
+    background-color: rgba(65, 70, 75, 0.85);
+    color: rgba(200, 200, 200, 0.95);
 }
 
 /* Paragraph transition effects */
@@ -537,29 +595,36 @@ p {
     -webkit-transition: top .3s;
 }
 
-/* Active state for switcher4 (legacy style) */
+/* Active state for switcher4 (legacy style) - Light Mode */
 #switcher4 span.active {
-    background-color: #fff;
-    color: #333;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #4a5568;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    font-weight: 600;
+    z-index: 2;
 }
 
 #switcher4 span.darkMode.active {
-    background-color: rgba(69, 75, 111, 0.96);
-    color: #808080;
+    background-color: rgba(90, 95, 100, 0.95);
+    color: rgba(240, 240, 240, 0.98);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-weight: 600;
+    z-index: 2;
 }
 
-/* Active and hover button states */
+/* Active and hover button states - Light Mode */
 #switcher4 span:hover{
-    background-color: #d9e1e8;
-    color: #333;
+    background-color: rgba(230, 230, 240, 0.7);
+    color: #555;
     cursor: pointer;
 }
 
-/* Hover button state */
+/* Hover button state - Dark Mode */
 #switcher4 span.darkMode:hover {
-    background-color: #484a46;
-    color: #333;
+    background-color: rgba(65, 70, 75, 0.85);
+    color: rgba(200, 200, 200, 0.95);
 }
 
 /* Property info panel styles */
