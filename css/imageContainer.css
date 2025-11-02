@@ -1,9 +1,10 @@
 /*Define image frame styles with grid layout for 4 images per row*/
 .showImage{
     position: relative;
-    top: 10px;
+    top: 0;
     width: 100%;
-    padding-bottom: 12px;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
     overflow: visible;
     white-space: normal;
 }

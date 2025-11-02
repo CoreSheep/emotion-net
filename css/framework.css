@@ -196,7 +196,7 @@ body.darkMode .canvas-wrapper {
 }
 
 .property-panel {
-    padding: 12px;
+    padding: 16px;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.12);
     max-height: 700px;
@@ -210,14 +210,15 @@ body.darkMode .property-panel {
 
 .property-panel h4 {
     margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 14px;
+    margin-bottom: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 
 .property-panel p {
-    margin: 8px 0;
-    font-size: 12px;
+    margin: 6px 0;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 /* Property Panel Section Labels */
@@ -233,16 +234,22 @@ body.darkMode .property-panel {
     font-size: 13px;
     font-weight: bold;
     color: #555;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 /* Increase spacing between Subclass/Description labels and their content */
 #subclass .label,
-#description .label {
+#description .label,
+#tag1 .label,
+#tag2 .label,
+#tag3 .label,
+#tag4 .label,
+#tag5 .label,
+#tag6 .label {
     display: inline-block;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 /* Add spacing to content that follows Subclass/Description labels */
@@ -250,7 +257,16 @@ body.darkMode .property-panel {
 #description > span:not(.label),
 #description div ~ span {
     display: block;
-    margin-top: 8px;
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+body.darkMode #subclass > span:not(.label),
+body.darkMode #description > span:not(.label),
+body.darkMode #description div ~ span {
+    color: rgba(200, 200, 200, 0.9);
 }
 
 body.darkMode #subclass,
@@ -635,9 +651,72 @@ p {
 
 #labelProperty p {
     color: #fff;
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Override inline font-size styles in property panel for better readability */
+#subclass span,
+#description span,
+#tag1 span,
+#tag2 span,
+#tag3 span,
+#tag4 span,
+#tag5 span,
+#tag6 span {
+    font-size: 14px !important;
+    line-height: 1.6;
+}
+
+/* Improve spacing for tag sections */
+#tag1,
+#tag2,
+#tag3,
+#tag4,
+#tag5,
+#tag6 {
+    margin-top: 6px;
+    margin-bottom: 8px;
+}
+
+/* Spacing for labels within tag sections */
+#tag1 .label,
+#tag2 .label,
+#tag3 .label,
+#tag4 .label,
+#tag5 .label,
+#tag6 .label {
+    margin-bottom: 6px;
+    margin-top: 4px;
+}
+
+/* Improve spacing between sections - showImage after tags */
+#tag1 + .showImage,
+#tag2 + .showImage,
+#tag3 + .showImage,
+#tag4 + .showImage,
+#tag5 + .showImage,
+#tag6 + .showImage {
+    margin-top: 4px;
+}
+
+/* Reduce excessive spacing after description section */
+#description + .showImage {
+    margin-top: 4px;
+}
+
+/* Increase top margin for Human Face Expressions label */
+#description .label[style*="background-color:#665d91"],
+#description div .label[style*="#665d91"] {
+    margin-top: 8px;
+    display: inline-block;
+}
+
+/* Alternative: target labels with the specific background color */
+#description div .label {
+    margin-top: 8px;
 }
 
 /* Tooltips Section */
