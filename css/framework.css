@@ -123,27 +123,25 @@ body.darkMode .button-group span.active {
 }
 
 .switcher-group {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     padding-bottom: 0;
     border-bottom: none;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .switcher-label {
-    font-size: 11px;
-    color: #666;
-    min-width: 50px;
-    font-weight: 500;
+    display: none;
 }
 
 body.darkMode .switcher-label {
-    color: rgba(128, 128, 128, 0.8);
+    display: none;
 }
 
 .switcher-group .button-group {
     flex: 1;
+    gap: 0;
 }
 
 /* Canvas Column */
