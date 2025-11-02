@@ -407,6 +407,15 @@ body.darkMode .tooltips-section {
     cursor: pointer;
 }
 
+/* Legend and Categories Wrapper */
+.legend-categories-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
 /* Switcher styles - removed absolute positioning */
 #switcher1, #switcher2, #switcher3, #switcher4 {
     /* removed absolute positioning - now using flex layout via .switcher-group */
