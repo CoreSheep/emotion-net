@@ -129,6 +129,11 @@ body.darkMode .button-group span.active {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-top: 3px;
+}
+
+.switcher-group:first-of-type {
+    margin-top: 5px;
 }
 
 .switcher-label {
