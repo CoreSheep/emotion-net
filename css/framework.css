@@ -677,8 +677,8 @@ p {
 #tag4,
 #tag5,
 #tag6 {
-    margin-top: 6px;
-    margin-bottom: 8px;
+    margin-top: 2px;
+    margin-bottom: 4px;
 }
 
 /* Spacing for labels within tag sections */
@@ -699,7 +699,7 @@ p {
 #tag4 + .showImage,
 #tag5 + .showImage,
 #tag6 + .showImage {
-    margin-top: 4px;
+    margin-top: 2px;
 }
 
 /* Reduce excessive spacing after description section */

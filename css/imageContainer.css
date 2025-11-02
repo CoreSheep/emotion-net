@@ -3,34 +3,37 @@
     position: relative;
     top: 0;
     width: 100%;
-    padding-bottom: 8px;
-    margin-bottom: 12px;
-    overflow: visible;
-    white-space: normal;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+    overflow-x: auto;
+    overflow-y: visible;
+    white-space: nowrap;
 }
 
-/*Define grid layout for image content*/
+/*Define grid layout for image content - horizontal layout*/
 .imageContent {
     position: relative;
     overflow: visible;
     width: 100%;
     margin: 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
 }
 
-.imageContent ul { /*4-column grid layout*/
+.imageContent ul { /*Horizontal layout*/
     position: relative;
     padding-left: 0;
-    display: contents; /*Allow grid to layout direct children*/
+    display: flex;
+    flex-wrap: nowrap;
     overflow: visible;
     margin: 0;
+    gap: 6px;
 }
 
-.imageContent ul li { /*Grid item styling*/
+.imageContent ul li { /*Horizontal item styling*/
     display: block;
-    width: 100%;
+    flex-shrink: 0;
     text-align: center;
     list-style: none;
     padding: 2px;
@@ -57,12 +60,13 @@
 /* Responsive styles for tablets */
 @media only screen and (max-width: 992px) {
     .imageContent {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 4px;
     }
 
     .imageContent ul li {
-        width: 100%;
+        flex-shrink: 0;
     }
 
     .imageContent ul li img {
@@ -77,16 +81,18 @@
         width: 100%;
         height: auto;
         padding: 6px;
+        overflow-x: auto;
     }
 
     .imageContent {
         width: 100%;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-wrap: nowrap;
         gap: 4px;
     }
 
     .imageContent ul li {
-        width: 100%;
+        flex-shrink: 0;
     }
 
     .imageContent ul li img {
@@ -100,16 +106,18 @@
         width: 100%;
         height: auto;
         padding: 3px;
+        overflow-x: auto;
     }
 
     .imageContent {
         width: 100%;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-wrap: nowrap;
         gap: 3px;
     }
 
     .imageContent ul li {
-        width: 100%;
+        flex-shrink: 0;
     }
 
     .imageContent ul li img {
