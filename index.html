@@ -21,8 +21,22 @@
     <!--link outer js lib-->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+
+    <!-- Initialize dark mode immediately to prevent flash of light mode -->
+    <style>
+        body.darkMode {
+            background-color: #252725 !important;
+        }
+    </style>
+    <script>
+        (function() {
+            // Apply dark mode classes immediately on page load
+            document.documentElement.classList.add('darkMode');
+            document.body.classList.add('darkMode');
+        })();
+    </script>
 </head>
-<body>
+<body class="darkMode">
 <!-- Title Section with Bootstrap Grid -->
 <div class="title-header-container">
     <div class="row title-header-row">
