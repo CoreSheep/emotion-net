@@ -373,7 +373,7 @@ body.darkMode .tooltips-section {
 .icons-container {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 15px;
     padding-right: 5px;
 }
 
@@ -1013,7 +1013,7 @@ body.darkMode #tooltips-toggle:hover {
     }
 
     #emotionNetName {
-        font-size: 20px;
+        font-size: 18px;
         margin: 0;
         padding: 0;
     }
