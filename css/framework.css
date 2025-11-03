@@ -363,9 +363,14 @@ body.darkMode .tooltips-section {
     flex: 1;
 }
 
-.github-icon-col,
+.github-icon-col {
+    justify-content: flex-end;
+    padding-right: 5px;
+}
+
 .darkmode-col {
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 5px;
 }
 
 /* Desktop layout - ensure proper width and alignment */
@@ -1006,7 +1011,7 @@ body.darkMode #tooltips-toggle:hover {
     }
 
     #emotionNetName {
-        font-size: 18px;
+        font-size: 20px;
         margin: 0;
         padding: 0;
     }
@@ -1014,7 +1019,8 @@ body.darkMode #tooltips-toggle:hover {
     .github-icon-col {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
+        padding-right: 3px;
     }
 
     .github-icon {
@@ -1031,8 +1037,8 @@ body.darkMode #tooltips-toggle:hover {
     .darkmode-col {
         display: flex;
         align-items: center;
-        justify-content: center;
-        padding: 0 2px;
+        justify-content: flex-start;
+        padding: 0 0 0 3px;
     }
 
     #darkMode {
