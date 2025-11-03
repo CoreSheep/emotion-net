@@ -363,14 +363,18 @@ body.darkMode .tooltips-section {
     flex: 1;
 }
 
-.github-icon-col {
+.icons-col {
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
     justify-content: flex-end;
-    padding-right: 5px;
 }
 
-.darkmode-col {
-    justify-content: flex-start;
-    padding-left: 5px;
+.icons-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-right: 5px;
 }
 
 /* Desktop layout - ensure proper width and alignment */
@@ -1004,9 +1008,7 @@ body.darkMode #tooltips-toggle:hover {
     }
 
     .title-col,
-    .spacer-col,
-    .github-icon-col,
-    .darkmode-col {
+    .spacer-col {
         padding: 0 3px;
     }
 
@@ -1016,11 +1018,18 @@ body.darkMode #tooltips-toggle:hover {
         padding: 0;
     }
 
-    .github-icon-col {
+    .icons-col {
+        padding: 0 3px;
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding-right: 3px;
+    }
+
+    .icons-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding-right: 5px;
     }
 
     .github-icon {
@@ -1030,15 +1039,8 @@ body.darkMode #tooltips-toggle:hover {
     }
 
     .github-icon svg {
-        height: 18px !important;
-        width: 18px !important;
-    }
-
-    .darkmode-col {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 0 0 0 3px;
+        height: 20px !important;
+        width: 20px !important;
     }
 
     #darkMode {
