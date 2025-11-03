@@ -329,18 +329,75 @@ body.darkMode .tooltips-section {
     background-color: rgba(69, 75, 111, 0.1);
 }
 
+/* Title Header Container */
+.title-header-container {
+    padding: 0 15px;
+    background-color: transparent;
+    margin-bottom: 15px;
+}
+
+.title-header-row {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 0;
+    height: auto;
+}
+
+.title-col,
+.spacer-col,
+.github-icon-col,
+.darkmode-col {
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-col {
+    justify-content: flex-start;
+    padding-left: 0;
+}
+
+.spacer-col {
+    flex: 1;
+}
+
+.github-icon-col,
+.darkmode-col {
+    justify-content: center;
+}
+
+/* Desktop layout - ensure proper width and alignment */
+@media only screen and (min-width: 993px) {
+    .title-header-row {
+        min-height: 60px;
+    }
+
+    #emotionNetName {
+        font-size: 38px;
+    }
+
+    .github-icon svg {
+        height: 20px !important;
+        width: 20px !important;
+    }
+
+    #darkMode span {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+}
+
 #emotionNetName {
-    position: absolute;
-    left: 10px;
     color: rgba(60, 80, 100, 1);
     font-size: 38px;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
     font-weight: 700;
     letter-spacing: 0.5px;
-    margin-bottom: 10px;
-    margin-top: 15px !important;
+    margin: 0;
+    padding: 0;
     text-align: left;
-    margin-left: 15px;
 }
 #emotionNetName.darkMode {
     color: rgba(200, 220, 240, 1);
@@ -441,54 +498,79 @@ body.darkMode .tooltips-section {
     color: rgba(200, 200, 200, 1);
 }
 
-#darkMode span {
-    display: inline-block;
+#darkMode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.dark-mode-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
     border: 1px solid rgba(150, 150, 150, 0.4);
-    color: #666;
-    padding: 5px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 500;
-    text-align: center;
     background-color: rgba(220, 220, 220, 0.5);
     transition: all .3s ease;
     -o-transition: all .3s ease;
     -ms-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -webkit-transition: all .3s ease;
-    cursor: pointer;
 }
 
-/* Hover state for dark mode toggle */
-#darkMode span:hover {
+.dark-mode-toggle:hover {
     background-color: rgba(200, 200, 200, 0.7);
-    color: #333;
     border: 1px solid rgba(120, 120, 120, 0.5);
 }
 
-#darkMode span.darkMode {
-    display: inline-block;
-    border: 1px solid rgba(100, 100, 100, 0.4);
-    color: rgba(180, 180, 180, 0.9);
-    padding: 5px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 500;
-    text-align: center;
-    background-color: rgba(50, 50, 50, 0.6);
-    transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -webkit-transition: all .3s ease;
+.dark-mode-toggle .icon {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    color: #666;
+    transition: color .3s ease, transform .3s ease;
 }
 
-/* Hover state for dark mode toggle in dark mode */
-#darkMode span.darkMode:hover {
+.dark-mode-toggle .icon-moon {
+    display: block;
+}
+
+.dark-mode-toggle .icon-sun {
+    display: none;
+}
+
+.dark-mode-toggle.darkMode {
+    border: 1px solid rgba(100, 100, 100, 0.4);
+    background-color: rgba(50, 50, 50, 0.6);
+}
+
+.dark-mode-toggle.darkMode:hover {
     background-color: rgba(70, 70, 70, 0.8);
-    color: rgba(220, 220, 220, 1);
     border: 1px solid rgba(100, 100, 100, 0.6);
-    cursor: pointer;
+}
+
+.dark-mode-toggle.darkMode .icon-moon {
+    display: none;
+}
+
+.dark-mode-toggle.darkMode .icon-sun {
+    display: block;
+    color: rgba(255, 200, 100, 0.95);
+}
+
+.dark-mode-toggle .icon-moon {
+    color: rgba(150, 150, 150, 0.8);
+}
+
+.dark-mode-toggle:hover .icon {
+    transform: rotate(20deg);
 }
 
 /* Legend and Categories Wrapper */
@@ -861,26 +943,32 @@ body.darkMode #tooltips-toggle:hover {
         flex-direction: column;
     }
 
+    /* Tablet header */
+    .title-header-container {
+        padding: 0 10px;
+        margin-bottom: 8px;
+    }
+
+    .title-header-row {
+        height: auto;
+        min-height: 45px;
+        align-items: center;
+    }
+
     #emotionNetName {
-        font-size: 22px;
-        margin-left: 15px;
-        left: 0;
-    }
-
-    #darkMode span {
-        right: 15px !important;
-        font-size: 9px;
-        padding: 2px 4px;
-    }
-
-    .github-icon {
-        right: 105px !important;
-        margin-top: 28px !important;
+        font-size: 24px;
+        margin: 0;
+        padding: 0;
     }
 
     .github-icon svg {
         height: 16px !important;
         width: 16px !important;
+    }
+
+    #darkMode span {
+        font-size: 9px;
+        padding: 2px 4px;
     }
 
     #project-footer {
@@ -896,6 +984,94 @@ body.darkMode #tooltips-toggle:hover {
 
     .main-container {
         padding: 10px 8px;
+    }
+
+    /* Mobile header with Bootstrap grid */
+    .title-header-container {
+        padding: 0 10px;
+        margin-bottom: 8px;
+    }
+
+    .title-header-row {
+        height: auto;
+        min-height: 50px;
+        align-items: center;
+    }
+
+    .title-col,
+    .spacer-col,
+    .github-icon-col,
+    .darkmode-col {
+        padding: 0 3px;
+    }
+
+    #emotionNetName {
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .github-icon-col {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .github-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .github-icon svg {
+        height: 18px !important;
+        width: 18px !important;
+    }
+
+    .darkmode-col {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2px;
+    }
+
+    #darkMode {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .dark-mode-toggle {
+        padding: 6px 8px;
+        border-radius: 6px;
+        border: 1px solid rgba(150, 150, 150, 0.4);
+        background-color: rgba(220, 220, 220, 0.5);
+    }
+
+    .dark-mode-toggle:hover {
+        background-color: rgba(200, 200, 200, 0.7);
+        border: 1px solid rgba(120, 120, 120, 0.5);
+    }
+
+    .dark-mode-toggle .icon {
+        width: 18px;
+        height: 18px;
+        color: rgba(150, 150, 150, 0.8);
+    }
+
+    .dark-mode-toggle.darkMode {
+        border: 1px solid rgba(100, 100, 100, 0.4);
+        background-color: rgba(50, 50, 50, 0.6);
+    }
+
+    .dark-mode-toggle.darkMode:hover {
+        background-color: rgba(70, 70, 70, 0.8);
+        border: 1px solid rgba(100, 100, 100, 0.6);
+    }
+
+    .dark-mode-toggle.darkMode .icon-sun {
+        color: rgba(255, 180, 80, 0.95);
     }
 
     /* Mobile layout: Canvas first, then Display/Property side by side, Tips last */
@@ -973,7 +1149,7 @@ body.darkMode #tooltips-toggle:hover {
         padding-top: 0;
         padding-bottom: 4px;
     }
-    
+
     #mode.control-group {
         margin-bottom: 8px;
         padding-bottom: 4px;
@@ -1011,29 +1187,6 @@ body.darkMode #tooltips-toggle:hover {
         display: block;
         padding: 8px 12px;
         font-size: 11px;
-    }
-
-    #emotionNetName {
-        font-size: 16px;
-        margin-left: 10px;
-        margin-top: 10px;
-    }
-
-    #darkMode span {
-        right: 10px !important;
-        font-size: 8px;
-        padding: 1px 3px;
-        margin-top: 10px !important;
-    }
-
-    .github-icon {
-        right: 95px !important;
-        margin-top: 18px !important;
-    }
-
-    .github-icon svg {
-        height: 18px !important;
-        width: 18px !important;
     }
 
     #tooltips {

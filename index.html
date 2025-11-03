@@ -23,17 +23,48 @@
     <script src="js/bootstrap.js"></script>
 </head>
 <body>
-<!-- Title Section -->
-<div style="height: 5em">
-    <h1 id="emotionNetName">Emotion Net</h1>
-    <div id='darkMode' style="display:inline-block;">
-        <span style="position: absolute; right: 30px; margin-bottom: 25px; margin-top: 15px;"><strong>dark mode</strong></span>
+<!-- Title Section with Bootstrap Grid -->
+<div class="title-header-container">
+    <div class="row title-header-row">
+        <!-- Title Column (col-3 on mobile) -->
+        <div class="col-xs-3 col-sm-3 col-md-2 title-col">
+            <h1 id="emotionNetName">Emotion Net</h1>
+        </div>
+
+        <!-- Empty Spacer Column (col-6 on mobile) -->
+        <div class="col-xs-6 col-sm-6 col-md-8 spacer-col"></div>
+
+        <!-- GitHub Icon Column (col-1 on mobile) -->
+        <div class="col-xs-1 col-sm-1 col-md-1 github-icon-col">
+            <a href="https://github.com/CoreSheep/emotion-net" target="_blank" class="github-icon" title="View on GitHub">
+                <svg height="20" viewBox="0 0 16 16" version="1.1" width="20" aria-hidden="true" style="fill: #333; vertical-align: middle;" class="github-icon-svg">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Dark Mode Toggle Column (col-2 on mobile) -->
+        <div class="col-xs-2 col-sm-2 col-md-1 darkmode-col">
+            <div id='darkMode' class="dark-mode-toggle">
+                <!-- Moon Icon (shown in light mode) -->
+                <svg class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <!-- Sun Icon (shown in dark mode) -->
+                <svg class="icon icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </div>
+        </div>
     </div>
-    <a href="https://github.com/CoreSheep/emotion-net" target="_blank" class="github-icon" style="position: absolute; right: 125px; margin-top: 33px; text-decoration: none;" title="View on GitHub">
-        <svg height="20" viewBox="0 0 16 16" version="1.1" width="20" aria-hidden="true" style="fill: #333; vertical-align: middle;" class="github-icon-svg">
-            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-        </svg>
-    </a>
 </div>
 
 <!-- Main container with grid layout -->
@@ -791,7 +822,7 @@
                 $("#emotionNetName").addClass("darkMode");
                 $("#label").addClass("darkMode");
                 $("#mode .button-group span").addClass("darkMode");
-                $("#darkMode span").addClass("darkMode").html("<strong>light mode</strong>");
+                $("#darkMode").addClass("darkMode");
                 $("#switcher1 .button-group span").addClass("darkMode");
                 $("#switcher2 .button-group span").addClass("darkMode");
                 $("#switcher3 .button-group span").addClass("darkMode");
@@ -809,7 +840,7 @@
                         $("#emotionNetName").addClass("darkMode");
                         $("#label").addClass("darkMode");
                         $("#mode .button-group span").addClass("darkMode");
-                        $("#darkMode span").addClass("darkMode").html("<strong>light mode</strong>");
+                        $("#darkMode").addClass("darkMode");
                         $("#switcher1 .button-group span").addClass("darkMode");
                         $("#switcher2 .button-group span").addClass("darkMode");
                         $("#switcher3 .button-group span").addClass("darkMode");
@@ -840,7 +871,7 @@
                         $("#emotionNetName").removeClass("darkMode");
                         $("#label").removeClass("darkMode");
                         $("#mode .button-group span").removeClass("darkMode");
-                        $("#darkMode span").removeClass("darkMode").html("<strong>dark mode</strong>");
+                        $("#darkMode").removeClass("darkMode");
                         $("#switcher1 .button-group span").removeClass("darkMode");
                         $("#switcher2 .button-group span").removeClass("darkMode");
                         $("#switcher3 .button-group span").removeClass("darkMode");
