@@ -1101,17 +1101,20 @@ body.darkMode #tooltips-toggle:hover {
     .left-controls {
         order: 2;
         width: calc(50% - 4px);
-        padding: 8px;
+        padding: 6px;
+        padding-left: 10px;
         margin-bottom: 0;
         margin-right: 0;
+        margin-left: 0;
     }
 
     .right-property {
         order: 2;
         width: calc(50% - 4px);
-        padding: 8px;
+        padding: 6px;
         margin-bottom: 0;
         margin-left: 0;
+        margin-right: 0;
     }
 
     /* Stack legend and node categories on mobile */
@@ -1142,12 +1145,34 @@ body.darkMode #tooltips-toggle:hover {
 
     .property-panel {
         max-height: 300px;
+        font-size: 8px;
+        padding: 8px;
+    }
+
+    .property-panel h4 {
         font-size: 10px;
+        margin-bottom: 8px;
+    }
+
+    .property-panel .label {
+        font-size: 7px;
+        padding: 2px 4px;
+    }
+
+    #subclass span,
+    #description span,
+    #tag1 span,
+    #tag2 span,
+    #tag3 span,
+    #tag4 span,
+    #tag5 span,
+    #tag6 span {
+        font-size: 8px !important;
     }
 
     .control-group {
-        margin-bottom: 12px;
-        padding-bottom: 12px;
+        margin-bottom: 6px;
+        padding-bottom: 6px;
     }
 
     /* Mode toggle button - mobile specific */
@@ -1164,12 +1189,13 @@ body.darkMode #tooltips-toggle:hover {
     }
 
     #mode .button-group span {
-        padding: 4px 6px;
-        font-size: 10px;
+        padding: 3px 5px;
+        font-size: 8px;
     }
 
     .control-label {
-        font-size: 11px;
+        font-size: 9px;
+        margin-bottom: 4px;
     }
 
     .switcher-group {
@@ -1187,8 +1213,8 @@ body.darkMode #tooltips-toggle:hover {
     }
 
     .switcher-group .button-group span {
-        padding: 5px 8px;
-        font-size: 10px;
+        padding: 3px 6px;
+        font-size: 8px;
     }
 
     .tips-button {
@@ -1198,13 +1224,40 @@ body.darkMode #tooltips-toggle:hover {
     }
 
     #tooltips {
-        font-size: 9px;
-        padding: 10px;
+        font-size: 8px;
+        padding: 6px;
+        line-height: 1.3;
     }
 
     #tooltips small {
-        font-size: 8px;
+        font-size: 7px;
         line-height: 1.3;
+    }
+
+    /* Legend - mobile adjustments */
+    .legend-categories-wrapper {
+        gap: 4px;
+        padding-top: 10px;
+        margin-left: 6px;
+    }
+
+    #label-content {
+        font-size: 8px;
+    }
+
+    #label-content > div {
+        margin-bottom: 8px;
+    }
+
+    #label span,
+    #label-content span {
+        width: 7px;
+        height: 7px;
+        margin-right: 5px;
+    }
+
+    .switcher-group {
+        margin-bottom: 6px;
     }
 
     #project-footer {
