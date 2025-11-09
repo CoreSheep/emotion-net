@@ -263,17 +263,17 @@
                 // Mobile devices
                 canvasWidth = Math.min(windowWidth - 20, 350);
                 canvasHeight = 320;
-                canvasElement.style.marginLeft = "10px";
+                canvasElement.style.marginLeft = "0";
             } else if (windowWidth <= 768) {
                 // Tablets
                 canvasWidth = Math.min(windowWidth - 40, 600);
                 canvasHeight = 450;
-                canvasElement.style.marginLeft = "20px";
+                canvasElement.style.marginLeft = "0";
             } else {
                 // Desktop
                 canvasWidth = 880;
                 canvasHeight = 580;
-                canvasElement.style.marginLeft = "40px";
+                canvasElement.style.marginLeft = "0";
             }
             canvasElement.setAttribute("width", canvasWidth);
             canvasElement.setAttribute("height", canvasHeight);
