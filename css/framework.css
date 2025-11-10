@@ -1094,8 +1094,9 @@ body.darkMode #tooltips-toggle:hover {
     .canvas-column {
         order: 1;
         width: 100%;
-        padding: 8px 5px;
+        padding: 8px;
         margin-bottom: 8px;
+        margin-left: 16px;
     }
 
     .canvas-wrapper {
