@@ -1233,9 +1233,7 @@ body.darkMode #tooltips-toggle:hover {
     }
 
     #tooltips {
-        font-size: 8px;
-        padding: 6px;
-        line-height: 1.3;
+        display: none !important;
     }
 
     #tooltips small {
