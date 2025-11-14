@@ -1198,8 +1198,9 @@ body.darkMode #tooltips-toggle:hover {
     }
 
     .control-label {
-        font-size: 10px;
+        font-size: 17px;
         margin-bottom: 5px;
+        font-weight: 600;
     }
 
     #search input {
@@ -1249,18 +1250,19 @@ body.darkMode #tooltips-toggle:hover {
     }
 
     #label-content {
-        font-size: 9px;
+        font-size: 17px;
+        font-weight: 500;
     }
 
     #label-content > div {
-        margin-bottom: 9px;
+        margin-bottom: 10px;
     }
 
     #label span,
     #label-content span {
-        width: 8px;
-        height: 8px;
-        margin-right: 6px;
+        width: 14px;
+        height: 14px;
+        margin-right: 8px;
     }
 
     .switcher-group {
