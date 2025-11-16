@@ -1149,18 +1149,18 @@ body.darkMode #tooltips-toggle:hover {
 
     .property-panel {
         max-height: 300px;
-        font-size: 9px;
+        font-size: 12px;
         padding: 10px;
     }
 
     .property-panel h4 {
-        font-size: 11px;
-        margin-bottom: 8px;
+        font-size: 15px;
+        margin-bottom: 10px;
     }
 
     .property-panel .label {
-        font-size: 8px;
-        padding: 2px 5px;
+        font-size: 11px;
+        padding: 3px 6px;
     }
 
     #subclass span,
@@ -1171,7 +1171,7 @@ body.darkMode #tooltips-toggle:hover {
     #tag4 span,
     #tag5 span,
     #tag6 span {
-        font-size: 9px !important;
+        font-size: 12px !important;
     }
 
     .control-group {
@@ -1250,7 +1250,7 @@ body.darkMode #tooltips-toggle:hover {
     }
 
     #label-content {
-        font-size: 17px;
+        font-size: 12px;
         font-weight: 500;
     }
 
